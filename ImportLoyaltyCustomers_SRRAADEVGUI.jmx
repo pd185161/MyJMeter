@@ -1,0 +1,1615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Import Promotion" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables-Global" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="env" elementType="Argument">
+            <stringProp name="Argument.name">env</stringProp>
+            <stringProp name="Argument.value">153.77.180.130</stringProp>
+            <stringProp name="Argument.desc">Environment name to be used in the Endpoint URL</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DBServer" elementType="Argument">
+            <stringProp name="Argument.name">DBServer</stringProp>
+            <stringProp name="Argument.value">153.77.180.130</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="serverIP" elementType="Argument">
+            <stringProp name="Argument.name">serverIP</stringProp>
+            <stringProp name="Argument.value">153.77.180.130</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="serverUserName" elementType="Argument">
+            <stringProp name="Argument.name">serverUserName</stringProp>
+            <stringProp name="Argument.value">s_raa_appadmin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="serverPassword" elementType="Argument">
+            <stringProp name="Argument.name">serverPassword</stringProp>
+            <stringProp name="Argument.value">HAha123!</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="LoyaltyDBName" elementType="Argument">
+            <stringProp name="Argument.name">LoyaltyDBName</stringProp>
+            <stringProp name="Argument.value">Loyalty_LMS_1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PromotionDBName" elementType="Argument">
+            <stringProp name="Argument.name">PromotionDBName</stringProp>
+            <stringProp name="Argument.value">Promotion_LMS_1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MPDBName" elementType="Argument">
+            <stringProp name="Argument.name">MPDBName</stringProp>
+            <stringProp name="Argument.value">MP_LMS</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DownloadDBName" elementType="Argument">
+            <stringProp name="Argument.name">DownloadDBName</stringProp>
+            <stringProp name="Argument.value">DLDB_LMS_1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="LoyaltyOnlineDBName" elementType="Argument">
+            <stringProp name="Argument.name">LoyaltyOnlineDBName</stringProp>
+            <stringProp name="Argument.value">LoyaltyOnline_LMS_1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RetailerID" elementType="Argument">
+            <stringProp name="Argument.name">RetailerID</stringProp>
+            <stringProp name="Argument.value">3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RetailerUserID" elementType="Argument">
+            <stringProp name="Argument.name">RetailerUserID</stringProp>
+            <stringProp name="Argument.value">TestRetailerPK</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RetailerPassword" elementType="Argument">
+            <stringProp name="Argument.name">RetailerPassword</stringProp>
+            <stringProp name="Argument.value">Abcd1234</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CurrDate" elementType="Argument">
+            <stringProp name="Argument.name">CurrDate</stringProp>
+            <stringProp name="Argument.value">${__time(yyyy-MM-dd)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="transID" elementType="Argument">
+            <stringProp name="Argument.name">transID</stringProp>
+            <stringProp name="Argument.value">${__Random(5000000,6000000)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="batchManagerPath" elementType="Argument">
+            <stringProp name="Argument.name">batchManagerPath</stringProp>
+            <stringProp name="Argument.value">C:\Retalix\LMS\HQ Loyalty and Promotions.1\BatchManager</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">This is the server path where batch manager bat file is available</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-LoyaltyDB" enabled="true">
+        <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://${DBServer};databaseName=${LoyaltyDBName}</stringProp>
+        <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="username">sa</stringProp>
+        <stringProp name="password">Abcd1234@</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-Promotion DB" enabled="true">
+        <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="dataSource">MS_Driver_Connection_Pool_Promotion</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://${DBServer};databaseName=${PromotionDBName}</stringProp>
+        <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="username">sa</stringProp>
+        <stringProp name="password">Abcd1234@</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-Loyalty Online" enabled="true">
+        <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty_Online</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://${DBServer};databaseName=${LoyaltyOnlineDBName}</stringProp>
+        <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="username">sa</stringProp>
+        <stringProp name="password">Abcd1234@</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-DownloadDB" enabled="true">
+        <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="dataSource">MS_Driver_Connection_Pool_DownloadDB</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://${DBServer};databaseName=${DownloadDBName}</stringProp>
+        <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="username">sa</stringProp>
+        <stringProp name="password">Abcd1234@</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="PSToolPath" elementType="Argument">
+            <stringProp name="Argument.name">PSToolPath</stringProp>
+            <stringProp name="Argument.value">C:\Users\pd185161\OneDrive - NCR Corporation\Desktop\LP\apache-jmeter-5.4.1\apache-jmeter-5.4.1\bin\PSTools</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="InputPath" elementType="Argument">
+            <stringProp name="Argument.name">InputPath</stringProp>
+            <stringProp name="Argument.value">C:\Retalix\LPBatchImportOp\In\</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Enter with \ at the end</stringProp>
+          </elementProp>
+          <elementProp name="ImportPromotionTypes" elementType="Argument">
+            <stringProp name="Argument.name">ImportPromotionTypes</stringProp>
+            <stringProp name="Argument.value">Single Item</stringProp>
+            <stringProp name="Argument.desc">Enter From below list and put &quot;:&quot; for multiple entries  1. Single Item 2. Single Condition 3. Multi Condition 4. Total Ticket 5. Manual Item Discount 6. Manual Ticket Discount 7. Targeted Manual Item Discount</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ImportPromotionCounts" elementType="Argument">
+            <stringProp name="Argument.name">ImportPromotionCounts</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- Import Promotion Batch Run " enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Get Max PromotionID+1" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Promotion</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= &apos;${RetailerID}&apos;)
+
+select(select max(cast(PromotionHeaderID AS INT ))FROM PromotionHeader
+where matrixmemberid=@matrixmemberid)+1 AS PromotionHeaderID</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">PromotionHeaderID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">PromotionHeaderID</stringProp>
+            <stringProp name="RegexExtractor.regex">PromotionHeaderID</stringProp>
+            <stringProp name="RegexExtractor.template"></stringProp>
+            <stringProp name="RegexExtractor.default">${PromotionHeaderID}</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler - Create Batch files" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">SampleResult.setIgnore();   //This will ignore the sampler in result
+
+log.info(&quot;PreProcessor OSbatch run Started&quot;);
+//Create remote batch file
+String batName = &quot;IMPORTPROMOTIONS&quot;;
+String inputFileformat = &quot;.xml&quot;;
+String inputFilePath =vars.get(&quot;InputPath&quot;);
+String workFilePath = &quot;C:\\Retalix\\LPBatchImportOp\\Wrk&quot;;
+String logFile = &quot;C:\\Retalix\\LPBatchImportOp\\Log\\PROMOTIONS.LOG&quot;;
+String errorFile = &quot;C:\\Retalix\\LPBatchImportOp\\Err\\PROMOTIONS.ERR&quot;;
+String retailerID = vars.get(&quot;RetailerID&quot;);
+String otherCriteria = &quot;&quot;;
+
+//UPload to variable
+vars.put(&quot;InputPath&quot;,inputFilePath);
+vars.put(&quot;LogFile&quot;,logFile);
+vars.put(&quot;ErrorFile&quot;,errorFile);
+
+StringBuilder batFileText = new StringBuilder(&quot;ReMABatchManager.exe&quot;);
+batFileText.append(&quot; -A&quot;+ batName);
+if (inputFileformat != &quot;&quot; &amp;&amp; inputFileformat != null )
+{
+	batFileText.append(&quot; -N*&quot;+ inputFileformat);
+}
+batFileText.append(&quot; -F&quot;+ inputFilePath);
+batFileText.append(&quot; -W&quot;+ workFilePath);
+batFileText.append(&quot; -L&quot;+ logFile);
+batFileText.append(&quot; -E&quot;+ errorFile);
+batFileText.append(&quot; -R&quot;+ retailerID);
+batFileText.append(&quot; &quot;+ otherCriteria);
+
+//String batFileText = &quot;ReMABatchManager.exe&quot;+&quot; &quot;+ &quot;-A&quot; + batName.toUpperCase()+&quot; &quot;+&quot;-O&quot;+outputFilePath+&quot; &quot;+&quot;-W&quot;+workFilePath+&quot; &quot; + &quot;-L&quot; + logFile + &quot; &quot; + &quot;-E&quot;+errorFile+ &quot; &quot; +&quot;-R&quot;+retailerID+ &quot; &quot;+ otherCriteria;
+
+String serverIP = vars.get(&quot;serverIP&quot;);
+String serverUserName = vars.get(&quot;serverUserName&quot;);
+String serverPassword = vars.get(&quot;serverPassword&quot;);
+String batchManagerPath = vars.get(&quot;batchManagerPath&quot;);
+
+String remoteBatchFilePath=&quot;\\\\&quot;+serverIP+&quot;\\&quot;+batchManagerPath.replace(&quot;:&quot;,&quot;&quot;);
+String remoteBatchFile = remoteBatchFilePath+&quot;\\TestBatch_Jmeter.bat&quot;;
+File file = new File(remoteBatchFile);
+
+FileWriter fw = new FileWriter(file.getAbsoluteFile(),false);
+BufferedWriter bw = new BufferedWriter(fw);
+bw.write(batFileText.toString());
+bw.close();
+
+
+//Create local batch file to run server batch file
+StringBuilder localbatText = new StringBuilder(&quot;@ECHO OFF&quot;);
+localbatText.append(&quot;\nPsExec.exe&quot;);
+localbatText.append(&quot; \\\\&quot;+ serverIP );
+localbatText.append(&quot; -u HQL\\&quot;+serverUserName);
+localbatText.append(&quot; -p &quot;+serverPassword);
+localbatText.append(&quot; cmd /c &quot;);
+localbatText.append(&quot;\&quot;cd /d &quot; + batchManagerPath +&quot; &amp;&amp; &quot;);
+localbatText.append(&quot;TestBatch_Jmeter.bat&quot;+&quot;\&quot;&quot;);
+localbatText.append(&quot;\nPAUSE&quot;);
+
+String localbatFile= vars.get(&quot;PSToolPath&quot;) + &quot;\\LocalBatchFile.bat&quot;;
+File localFile = new File(localbatFile);
+
+FileWriter fwr = new FileWriter(localFile.getAbsoluteFile(),false);
+BufferedWriter bwr = new BufferedWriter(fwr);
+bwr.write(localbatText.toString());
+bwr.close();
+
+//send batchfile path to variable 
+vars.put(&quot;LocalBatchFile&quot;,localbatFile);
+log.info(&quot;PreProcessor OSbatch run ended&quot;);</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler - Import files creation" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">SampleResult.setIgnore();   //This will ignore the sampler in result
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.StringWriter;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import java.io.StringReader;
+import java.util.ArrayList;
+
+ArrayList importPomoIDs  = new ArrayList();
+ArrayList importFiles = new ArrayList();
+		
+	
+static String XMLtoString(String fileName, String PromoID)
+{
+	String xmlString =null;
+	 try {
+	    	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder = dbf.newDocumentBuilder();
+			Document xmlDocument = builder.parse(new File(fileName));
+			
+			/* Start Change the details of xml */
+			org.w3c.dom.Node noderetailerid= xmlDocument.getElementsByTagName(&quot;Retailer&quot;).item(0).getAttributes().getNamedItem(&quot;Id&quot;);
+			noderetailerid.setTextContent(&quot;${RetailerID}&quot;);
+			
+			org.w3c.dom.Node nodePromotionHeaderId= xmlDocument.getElementsByTagName(&quot;Promotion&quot;).item(0).getAttributes().getNamedItem(&quot;PromotionHeaderId&quot;);
+			nodePromotionHeaderId.setTextContent(PromoID);
+			
+			org.w3c.dom.Node nodePromodetailsStartDate= xmlDocument.getElementsByTagName(&quot;PromotionDetails&quot;).item(0).getAttributes().getNamedItem(&quot;StartDate&quot;);
+			nodePromodetailsStartDate.setTextContent(&quot;${CurrDate}T00:00:00&quot;);
+			
+			org.w3c.dom.Node nodeStoreStartDate= xmlDocument.getElementsByTagName(&quot;Store&quot;).item(0).getAttributes().getNamedItem(&quot;StartDate&quot;);
+			nodeStoreStartDate.setTextContent(&quot;${CurrDate}T00:00:00&quot;);
+							
+			/* end change the details of xml */
+			
+			TransformerFactory tf = TransformerFactory.newInstance();
+		    Transformer transformer;
+	        transformer = tf.newTransformer();
+	        StringWriter writer = new StringWriter();
+	 
+	        transformer.transform(new DOMSource(xmlDocument), new StreamResult(writer));
+	 
+	        xmlString = writer.getBuffer().toString();
+	    } 
+	    catch (Exception e) 
+	    {
+	        log.info(e.getMessage());
+	    }
+	return xmlString;
+}
+
+static void StringToXML(String xmlSource, String xmlPath)
+{
+	try{
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	DocumentBuilder builder = factory.newDocumentBuilder();
+	Document doc = builder.parse(new InputSource(new StringReader(xmlSource)));
+	
+	// Write the parsed document to an xml file
+	TransformerFactory transformerFactory = TransformerFactory.newInstance();
+	Transformer transformer = transformerFactory.newTransformer();
+	DOMSource source = new DOMSource(doc);
+	
+	StreamResult result =  new StreamResult(new File(xmlPath));
+	transformer.transform(source, result);
+	log.info(&quot;File created&quot;);
+	}
+	catch (Exception e)
+	{
+		log.info(e.getMessage());
+	}
+}
+
+static void ImportPromotion()
+{
+	String PSToolPath = vars.get(&quot;PSToolPath&quot;);
+	String inputPath = vars.get(&quot;InputPath&quot;);
+	
+	String ImportPromotionTypes = &quot;${ImportPromotionTypes}&quot;;
+	String ImportPromotionCounts = &quot;${ImportPromotionCounts}&quot;;
+	
+	String[] arrPromotionTypes = ImportPromotionTypes.split(&quot;:&quot;);
+	String[] arrPromotionCounts = ImportPromotionCounts.split(&quot;:&quot;);
+	
+	
+	
+	if (arrPromotionTypes.length != arrPromotionCounts.length)
+	{
+		log.info(&quot;Please enter same number of Promotions types and counts in User Defined Variable&quot;);
+		return;
+	
+	}
+	
+	log.info(&quot;Reached here&quot;);
+	
+	String xmlFilePath=null;
+	
+	int counter=0;
+	String latestPromoID = vars.get(&quot;PromotionHeaderID_1&quot;);
+	int promoID = Integer.parseInt(latestPromoID);
+	
+	for (int i=0;i&lt;arrPromotionTypes.length;i++)
+	{
+		log.info(&quot;Create Promotion type: &quot;+arrPromotionTypes[i]+ &quot; with count: &quot;+arrPromotionCounts[i]);
+		
+		String PromoType= arrPromotionTypes[i].toLowerCase().replace(&quot; &quot;, &quot;&quot;);
+					
+		
+		switch (PromoType)
+		{
+		case &quot;singleitem&quot;:
+		{
+			log.info(&quot;Use single item import file&quot;);
+			xmlFilePath = PSToolPath+&quot;/Import Promotions_Examples/Import_Single Item.xml&quot;;
+			break;
+		}
+		case &quot;singlecondition&quot;:
+		{
+			log.info(&quot;Use Single Condition import file&quot;);
+			xmlFilePath = PSToolPath+&quot;/Import Promotions_Examples/Import_Single Condition.xml&quot;;
+			break;
+		}
+		
+		case &quot;multicondition&quot;:
+		{
+			log.info(&quot;Use Multi Condition import file &quot;);
+			xmlFilePath = PSToolPath+&quot;/Import Promotions_Examples/Import_Multi Condition.xml&quot;;
+			break;
+		}
+		case &quot;totalticket&quot;:
+		{
+			log.info(&quot;Use Total Ticket import file &quot;);
+			xmlFilePath = PSToolPath+&quot;/Import Promotions_Examples/Import_Total Ticket.xml&quot;;
+			break;
+		}
+		case &quot;manualitemdiscount&quot;:
+		{
+			log.info(&quot;Use Manual Item Discount import file &quot;);
+			xmlFilePath = PSToolPath+&quot;/Import Promotions_Examples/Import_Manual Item Discount.xml&quot;;
+			break;
+		}
+		case &quot;manualticketdiscount&quot;:
+		{
+			log.info(&quot;Use Manual Ticket Discount import file &quot;);
+			xmlFilePath = PSToolPath+&quot;/Import Promotions_Examples/Import_Manual Ticket Discount.xml&quot;;
+			break;
+		}
+		case &quot;targetedmanualitemdiscount&quot;:
+		{
+			log.info(&quot;Use Targeted Manual Item Discount import file &quot;);
+			xmlFilePath = PSToolPath+&quot;/Import Promotions_Examples/Import_Targeted Manual Item Discount.xml&quot;;
+			break;
+		}
+		default:
+		{
+			log.info(&quot;Incorrect Promotion type entered&quot;);
+		}
+		return;
+		}
+		log.info(&quot;Using XML template&quot; + xmlFilePath);
+		
+		
+		
+		for (int j=0;j&lt; Integer.parseInt(arrPromotionCounts[i]);j++)
+		{
+			String serverpath = &quot;\\\\\\\\&quot; + vars.get(&quot;serverIP&quot;)+&quot;\\\\&quot;;
+			log.info(serverpath);
+			String inputPathwithoutcolon= inputPath.replace(&quot;:&quot;,&quot;&quot;);
+			counter= counter+1 ;
+			String newFileName = serverpath + inputPathwithoutcolon + &quot;PromotionImport-&quot;+vars.get(&quot;CurrDate&quot;)+&quot;T000000-&quot;+counter +&quot;.xml&quot;; 
+			String fnames=&quot;PromotionImport-&quot;+vars.get(&quot;CurrDate&quot;)+&quot;T000000-&quot;+counter +&quot;.xml&quot;; 
+			importFiles.add(fnames);
+			log.info(newFileName);
+			
+			String xmltoString = XMLtoString(xmlFilePath,Integer.toString(promoID));
+			importPomoIDs.add(promoID);
+			StringToXML(xmltoString, newFileName );
+			promoID = promoID+1;
+		}
+	}
+	
+}
+
+	
+//Call the main function
+ImportPromotion();
+vars.putObject(&quot;importPomoIDs&quot;,importPomoIDs);
+vars.putObject(&quot;importFiles&quot;,importFiles);</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Bat File Execution" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">String[] array = { &quot;cmd.exe&quot;, &quot;/c&quot;, &quot;start&quot;,&quot;cd /d&quot;, vars.get(&quot;LocalBatchFile&quot;) };
+
+
+try{
+	
+Process proc = Runtime.getRuntime().exec(array);
+Thread.sleep(200000);
+//proc.waitFor();
+
+}
+ catch (Exception e) 
+ {
+      e.printStackTrace();
+ }
+ 
+//proc.destroy();
+//Runtime.getRuntime().exec(&quot;taskkill /F /IM PsExec.exe&quot;);</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Read  log file" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">//Final
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+static ReadFile(String fileFullPath) 
+{
+	String fileNameUp=&quot;\\\\&quot;+vars.get(&quot;serverIP&quot;)+&quot;\\&quot;+fileFullPath.replace(&quot;:&quot;,&quot;&quot;);
+	log.info (&quot;File path is &quot;+fileNameUp);
+	
+	File file = new File(fileNameUp);
+	
+	String str;
+	FileReader fr = new FileReader(file);
+	BufferedReader br= new BufferedReader(fr);
+	
+	int startlinenumber=0;
+	int endlinenumber=0;
+	int linecounter=1;
+	while((str=br.readLine())!=null)
+	{
+		
+		if (str.contains(&quot;======================Start&quot;))
+		{
+			startlinenumber=linecounter;	
+			log.info(Integer.toString(startlinenumber));
+		}
+		if (str.contains(&quot;==============End&quot;))
+		{
+			endlinenumber=linecounter;
+			log.info(Integer.toString(endlinenumber));	
+		}
+		linecounter++;
+	}
+	
+	String logFileText = &quot;&quot;;
+	
+	String line;
+	for (int j=startlinenumber+1;j&lt;endlinenumber;j++)
+	{
+			FileReader fr1 = new FileReader(file);
+				BufferedReader br1 = new BufferedReader(fr1);
+			for (int i = 1; i &lt; j; i++)
+		{
+			br1.readLine();
+		}
+			line = br1.readLine();
+			logFileText = logFileText.concat(&quot;\n&quot;+line);
+		}
+	
+	log.info(&quot;-------------------------File data starts here----------------------------&quot;);
+	log.info(logFileText);
+	log.info(&quot;-------------------------File data ends here----------------------------&quot;);
+	
+	
+	/*-------- Start: get import promotion details( promotion id, file names, status of files */
+	ArrayList importFiles = vars.getObject(&quot;importFiles&quot;); 
+	ArrayList importPomoIDs = vars.getObject(&quot;importFiles&quot;); 
+	
+	String[] lines = logFileText.split(System.getProperty(&quot;line.separator&quot;));
+
+		ArrayList importStatuses = new ArrayList();
+		
+		for (int j = 0; j&lt; importFiles.size(); j ++)
+		{
+			
+			String inputPath1 = vars.get(&quot;InputPath&quot;).toUpperCase().replace(&quot;\\&quot;, &quot;\\\\&quot;)+((String) importFiles.get(j));
+			//System.out.println(inputPath1);
+			
+			
+			for(int i=0;i&lt;lines.length;i++)
+			{
+				
+				//System.out.println(lines[i]);
+				if(lines[i].contains(&quot;Description : Rename file &quot;))
+				{
+					
+					String filename=inputPath1;
+					
+					//System.out.println(filename);
+					
+					String regPattern=&quot;Rename file &quot;+ filename+ &quot; to &quot; + filename +&quot;.&quot;+&quot;(.*).;&quot;;
+					//log.info(regPattern);
+					
+					Pattern r =Pattern.compile(regPattern);
+					Matcher m= r.matcher(lines[i]);
+					if (m.find( ))
+					{
+				      importStatuses.add(m.group(1));
+
+				      /*start: if err or wrn throw message in log*/ 
+				        if(m.group(1).equals(&quot;err&quot;) || m.group(1).equals(&quot;wrn&quot;) )
+				      {
+				    	  log.info(&quot;File &quot;+filename +&quot;is not imported successfully. Recieved with &quot;+ m.group(1).toString() + &quot; Status&quot;);
+				      }
+				       /*End: if err or wrn throw message in log*/
+					}
+					else
+					{
+				         log.info(&quot;NO MATCH. No File exported&quot;);
+				    }
+					
+				}
+				
+			}
+		}
+		log.info(importStatuses.toString());
+		
+		vars.putObject(&quot;importStatuses&quot;,importStatuses);
+	/*-------- End: get import promotion details( promotion id, file names, status of files */
+	
+}
+
+String prevRemoteBatchStatus = vars.get(&quot;RemoteBatchStatus&quot;);
+String filename= &quot;&quot;;
+filename = vars.get(&quot;LogFile&quot;);
+log.info(&quot;Reading log file&quot;);
+ReadFile(filename);</stringProp>
+        </JSR223Sampler>
+        <hashTree>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
+            <stringProp name="scriptLanguage">java</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.ArrayList;
+
+ArrayList importStatuses = vars.getObject(&quot;importStatuses&quot;);
+
+int count=0;
+for (int i = 0; i&lt;importStatuses.size();i++)
+{
+	if (importStatuses.get(i).equals(&quot;scc&quot;))
+	{
+		count = count+1;
+	}
+}
+log.info((importStatuses.size()).toString());
+if(count==importStatuses.size())
+{
+	Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+	log.info(&quot;All promotion import files imported successfully&quot;);
+   	AssertionResult.setFailure(false);
+}
+else
+{
+	Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+	AssertionResult.setFailureMessage(&quot;All promotion files are not imported&quot;);
+	log.error(&quot;All promotion files are not imported&quot;);
+   	AssertionResult.setFailure(true);
+}</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- Import Customers" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="type" elementType="Argument">
+              <stringProp name="Argument.name">type</stringProp>
+              <stringProp name="Argument.value">2</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="subType" elementType="Argument">
+              <stringProp name="Argument.name">subType</stringProp>
+              <stringProp name="Argument.value">7</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="isShared" elementType="Argument">
+              <stringProp name="Argument.name">isShared</stringProp>
+              <stringProp name="Argument.value">true</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="UploadInTransactionsSummary" elementType="Argument">
+              <stringProp name="Argument.name">UploadInTransactionsSummary</stringProp>
+              <stringProp name="Argument.value">true</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Get Max ClubCardID+1" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+declare @BarcodeId int
+declare @Value nvarchar(50)
+declare @maxclubcardId_string nvarchar(50)
+
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= &apos;${RetailerID}&apos;)
+
+ 
+
+select top 1 @Value = btl.Value, @BarcodeId = btl.BarcodeId 
+from CRM_ClubCard cc
+inner join [${PromotionDBName}].dbo.BarcodeTemplateLine btl
+on cc.Matrixmemberid= btl.Matrixmemberid and btl.AttributeId=1 and cc.BarcodeId = btl.BarcodeId and cc.ClubCardId like &apos;&apos;+ (btl.[Value])+&apos;%&apos;
+where cc.matrixmemberid = @matrixmemberid 
+ORDER BY newid()
+
+set @maxclubcardId_string = (select max(ClubCardId) from CRM_ClubCard where matrixmemberid = @matrixmemberid and BarcodeId=@BarcodeId and ClubCardId like &apos;&apos;+ (@Value)+&apos;%&apos;)
+
+select replicate(&apos;0&apos;,len(@maxclubcardId_string)-len(cast(@maxclubcardId_string as numeric))) +
+cast((cast(@maxclubcardId_string as numeric) +1) as varchar) as CardID, @BarcodeId as CardBarcodeID</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">CardID, CardBarcodeID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Get Accumulated Account" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select top 1 AccountID from CRM_AccumulatedAccounts where matrixmemberid=3 and Type=1 and isManualUpdate=1 and IsManualUpdateMS=1 order by newid()</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">AccID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Get Shared Targeted Segment" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @ClubInternalKey varchar(50)
+Set @ClubInternalKey = (select ClubInternalKey from CRM_RetailerClubAssign where matrixmemberid = (select matrixmemberid from RetailerCode_MP where RetailerID= &apos;3&apos;))
+
+select top 1 SegmentId from CRM_Segment where ClubInternalKey=@ClubInternalKey and status=1 and type = 1 and isShared=1 order by newId()</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">SegID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler - Create Batch files" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">SampleResult.setIgnore();   //This will ignore the sampler in result
+
+log.info(&quot;PreProcessor OSbatch run Started&quot;);
+//Create remote batch file
+String batName = &quot;IMPORTLOYALTYCUSTOMERS&quot;;
+String inputFileformat = &quot;.xml&quot;;
+String inputFilePath =vars.get(&quot;InputPath&quot;);
+String workFilePath = &quot;C:\\Retalix\\LPBatchImportOp\\Wrk&quot;;
+String logFile = &quot;C:\\Retalix\\LPBatchImportOp\\Log\\MemberImport.log&quot;;
+String errorFile = &quot;C:\\Retalix\\LPBatchImportOp\\Err\\MemberImport.err&quot;;
+String retailerID = vars.get(&quot;RetailerID&quot;);
+String otherCriteria = &quot;&quot;;
+
+//UPload to variable
+vars.put(&quot;InputPath&quot;,inputFilePath);
+vars.put(&quot;LogFile&quot;,logFile);
+vars.put(&quot;ErrorFile&quot;,errorFile);
+
+StringBuilder batFileText = new StringBuilder(&quot;ReMABatchManager.exe&quot;);
+batFileText.append(&quot; -Itrue&quot;);
+batFileText.append(&quot; -A&quot;+ batName);
+if (inputFileformat != &quot;&quot; &amp;&amp; inputFileformat != null )
+{
+	batFileText.append(&quot; -N*&quot;+ inputFileformat);
+}
+batFileText.append(&quot; -F&quot;+ inputFilePath);
+batFileText.append(&quot; -W&quot;+ workFilePath);
+batFileText.append(&quot; -L&quot;+ logFile);
+batFileText.append(&quot; -E&quot;+ errorFile);
+//batFileText.append(&quot; -R&quot;+ retailerID);
+//batFileText.append(&quot; &quot;+ otherCriteria);
+
+//String batFileText = &quot;ReMABatchManager.exe&quot;+&quot; &quot;+ &quot;-A&quot; + batName.toUpperCase()+&quot; &quot;+&quot;-O&quot;+outputFilePath+&quot; &quot;+&quot;-W&quot;+workFilePath+&quot; &quot; + &quot;-L&quot; + logFile + &quot; &quot; + &quot;-E&quot;+errorFile+ &quot; &quot; +&quot;-R&quot;+retailerID+ &quot; &quot;+ otherCriteria;
+
+String serverIP = vars.get(&quot;serverIP&quot;);
+String serverUserName = vars.get(&quot;serverUserName&quot;);
+String serverPassword = vars.get(&quot;serverPassword&quot;);
+String batchManagerPath = vars.get(&quot;batchManagerPath&quot;);
+
+String remoteBatchFilePath=&quot;\\\\&quot;+serverIP+&quot;\\&quot;+batchManagerPath.replace(&quot;:&quot;,&quot;&quot;);
+String remoteBatchFile = remoteBatchFilePath+&quot;\\TestBatch_Jmeter.bat&quot;;
+File file = new File(remoteBatchFile);
+
+FileWriter fw = new FileWriter(file.getAbsoluteFile(),false);
+BufferedWriter bw = new BufferedWriter(fw);
+bw.write(batFileText.toString());
+bw.close();
+
+
+//Create local batch file to run server batch file
+StringBuilder localbatText = new StringBuilder(&quot;@ECHO OFF&quot;);
+localbatText.append(&quot;\nPsExec.exe&quot;);
+localbatText.append(&quot; \\\\&quot;+ serverIP );
+localbatText.append(&quot; -u HQL\\&quot;+serverUserName);
+localbatText.append(&quot; -p &quot;+serverPassword);
+localbatText.append(&quot; cmd /c &quot;);
+localbatText.append(&quot;\&quot;cd /d &quot; + batchManagerPath +&quot; &amp;&amp; &quot;);
+localbatText.append(&quot;TestBatch_Jmeter.bat&quot;+&quot;\&quot;&quot;);
+localbatText.append(&quot;\nPAUSE&quot;);
+
+String localbatFile= vars.get(&quot;PSToolPath&quot;) + &quot;\\LocalBatchFile.bat&quot;;
+File localFile = new File(localbatFile);
+
+FileWriter fwr = new FileWriter(localFile.getAbsoluteFile(),false);
+BufferedWriter bwr = new BufferedWriter(fwr);
+bwr.write(localbatText.toString());
+bwr.close();
+
+//send batchfile path to variable 
+vars.put(&quot;LocalBatchFile&quot;,localbatFile);
+log.info(&quot;PreProcessor OSbatch run ended&quot;);</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler - Import files creation" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">SampleResult.setIgnore();   //This will ignore the sampler in result
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.StringWriter;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+
+import org.xml.sax.InputSource;
+import java.io.StringReader;
+import java.util.ArrayList;
+
+
+
+String segid = vars.get(&quot;SegID_1&quot;);
+String accID = vars.get(&quot;AccID_1&quot;);
+String cardID= vars.get(&quot;CardID_1&quot;);
+
+String xmlnameCounter=&quot;1&quot;;
+
+
+ArrayList importHHIDs  = new ArrayList();
+ArrayList importFiles = new ArrayList();
+	
+static String newMembersXMLString(String segdID, String accID, String cardID)
+{
+	String xmlString =null;
+	 try {
+	    	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder = dbf.newDocumentBuilder();
+			Document xmlDocument = builder.newDocument();
+			
+			/* Start Writing the details of xml */
+		  //Element rootElement = xmlDocument.createElementNS(&quot;http://www.w3.org/2001/XMLSchema-instance&quot;, &quot;LoyaltyCustomer&quot;);
+		  Element rootElement = xmlDocument.createElement(&quot;LoyaltyCustomer&quot;);
+            rootElement.setAttribute(&quot;Action&quot;, &quot;I&quot;);
+            //rootElement.setAttribute(&quot;noNamespaceSchemaLocation&quot;, &quot;file:///C:/Product/Tags/10.6.0/Documents/XSD%20Schemas/HQL_Customer_Interface.xsd&quot;);
+            
+			
+            xmlDocument.appendChild(rootElement);			//Append rootElement to xmlDocument
+			
+			Element RetailEle= xmlDocument.createElement(&quot;Retailer&quot;);
+            RetailEle.setAttribute(&quot;Id&quot;, vars.get(&quot;RetailerID&quot;));
+            rootElement.appendChild(RetailEle);
+			
+			Element hhEle= xmlDocument.createElement(&quot;HouseHold&quot;);
+			hhEle.setAttribute(&quot;City&quot;, &quot;HHCity&quot;);
+			hhEle.setAttribute(&quot;Country&quot;, &quot;28&quot;);
+			hhEle.setAttribute(&quot;EMailAddress&quot;, &quot;pkh@gmail.com&quot;);
+			hhEle.setAttribute(&quot;HouseHoldExternalId&quot;, cardID);
+			hhEle.setAttribute(&quot;PostalCode&quot;, &quot;500088&quot;);
+			hhEle.setAttribute(&quot;Street1&quot;, &quot;Telecom&quot;);
+			hhEle.setAttribute(&quot;StreetNum&quot;, &quot;22&quot;);
+			RetailEle.appendChild(hhEle);
+			
+			Element hhSegmentsEle= xmlDocument.createElement(&quot;HouseHoldSegments&quot;);
+			hhEle.appendChild(hhSegmentsEle);
+			
+			Element segEle= xmlDocument.createElement(&quot;Segment&quot;);
+			segEle.setAttribute(&quot;Id&quot;,segdID);
+			segEle.setAttribute(&quot;Status&quot;,&quot;1&quot;);
+			hhSegmentsEle.appendChild(segEle);
+			
+			Element accountsEle= xmlDocument.createElement(&quot;Accounts&quot;);
+			hhEle.appendChild(accountsEle);
+			
+			Element accountele = xmlDocument.createElement(&quot;Account&quot;);
+			accountele.setAttribute(&quot;Id&quot;, accID);
+			accountele.setAttribute(&quot;EarnValue&quot;, &quot;600.0000&quot;);
+			accountele.setAttribute(&quot;RedeemValue&quot;, &quot;1.0000&quot;);
+			accountsEle.appendChild(accountele);
+			
+			
+			Element membersEle= xmlDocument.createElement(&quot;Members&quot;);
+			hhEle.appendChild(membersEle);
+			
+			Element memberEle= xmlDocument.createElement(&quot;Member&quot;);
+			memberEle.setAttribute(&quot;IsMainMember&quot;,&quot;true&quot;);
+			memberEle.setAttribute(&quot;MemberExternalId&quot;,cardID);
+			memberEle.setAttribute(&quot;FirstName&quot;,&quot;ImportMember&quot;);
+			memberEle.setAttribute(&quot;LastName&quot;,&quot;PK&quot;);
+			memberEle.setAttribute(&quot;EMailAddress&quot;,&quot;pk@gmail.com&quot;);
+			membersEle.appendChild(memberEle);
+			
+			/* Element memberSegsEle= xmlDocument.createElement(&quot;MemberSegments&quot;);
+			memberEle.appendChild(memberSegsEle);
+			
+			Element membersegment= xmlDocument.createElement(&quot;Segment&quot;);
+			membersegment.setAttribute(&quot;Id&quot;, segID);
+			membersegment.setAttribute(&quot;Status&quot;, &quot;1&quot;);
+			memberSegsEle.appendChild(membersegment); */
+			
+			Element cardsEle = xmlDocument.createElement(&quot;Cards&quot;);
+			memberEle.appendChild(cardsEle);
+			
+			Element cardEle= xmlDocument.createElement(&quot;Card&quot;);
+			cardEle.setAttribute(&quot;CardStatus&quot;,&quot;1&quot;);
+			cardEle.setAttribute(&quot;ExpirationDate&quot;,&quot;2056-12-31T23:59:00.444+06:00&quot;);
+			cardEle.setAttribute(&quot;Id&quot;,cardID);
+			cardEle.setAttribute(&quot;IssueDate&quot;,&quot;${CurrDate}T22:40:00&quot;);
+			cardsEle.appendChild(cardEle);
+			
+			/* Element legendeEle = xmlDocument.createElement(&quot;Legend&quot;);
+			RetailEle.appendChild(legendeEle);
+			
+			Element segsEle= xmlDocument.createElement(&quot;Segments&quot;);
+			legendeEle.appendChild(segsEle);
+			
+			Element segEle = xmlDocument.createElement(&quot;Segment&quot;);
+			segEle.setAttribute(&quot;SegmentId&quot;,segID);
+			segEle.setAttribute(&quot;SegmentDescription&quot;,&quot;LocalSeg_&quot;+segID);
+			segEle.setAttribute(&quot;Type&quot;,type);
+			segEle.setAttribute(&quot;SubTypeId&quot;,subType);
+			segEle.setAttribute(&quot;IsShared&quot;,&quot;${isShared}&quot;);
+			segEle.setAttribute(&quot;StartDate&quot;,&quot;${CurrDate}T22:40:00&quot;);
+			segEle.setAttribute(&quot;EndDate&quot;,&quot;2056-02-24T22:40:00&quot;);
+			segEle.setAttribute(&quot;UploadInTransactionsSummary&quot;,&quot;${UploadInTransactionsSummary}&quot;);
+			
+			segsEle.appendChild(segEle); */
+			
+			/* end change the details of xml */
+			
+			TransformerFactory tf = TransformerFactory.newInstance();
+		    Transformer transformer;
+	        transformer = tf.newTransformer();
+	        StringWriter writer = new StringWriter();
+	 
+	        transformer.transform(new DOMSource(xmlDocument), new StreamResult(writer));
+	 
+	        xmlString = writer.getBuffer().toString();
+	    } 
+	    catch (Exception e) 
+	    {
+	        log.info(e.getMessage());
+	    }
+	return xmlString;
+}
+
+static void StringToXML(String xmlSource, String xmlPath)
+{
+	try{
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	DocumentBuilder builder = factory.newDocumentBuilder();
+	Document doc = builder.parse(new InputSource(new StringReader(xmlSource)));
+	
+	// Write the parsed document to an xml file
+	TransformerFactory transformerFactory = TransformerFactory.newInstance();
+	Transformer transformer = transformerFactory.newTransformer();
+	DOMSource source = new DOMSource(doc);
+	
+	StreamResult result =  new StreamResult(new File(xmlPath));
+	transformer.transform(source, result);
+	log.info(&quot;Import File created at &quot;+ xmlPath);
+	}
+	catch (Exception e)
+	{
+		log.info(e.getMessage());
+	}
+}
+
+static void ImportCustomerXMLFile()
+{
+	String PSToolPath = vars.get(&quot;PSToolPath&quot;);
+	String inputPath = vars.get(&quot;InputPath&quot;);	
+	
+	//int segmentID = Integer.parseInt(latestSegID);
+		
+		
+		
+	String serverpath = &quot;\\\\\\\\&quot; + vars.get(&quot;serverIP&quot;)+&quot;\\\\&quot;;
+	log.info(serverpath);
+	String inputPathwithoutcolon= inputPath.replace(&quot;:&quot;,&quot;&quot;);
+	String newFileName = serverpath + inputPathwithoutcolon + &quot;CustomerImport-&quot;+vars.get(&quot;CurrDate&quot;)+&quot;T000000-&quot;+xmlnameCounter +&quot;.xml&quot;; 
+	String fnames=&quot;CustomerImport-&quot;+vars.get(&quot;CurrDate&quot;)+&quot;T000000-&quot;+xmlnameCounter +&quot;.xml&quot;; 
+	importFiles.add(fnames);
+	log.info(newFileName);
+	
+	String newMembersXMLString = newMembersXMLString(segid,accID,cardID);
+	//importHHIDs.add(segmentID);
+	StringToXML(newMembersXMLString, newFileName );
+	
+}
+
+	
+//Call the main function
+ImportCustomerXMLFile();
+//vars.putObject(&quot;importSegIDs&quot;,importSegIDs);
+vars.putObject(&quot;importFiles&quot;,importFiles);</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Bat File Execution" enabled="false">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">String[] array = { &quot;cmd.exe&quot;, &quot;/c&quot;, &quot;start&quot;,&quot;cd /d&quot;, vars.get(&quot;LocalBatchFile&quot;) };
+
+
+try{
+	
+Process proc = Runtime.getRuntime().exec(array);
+Thread.sleep(200000);
+//proc.waitFor();
+
+}
+ catch (Exception e) 
+ {
+      e.printStackTrace();
+ }
+ 
+//proc.destroy();
+//Runtime.getRuntime().exec(&quot;taskkill /F /IM PsExec.exe&quot;);</stringProp>
+        </JSR223Sampler>
+        <hashTree>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 assertion- Read error log file" enabled="true">
+            <stringProp name="scriptLanguage">java</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+static ReadFile(String fileFullPath) 
+{
+	String fileNameUp=&quot;\\\\&quot;+vars.get(&quot;serverIP&quot;)+&quot;\\&quot;+fileFullPath.replace(&quot;:&quot;,&quot;&quot;);
+	log.info (&quot;File path is &quot;+fileNameUp);
+	
+	File file = new File(fileNameUp);
+	
+	String str;
+	FileReader fr = new FileReader(file);
+	BufferedReader br= new BufferedReader(fr);
+	
+	int startlinenumber=0;
+	int endlinenumber=0;
+	int linecounter=1;
+	while((str=br.readLine())!=null)
+	{
+		
+		if (str.contains(&quot;======================Start&quot;))
+		{
+			startlinenumber=linecounter;	
+			//log.info(Integer.toString(startlinenumber));
+		}
+		if (str.contains(&quot;==============End&quot;))
+		{
+			endlinenumber=linecounter;
+			//log.info(Integer.toString(endlinenumber));	
+		}
+		linecounter++;
+	}
+	
+	String logFileText = &quot;&quot;;
+	
+	String line;
+	for (int j=startlinenumber+1;j&lt;endlinenumber;j++)
+	{
+			FileReader fr1 = new FileReader(file);
+				BufferedReader br1 = new BufferedReader(fr1);
+			for (int i = 1; i &lt; j; i++)
+		{
+			br1.readLine();
+		}
+			line = br1.readLine();
+			logFileText = logFileText.concat(&quot;\n&quot;+line);
+		}
+	
+	log.info(&quot;-------------------------File data starts here----------------------------&quot;);
+	log.info(logFileText);
+	log.info(&quot;-------------------------File data ends here----------------------------&quot;);
+	
+	String expectedLogtext = &quot;WARNING; Description : Row data RetailerId &quot;+&quot;\&quot;&quot;+vars.get(&quot;RetailerID&quot;)+&quot;\&quot;&quot;+&quot; - Legend - SegmentId &quot;+&quot;\&quot;&quot;+vars.get(&quot;SegID_1&quot;)+&quot;\&quot;&quot;+&quot; has SubTypeId &quot;+&quot;\&quot;&quot;+vars.get(&quot;subType&quot;)+&quot;\&quot;&quot;+&quot; that does not exist in the DataBase for Segment Type &quot;+&quot;\&quot;&quot;+vars.get(&quot;type&quot;)+&quot;\&quot;&quot;+&quot;&quot;;
+	log.info(expectedLogtext);
+	if (logFileText.contains(expectedLogtext))
+	{
+		log.info(&quot;Expected error appeared. so passed&quot;);
+	}
+}
+
+//String prevRemoteBatchStatus = vars.get(&quot;RemoteBatchStatus&quot;);
+String filename= &quot;&quot;;
+filename = vars.get(&quot;ErrorFile&quot;);
+log.info(&quot;Reading Error file&quot;);
+ReadFile(filename);</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+        </hashTree>
+        <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="OS Process Sampler- Import Customer" enabled="true">
+          <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
+          <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
+          <stringProp name="SystemSampler.command">CMD</stringProp>
+          <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">/C</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${LocalBatchFile}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="SystemSampler.environment" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="SystemSampler.directory">${PSToolPath}</stringProp>
+        </SystemSampler>
+        <hashTree>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor- Take RemoteBatchStatus" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">RemoteBatchStatus</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">error code </stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">.</stringProp>
+            <stringProp name="BoundaryExtractor.default">99</stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">0</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion - Read log/Error file" enabled="true">
+            <stringProp name="scriptLanguage">java</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+static String ReadFile(String fileFullPath) 
+{
+	String fileNameUp=&quot;\\\\&quot;+vars.get(&quot;serverIP&quot;)+&quot;\\&quot;+fileFullPath.replace(&quot;:&quot;,&quot;&quot;);
+	log.info (&quot;File path is &quot;+fileNameUp);
+	
+	File file = new File(fileNameUp);
+	
+	String str;
+	FileReader fr = new FileReader(file);
+	BufferedReader br= new BufferedReader(fr);
+	
+	int startlinenumber=0;
+	int endlinenumber=0;
+	int linecounter=1;
+	while((str=br.readLine())!=null)
+	{
+		
+		if (str.contains(&quot;======================Start&quot;))
+		{
+			startlinenumber=linecounter;	
+			//log.info(Integer.toString(startlinenumber));
+		}
+		
+		if (str.contains(&quot;==============End&quot;))
+		{
+			endlinenumber=linecounter;
+			//log.info(Integer.toString(endlinenumber));	
+		}
+		linecounter++;
+	}
+	
+	String logFileText = &quot;&quot;;
+	
+	String line;
+	for (int j=startlinenumber+1;j&lt;endlinenumber;j++)
+	{
+			FileReader fr1 = new FileReader(file);
+				BufferedReader br1 = new BufferedReader(fr1);
+			for (int i = 1; i &lt; j; i++)
+		{
+			br1.readLine();
+		}
+			line = br1.readLine();
+			logFileText = logFileText.concat(&quot;\n&quot;+line);
+		}
+	
+	//log.info(&quot;-------------------------File data starts here----------------------------&quot;);
+	//log.info(logFileText);
+	//log.info(&quot;-------------------------File data ends here----------------------------&quot;);
+	return logFileText;
+	
+}
+
+
+
+
+String remoteBatchStatus = vars.get(&quot;RemoteBatchStatus&quot;);
+String filename= &quot;&quot;;
+
+if (remoteBatchStatus.equals(&quot;0&quot;))
+{
+	AssertionResult.setFailure(false);
+	filename = vars.get(&quot;LogFile&quot;);
+	log.info (&quot;Reading out the log file&quot;);
+	log.info (&quot;====================File Data starts here===========================&quot;);
+	log.info(ReadFile(filename));
+	log.info (&quot;====================File Data ends here=============================&quot;);
+}
+else if(remoteBatchStatus.equals(&quot;1&quot;))
+{
+	AssertionResult.setFailure(true);
+	AssertionResult.setFailureMessage(&quot;Batch run returned with Error. Error Code: &quot; + remoteBatchStatus);
+	filename = vars.get(&quot;LogFile&quot;);
+	log.info (&quot;Reading out the log file&quot;);
+	log.info (&quot;====================File Data starts here===========================&quot;);
+	log.info(ReadFile(filename));
+	log.info (&quot;====================File Data ends here=============================&quot;);
+	
+	
+	
+	String errorFileName=null;
+	errorFileName = vars.get(&quot;ErrorFile&quot;);
+	String errMsgText = ReadFile(errorFileName);
+	log.info (&quot;Reading out the Error file&quot;);
+	log.info (&quot;====================File Data starts here===========================&quot;);
+	log.info(errMsgText);
+	log.info (&quot;====================File Data ends here=============================&quot;);
+	
+}
+else if(remoteBatchStatus.equals(&quot;99&quot;))
+{
+	AssertionResult.setFailure(true);
+	AssertionResult.setFailureMessage(&quot;Batch run returned with Error. Error Code: &quot; + remoteBatchStatus);
+	
+	filename = vars.get(&quot;LogFile&quot;);
+	log.info (&quot;Reading out the log file&quot;);
+	log.info (&quot;====================File Data starts here===========================&quot;);
+	log.info(ReadFile(filename));
+	log.info (&quot;====================File Data ends here=============================&quot;);
+	
+	
+	
+	String errorFileName=null;
+	errorFileName = vars.get(&quot;ErrorFile&quot;);
+	String errMsgText = ReadFile(errorFileName);
+	log.info (&quot;Reading out the Error file&quot;);
+	log.info (&quot;====================File Data starts here===========================&quot;);
+	log.info(errMsgText);
+	log.info (&quot;====================File Data ends here=============================&quot;);
+}
+else 
+{
+	AssertionResult.setFailure(true); 
+	AssertionResult.setFailureMessage(&quot;Error in remote batchrun. Error Code: &quot; + remoteBatchStatus);
+}</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+        </hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-XML" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">text/xml</stringProp>
+            </elementProp>
+            <elementProp name="Authorization" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">LmsSession ${session}</stringProp>
+            </elementProp>
+            <elementProp name="DebugLevel" elementType="Header">
+              <stringProp name="Header.name">DebugLevel</stringProp>
+              <stringProp name="Header.value">Info</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request-Login" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;UserLogin xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;in_UserName&gt;${RetailerUserID}&lt;/in_UserName&gt;&#xd;
+      &lt;in_Password&gt;${RetailerPassword}&lt;/in_Password&gt;&#xd;
+    &lt;/UserLogin&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/Authorization/Login.asmx</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
+            <stringProp name="XPathExtractor.default">${session}</stringProp>
+            <stringProp name="XPathExtractor.refname">session</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//out_SessionKey</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">sKey</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- GetDemographic" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:hql=&quot;http://www.retalix.com/HQLWebServices&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#xd;
+  &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+    &lt;hql:GetDemographic xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:in_ClubCardId&gt;${CardID_1}&lt;/hql:in_ClubCardId&gt;&#xd;
+      &lt;/hql:GetDemographic&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/CRM/MemberService.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+              <stringProp name="1453784099">HouseHoldExternalId=&quot;${CardID_1}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

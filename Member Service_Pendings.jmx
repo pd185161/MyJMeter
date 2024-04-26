@@ -1,0 +1,1852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables-Global" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="env" elementType="Argument">
+            <stringProp name="Argument.name">env</stringProp>
+            <stringProp name="Argument.value">153.77.180.130</stringProp>
+            <stringProp name="Argument.desc">Environment name to be used in the Endpoint URL</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DBServer" elementType="Argument">
+            <stringProp name="Argument.name">DBServer</stringProp>
+            <stringProp name="Argument.value">153.77.180.130</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="LoyaltyDBName" elementType="Argument">
+            <stringProp name="Argument.name">LoyaltyDBName</stringProp>
+            <stringProp name="Argument.value">Loyalty_LMS_1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PromotionDBName" elementType="Argument">
+            <stringProp name="Argument.name">PromotionDBName</stringProp>
+            <stringProp name="Argument.value">Promotion_LMS_1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MPDBName" elementType="Argument">
+            <stringProp name="Argument.name">MPDBName</stringProp>
+            <stringProp name="Argument.value">MP_LMS</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RetailerID" elementType="Argument">
+            <stringProp name="Argument.name">RetailerID</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RetailerUserID" elementType="Argument">
+            <stringProp name="Argument.name">RetailerUserID</stringProp>
+            <stringProp name="Argument.value">HQL</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RetailerPassword" elementType="Argument">
+            <stringProp name="Argument.name">RetailerPassword</stringProp>
+            <stringProp name="Argument.value">Abcd123</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CurrDate1" elementType="Argument">
+            <stringProp name="Argument.name">CurrDate1</stringProp>
+            <stringProp name="Argument.value">${__groovy(new Date().format(&apos;yyyy-MM-dd&apos;),)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CurrDate" elementType="Argument">
+            <stringProp name="Argument.name">CurrDate</stringProp>
+            <stringProp name="Argument.value">${__time(yyyy-MM-dd)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="transID" elementType="Argument">
+            <stringProp name="Argument.name">transID</stringProp>
+            <stringProp name="Argument.value">${__Random(5000000,6000000)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ManagerUserID" elementType="Argument">
+            <stringProp name="Argument.name">ManagerUserID</stringProp>
+            <stringProp name="Argument.value">Manager</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ManagerPassword" elementType="Argument">
+            <stringProp name="Argument.name">ManagerPassword</stringProp>
+            <stringProp name="Argument.value">123</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RandomString5Letter" elementType="Argument">
+            <stringProp name="Argument.name">RandomString5Letter</stringProp>
+            <stringProp name="Argument.value">${__RandomString(6,abcdefghijklmnopqrstuvwxyz,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RandomPassword8chr" elementType="Argument">
+            <stringProp name="Argument.name">RandomPassword8chr</stringProp>
+            <stringProp name="Argument.value">${__RandomString(3,abcdefghijklmnopqrstuvwxyz,)}${__RandomString(3,ABCDEFGHIJKLMNOPQRSTUVWXYZ,)}${__RandomString(1,`-=~!@#$%^*()_+[]\;&apos;\,./{}|:&quot;&lt;&gt;?,)}${__Random(1,9)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-LoyaltyDB" enabled="true">
+        <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://${DBServer};databaseName=${LoyaltyDBName}</stringProp>
+        <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="username">sa</stringProp>
+        <stringProp name="password">Abcd1234@</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-Promotion DB" enabled="true">
+        <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="dataSource">MS_Driver_Connection_Pool_Promotion</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://${DBServer};databaseName=${PromotionDBName}</stringProp>
+        <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="username">sa</stringProp>
+        <stringProp name="password">Abcd1234@</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-Loyalty Online" enabled="true">
+        <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty_Online</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://SRRAAMAINSA\ONLINE;databaseName=LoyaltyOnline_LOY_MAIN</stringProp>
+        <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="username">sa</stringProp>
+        <stringProp name="password">Abcd1234@</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-MPDB" enabled="true">
+        <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="dataSource">MS_Driver_Connection_Pool_MP</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://${DBServer};databaseName=${MPDBName}</stringProp>
+        <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <stringProp name="username">sa</stringProp>
+        <stringProp name="password">Abcd1234@</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Member Services Pending WSs" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-XML" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">text/xml</stringProp>
+            </elementProp>
+            <elementProp name="Authorization" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">LmsSession ${session}</stringProp>
+            </elementProp>
+            <elementProp name="DebugLevel" elementType="Header">
+              <stringProp name="Header.name">DebugLevel</stringProp>
+              <stringProp name="Header.value">Info</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request-Login" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;UserLogin xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;in_UserName&gt;${RetailerUserID}&lt;/in_UserName&gt;&#xd;
+      &lt;in_Password&gt;${RetailerPassword}&lt;/in_Password&gt;&#xd;
+    &lt;/UserLogin&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/Authorization/Login.asmx</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
+            <stringProp name="XPathExtractor.default">${session}</stringProp>
+            <stringProp name="XPathExtractor.refname">session</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//out_SessionKey</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">sKey</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Get CardID from Retailer ID" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+declare @BarcodeId int
+declare @Value nvarchar(50)
+
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= &apos;${RetailerID}&apos;)
+
+ 
+
+select top 1 @Value = btl.Value, @BarcodeId = btl.BarcodeId 
+from CRM_ClubCard cc
+inner join [${PromotionDBName}].dbo.BarcodeTemplateLine btl
+on cc.Matrixmemberid= btl.Matrixmemberid and btl.AttributeId=1 and cc.BarcodeId = btl.BarcodeId and cc.ClubCardId like &apos;&apos;+ (btl.[Value])+&apos;%&apos;
+where cc.matrixmemberid = @matrixmemberid 
+ORDER BY newid()
+
+select  (select  max(ClubCardId) from CRM_ClubCard where matrixmemberid = @matrixmemberid and BarcodeId=@BarcodeId and ClubCardId like &apos;&apos;+ (@Value)+&apos;%&apos;) as LastCardID, MatrixMemberid= @matrixmemberid</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">LastCardID, MatrixMemberid</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- CardValidate" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xd;
+&lt;soap:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;CardValidate xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;in_ClubCardId&gt;${LastCardID_1}&lt;/in_ClubCardId&gt;&#xd;
+    &lt;/CardValidate&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/CRM/MemberService.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor- Get inside Data xml" enabled="true">
+            <stringProp name="XPathExtractor.default">0</stringProp>
+            <stringProp name="XPathExtractor.refname">out_Member</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//out_Member</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">sKey</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor- Get attribute BuyigUnitInternalKey" enabled="true">
+            <stringProp name="XPathExtractor.default">0</stringProp>
+            <stringProp name="XPathExtractor.refname">BuyingUnitInternalKey</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//Member/@BuyingUnitInternalKey</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">variable</stringProp>
+            <stringProp name="Scope.variable">out_Member</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor- Get attribute MemberInternalKey" enabled="true">
+            <stringProp name="XPathExtractor.default">0</stringProp>
+            <stringProp name="XPathExtractor.refname">MemberInternalKey</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//Member/@MemberInternalKey</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">variable</stringProp>
+            <stringProp name="Scope.variable">out_Member</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Validate Card agaist DB" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select MemberInternalKey as MIK_DB, BuyingUnitInternalKey as BUIK_DB from CRM_member where memberinternalkey= (select MemberInternalKey from CRM_ClubCard where MatrixMemberid=&apos;${MatrixMemberid_1}&apos; and ClubcardId=&apos;${LastCardID_1}&apos;)
+</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">MIK_DB, BUIK_DB</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String expectedBUIK = &quot;${BuyingUnitInternalKey}&quot;;
+String actualBUIK = &quot;${BUIK_DB_1}&quot;;
+
+String expectedMIK = &quot;${MemberInternalKey}&quot;;
+String actualMIK = &quot;${MIK_DB_1}&quot;;
+
+
+if(expectedBUIK.equals(actualBUIK) &amp;&amp; expectedMIK.equals(actualMIK))
+{
+	Failure = false;
+	log.info(&quot;CardValidate response validated against DB&quot;);	
+}
+else
+{
+	Failure = true;
+	log.info(&quot;CardValidate response validation against DB is failed&quot;);	
+}
+</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- GetMemberAccountsExpirationActivity Hardcoded" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:hql=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+&lt;soapenv:Header/&gt;&#xd;
+&lt;soapenv:Body&gt;&#xd;
+&lt;hql:GetMemberAccountsExpirationActivity&gt;&#xd;
+&lt;hql:MemberAccountsExpirationActivityRequest MemberIdentifier=&quot;${LastCardID_1}&quot;&gt;&#xd;
+&lt;!--Optional:--&gt;&#xd;
+&lt;hql:Accounts&gt;&#xd;
+&lt;!--Zero or more repetitions:--&gt;&#xd;
+&lt;hql:AccountId&gt;1589&lt;/hql:AccountId&gt;&#xd;
+&lt;/hql:Accounts&gt;&#xd;
+&lt;/hql:MemberAccountsExpirationActivityRequest&gt;&#xd;
+&lt;/hql:GetMemberAccountsExpirationActivity&gt;&#xd;
+&lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/CRM/MemberService.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+              <stringProp name="1190070318">Account Id</stringProp>
+              <stringProp name="1917705372">AccountExpiration</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- SaveNotes" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xd;
+&lt;soap:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;SaveNotes xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;in_ClubCardId&gt;${LastCardID_1}&lt;/in_ClubCardId&gt;&#xd;
+      &lt;in_RetailerId&gt;${RetailerID}&lt;/in_RetailerId&gt;&#xd;
+      &lt;in_ParamsXML&gt;&lt;![CDATA[&lt;Notes&gt;&#xd;
+&lt;Note Note=&quot;${RandomString5Letter}&quot; NoteDateTime=&quot;${CurrDate}T00:00:00&quot; SubTypeId=&quot;11&quot;/&gt;&#xd;
+&lt;/Notes&gt;]]&gt;&lt;/in_ParamsXML&gt;&#xd;
+    &lt;/SaveNotes&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/CRM/MemberService.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Verify added Note" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">
+Declare @id integer
+set @id = (select max(id) from [dbo].[CRM_BuyingUnitNotes] where MatrixMemberid=&apos;${MatrixMemberid_1}&apos; and  BuyingUnitInternalKey =  (select BuyingUnitInternalKey from CRM_Member where MemberInternalKey=(select MemberInternalKey from CRM_ClubCard where MatrixMemberid=&apos;${MatrixMemberid_1}&apos; and ClubcardId=&apos;${LastCardID_1}&apos;)))
+ 
+select Note, NoteDateTime from [dbo].[CRM_BuyingUnitNotes] where MatrixMemberid= &apos;${MatrixMemberid_1}&apos; and BuyingUnitInternalKey =  (select BuyingUnitInternalKey from CRM_Member where MemberInternalKey=(select MemberInternalKey from CRM_ClubCard where MatrixMemberid=&apos;${MatrixMemberid_1}&apos; and ClubcardId=&apos;${LastCardID_1}&apos;)) and Id = @id</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">Note, NoteDateTime</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String expectedNote = &quot;${RandomString5Letter}&quot;;
+String actualNote = &quot;${Note_1}&quot;;
+
+String expectedNoteDateTime =&quot;${CurrDate} 00:00:00.0&quot;;
+String ActualNoteDateTime = &quot;${NoteDateTime_1}&quot;;
+
+
+if(expectedNote.equals(actualNote) &amp;&amp; expectedNoteDateTime.equals(ActualNoteDateTime))
+{
+	Failure = false;
+	log.info(&quot;Buying Unit Notes validated successfully against DB&quot;);	
+}
+else
+{
+	Failure = true;
+	log.info(&quot;Buying Unit Notes validation failed&quot;);	
+}
+</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- GetAddressByZipCode- HardCoded" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xd;
+&lt;soap:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;GetAddressByZipCode xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;zipCode&gt;06801&lt;/zipCode&gt;&#xd;
+      &lt;countryId&gt;100&lt;/countryId&gt;&#xd;
+    &lt;/GetAddressByZipCode&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/CRM/MemberService.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor- Get StateId" enabled="true">
+            <stringProp name="XPathExtractor.default">0</stringProp>
+            <stringProp name="XPathExtractor.refname">StateId_Response</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//StateId</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">sKey</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor- Get City" enabled="true">
+            <stringProp name="XPathExtractor.default">0</stringProp>
+            <stringProp name="XPathExtractor.refname">City_Response</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//City</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">sKey</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Verify ZipCode Response Against DB" enabled="false">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_MP</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select StateId, City from [dbo].[ZipCode] where ZipCode= &apos;06801&apos; and CountryId=100</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">StateId, City</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String expectedState = &quot;${StateId_Response}&quot;;
+String actualState = &quot;${StateId_1}&quot;;
+
+String expectedCity =&quot;${City_Response}&quot;;
+String actualCity = &quot;${City_1}&quot;;
+
+
+if(expectedState.equals(actualState) &amp;&amp; expectedCity.equals(actualCity))
+{
+	Failure = false;
+	log.info(&quot;Validated ZipCode against DB successfully&quot;);	
+}
+else
+{
+	Failure = true;
+	log.info(&quot;ZipCode validation against DB failed&quot;);
+}
+</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Get segment Id to Add to Member" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select top 1 segmentID from [dbo].[CRM_Segment] where MatrixMemberid=&apos;${MatrixMemberid_1}&apos; and StartDate is null order by newid()</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">segmentID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- SegmentsMovements (Add segment to Card)" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xd;
+&lt;soap:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;SegmentsMovements xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;in_ClubCardIdXML&gt;&lt;![CDATA[&lt;Card CardId=&quot;${LastCardID_1}&quot;&gt;&lt;Segments&gt;&lt;Segment SegmentId=&quot;${segmentID_1}&quot; Status=&quot;1&quot; StartDate=&quot;${CurrDate}T00:00:00&quot; EndDate=&quot;2026-10-19T00:00:00&quot;/&gt;&lt;/Segments&gt;&lt;/Card&gt;]]&gt;&lt;/in_ClubCardIdXML&gt;&#xd;
+    &lt;/SegmentsMovements&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/CRM/MemberService.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Verify segment added to clubcard" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select SegmentInternalKey from [dbo].[CRM_BuyingUnitSegment] where Matrixmemberid=&apos;${MatrixMemberid_1}&apos; and BuyingUnitInternalKey = 
+
+(select BuyingUnitInternalKey from CRM_Member where MemberinternalKey= (select MemberInternalKey from CRM_Clubcard where ClubCardId=&apos;${LastCardID_1}&apos;))
+</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">segmentInteranalKey</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- MS_Combos_Get" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:hql=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;hql:MS_Combos_Get/&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/CRM/MemberService.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+              <stringProp name="-1434571280">out_LookupTables</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="false">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="RandomExternalID" elementType="Argument">
+              <stringProp name="Argument.name">RandomExternalID</stringProp>
+              <stringProp name="Argument.value">${__Random(10000000000,99999999999)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Get Latest CardID from Retailer ID" enabled="false">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+declare @BarcodeId int
+declare @Value nvarchar(50)
+
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= &apos;${RetailerID}&apos;)
+
+ 
+
+select top 1 @Value = btl.Value, @BarcodeId = btl.BarcodeId 
+from CRM_ClubCard cc
+inner join [${PromotionDBName}].dbo.BarcodeTemplateLine btl
+on cc.Matrixmemberid= btl.Matrixmemberid and btl.AttributeId=1 and cc.BarcodeId = btl.BarcodeId and cc.ClubCardId like &apos;&apos;+ (btl.[Value])+&apos;%&apos;
+where cc.matrixmemberid = @matrixmemberid 
+ORDER BY newid()
+
+select  (select  max(ClubCardId) from CRM_ClubCard where matrixmemberid = @matrixmemberid and BarcodeId=@BarcodeId and ClubCardId like &apos;&apos;+ (@Value)+&apos;%&apos;)+1 as CardID, MatrixMemberid= @matrixmemberid, BarcodeID=@BarcodeId</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">CardID, MatrixMemberid, BarcodeID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request - Create Member" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:hql=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;hql:SaveDemographic&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:in_ClubCardId&gt;${CardID_1}&lt;/hql:in_ClubCardId&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:in_HouseHold&gt;&lt;![CDATA[&lt;HouseHold BuyingUnitInternalKey=&quot;0&quot; HouseHoldExternalId=&quot;${CardID_1}&quot; Country=&quot;100&quot; State=&quot;0&quot; City=&quot;&quot; Street1=&quot;&quot; Street2=&quot;&quot; PostalCode=&quot;&quot; PhonePrefix=&quot;+1&quot; HomePhone=&quot;9160962222&quot; SendEmail=&quot;false&quot; County=&quot;&quot; HouseName=&quot;&quot;&gt;&#xd;
+	&lt;Members&gt;&#xd;
+		&lt;Member MemberInternalKey=&quot;0&quot; MemberExternalId=&quot;${CardID_1}&quot; IsMainMember=&quot;true&quot; LastName=&quot;name1&quot; FirstName=&quot;test1&quot; AdditionalFirstName=&quot;&quot; AdditionalLastName=&quot;&quot; MiddleInitial=&quot;&quot; DriversLicense=&quot;&quot; NationalInsuranceNumber=&quot;&quot; Remarks=&quot;&quot; MobilePhoneNumber=&quot;9985991111&quot; WorkPhoneNumber=&quot;&quot; Gender=&quot;0&quot; Passport=&quot;&quot; StartDate=&quot;${CurrDate}T00:00:00&quot; RedemptionPrivileges=&quot;0&quot; LanguageId=&quot;0&quot; PostOption=&quot;1&quot; NumberOfFamilyMembers=&quot;1&quot; Anonimity=&quot;0&quot; SpouseLastName=&quot;&quot; MemberStatus=&quot;1&quot; ReceiptLayoutId=&quot;0&quot; AdressNormalizationUpdate=&quot;N&quot; UpdatedDate=&quot;${CurrDate}T00:00:00&quot; CompanyName=&quot;&quot; EMailAddress=&quot;&quot; ProcessingPrevention=&quot;false&quot; ReceiptType=&quot;0&quot;&gt;&#xd;
+			&lt;Cards&gt;&#xd;
+				&lt;Card Id=&quot;${CardID_1}&quot; CardStatus=&quot;1&quot; IssueDate=&quot;${CurrDate}T00:00:00&quot; ExpirationDate=&quot;2056-12-31T00:00:00&quot; BarcodeId=&quot;${BarcodeID_1}&quot;/&gt;&#xd;
+			&lt;/Cards&gt;&#xd;
+			&lt;MemberAttributes&gt;&#xd;
+				&lt;Attribute Id=&quot;2400&quot; Value=&quot;012345678101234567820123456783012345678401234567850123456786&quot; DataType=&quot;String&quot;/&gt;&#xd;
+			&lt;/MemberAttributes&gt;&#xd;
+			&lt;MemberAdditionalAddress Country=&quot;0&quot; State=&quot;0&quot; City=&quot;&quot; Street1=&quot;&quot; Street2=&quot;&quot; PostalCode=&quot;&quot; Remarks=&quot;&quot;/&gt;&#xd;
+			&lt;PrivacySettings OptInConsent=&quot;false&quot;/&gt;&#xd;
+		&lt;/Member&gt;&#xd;
+	&lt;/Members&gt;&#xd;
+&lt;/HouseHold&gt;]]&gt;&#xd;
+         &lt;/hql:in_HouseHold&gt;&#xd;
+      &lt;/hql:SaveDemographic&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/LoyaltyOnlineWS/CRM/MemberService.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">34</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request - UpdateExternals" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:hql=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;hql:UpdateExternals&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:loyaltyCardId&gt;${CardID_1}&lt;/hql:loyaltyCardId&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:oldMemberId&gt;${CardID_1}&lt;/hql:oldMemberId&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:oldBuyingUnitId&gt;${CardID_1}&lt;/hql:oldBuyingUnitId&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:newMemberId&gt;${RandomExternalID}&lt;/hql:newMemberId&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:newBuyingUnitId&gt;${RandomExternalID}&lt;/hql:newBuyingUnitId&gt;&#xd;
+      &lt;/hql:UpdateExternals&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/LoyaltyOnlineWS/CRM/MemberService.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">34</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Validate ExternalID updates" enabled="false">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= &apos;${RetailerID}&apos;)
+
+ 
+
+select M.ExternalMemberKey as EMK, B.ExternalBuyingUnit as EBU from CRM_Member M 
+inner join CRM_BuyingUnit B on M.BuyingUnitInternalKey = B.BuyingUnitInternalKey
+ where MemberInternalKey = (select MemberInternalKey from CRM_Clubcard where MatrixMemberId =@matrixmemberid and ClubcardID=&apos;${CardID_1}&apos;)
+</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">EMK, EBU</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String ExternalMemberKey = &quot;${EMK_1}&quot;;
+String ExternalBuyingUnit = &quot;${EBU_1}&quot;;
+
+String expectedExternalkey=&quot;${RandomExternalID}&quot;;
+
+
+if(ExternalMemberKey.equals(expectedExternalkey) &amp;&amp; ExternalBuyingUnit.equals(expectedExternalkey))
+{
+	Failure = false;
+	log.info(&quot;External keys updated successfully&quot;);	
+}
+else
+{
+	Failure = true;
+	log.info(&quot;Error updating external keys&quot;);	
+}
+</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SaveLoyaltyDocument" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-XML" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">text/xml</stringProp>
+            </elementProp>
+            <elementProp name="Authorization" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">LmsSession ${session}</stringProp>
+            </elementProp>
+            <elementProp name="DebugLevel" elementType="Header">
+              <stringProp name="Header.name">DebugLevel</stringProp>
+              <stringProp name="Header.value">Info</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request-Login" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;UserLogin xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;in_UserName&gt;${RetailerUserID}&lt;/in_UserName&gt;&#xd;
+      &lt;in_Password&gt;${RetailerPassword}&lt;/in_Password&gt;&#xd;
+    &lt;/UserLogin&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/Authorization/Login.asmx</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
+            <stringProp name="XPathExtractor.default">${session}</stringProp>
+            <stringProp name="XPathExtractor.refname">session</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//out_SessionKey</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">sKey</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- GetIssuingOrRedemptionDocuments" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:hql=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;hql:GetIssuingOrRedemptionDocuments&gt;&#xd;
+         &lt;GetDocumentRequest DocumentsRetrievePurpose=&quot;0&quot; DocumentType=&quot;5&quot; IssuingSource=&quot;1&quot; RewardDefinition=&quot;0&quot; LastUpdate=&quot;2021-11-11&quot;/&gt;&#xd;
+      &lt;/hql:GetIssuingOrRedemptionDocuments&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/LoyaltyDocuments/SaveLoyaltyDocument.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor- Get DocumentId" enabled="true">
+            <stringProp name="XPathExtractor.default">0</stringProp>
+            <stringProp name="XPathExtractor.refname">DocumentId_resp</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//@DocumentId</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">sKey</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">int docid= Integer.parseInt(vars.getObject(&quot;DocumentId_resp_matchNr&quot;));
+
+
+for (int i=1; i&lt;=docid;i++)
+{
+	//log.info(&quot;DocumentId_resp_&quot;+i.toString());
+log.info(vars.getObject(&quot;DocumentId_resp_&quot;+i).toString());
+}</stringProp>
+            <stringProp name="scriptLanguage">beanshell</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Get Max ClubCardID" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+declare @BarcodeId int
+declare @Value nvarchar(50)
+declare @maxclubcardId_string nvarchar(50)
+
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= &apos;${RetailerID}&apos;)
+
+ 
+
+select top 1 @Value = btl.Value, @BarcodeId = btl.BarcodeId 
+from CRM_ClubCard cc
+inner join [${PromotionDBName}].dbo.BarcodeTemplateLine btl
+on cc.Matrixmemberid= btl.Matrixmemberid and btl.AttributeId=1 and cc.BarcodeId = btl.BarcodeId and cc.ClubCardId like &apos;&apos;+ (btl.[Value])+&apos;%&apos;
+where cc.matrixmemberid = @matrixmemberid 
+ORDER BY newid()
+
+set @maxclubcardId_string = (select max(ClubCardId) from CRM_ClubCard where matrixmemberid = @matrixmemberid and BarcodeId=@BarcodeId and ClubCardId like &apos;&apos;+ (@Value)+&apos;%&apos;)
+
+select replicate(&apos;0&apos;,len(@maxclubcardId_string)-len(cast(@maxclubcardId_string as numeric))) +
+cast((cast(@maxclubcardId_string as numeric)) as varchar) as LastCardID, @matrixmemberid as MatrixMemberid</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">LastCardID, MatrixMemberid</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Same Household --Get Barcode, DocumentId, Prefix " enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">--RedemptionSegmentation = &apos;1&apos; for samehousehold
+--RedemptionSegmentation = &apos;2&apos; for any customer
+
+Declare @matrixmemberid varchar(50)
+declare @BarcodeId int
+declare @DocumentId int
+declare @Value varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from [${MPDBName}].[dbo].[RetailerCode] where RetailerID= &apos;${RetailerID}&apos;)
+
+select top 1 @Value = btl.Value, @BarcodeId = btl.BarcodeId, @DocumentId = ld.businessid from CRM_LoyaltyDocuments ld
+inner join [${PromotionDBName}].dbo.BarcodeTemplateLine btl
+on ld.Matrixmemberid= btl.Matrixmemberid and btl.AttributeId=1 and ld.BarcodeId = btl.BarcodeId and ld.BusinessId is NOT NULL and ld.Barcode like &apos;&apos;+ (btl.[Value])+&apos;%&apos;
+where ld.matrixmemberid = @matrixmemberid and btl.BarCodeId in (select BarCodeId from [Promotion_LMS_1].dbo.BarcodeTemplateHeader where RedemptionSegmentation = &apos;1&apos; and matrixMemberId=@matrixmemberid)
+ORDER BY newid()
+select @matrixmemberid as matrixmemberid, @BarcodeId as BarcodeId, @DocumentId as DocumentId, @Value as Value, (select max(cast(Barcode as decimal(38,0))) from CRM_LoyaltyDocuments where matrixmemberid= @matrixmemberid and BarcodeId= @BarcodeId and BusinessId= @DocumentId
+and Barcode like (@Value)+&apos;%&apos;)+1 as Barcode</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">MatrixMemberid,BarcodeId,DocumentId,Prefix,Barcode</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Any Customer --Get Barcode, DocumentId, Prefix " enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">--RedemptionSegmentation = &apos;1&apos; for samehousehold
+--RedemptionSegmentation = &apos;2&apos; for any customer
+
+Declare @matrixmemberid varchar(50)
+declare @BarcodeId int
+declare @DocumentId int
+declare @Value varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from [${MPDBName}].[dbo].[RetailerCode] where RetailerID= &apos;${RetailerID}&apos;)
+
+select top 1 @Value = btl.Value, @BarcodeId = btl.BarcodeId, @DocumentId = ld.businessid from CRM_LoyaltyDocuments ld
+inner join [${PromotionDBName}].dbo.BarcodeTemplateLine btl
+on ld.Matrixmemberid= btl.Matrixmemberid and btl.AttributeId=1 and ld.BarcodeId = btl.BarcodeId and ld.BusinessId is NOT NULL and ld.Barcode like &apos;&apos;+ (btl.[Value])+&apos;%&apos;
+where ld.matrixmemberid = @matrixmemberid and btl.BarCodeId in (select BarCodeId from [Promotion_LMS_1].dbo.BarcodeTemplateHeader where RedemptionSegmentation = &apos;2&apos; and matrixMemberId=@matrixmemberid)
+ORDER BY newid()
+select @matrixmemberid as matrixmemberid, @BarcodeId as BarcodeId, @DocumentId as DocumentId, @Value as Value, (select max(cast(Barcode as decimal(38,0))) from CRM_LoyaltyDocuments where matrixmemberid= @matrixmemberid and BarcodeId= @BarcodeId and BusinessId= @DocumentId
+and Barcode like (@Value)+&apos;%&apos;)+1 as Barcode</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">MatrixMemberid1,BarcodeId1,DocumentId1,Prefix1,Barcode1</stringProp>
+          <stringProp name="resultVariable">resultSet1</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request-MSG345 for coupon add" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:tem=&quot;http://tempuri.org/&quot;&gt;&#xd;
+   &lt;soap:Header/&gt;&#xd;
+   &lt;soap:Body&gt;&#xd;
+      &lt;tem:StoreData&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;tem:messageHandlerApplication&gt;StoreInLoyalty&lt;/tem:messageHandlerApplication&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;tem:chain&gt;${RetailerID}&lt;/tem:chain&gt;                                                                                &#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;tem:branch&gt;1&lt;/tem:branch&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;tem:messageData&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot;?&gt;&#xd;
+&lt;Root&gt;&#xd;
+	&lt;Customer MsgType=&quot;3&quot; LPEVer=&quot;5.0.0.0.1&quot; StoreID=&quot;1&quot; PosID=&quot;1&quot; TransID=&quot;${transID}&quot; BusinessDate=&quot;${CurrDate}&quot; StartDateTime=&quot;${CurrDate}T13:41:22.000&quot; CashierID=&quot;1&quot; TicketTotal=&quot;100.00&quot; HomeStore=&quot;0&quot; FileSource=&quot;1&quot;&gt;&#xd;
+		&lt;LoyaltyInfo CardID=&quot;${LastCardID_1}&quot; ServerDate=&quot;${CurrDate}&quot; MemberEffectiveDate=&quot;${CurrDate}T10:37:00&quot;&gt;&#xd;
+			&lt;Accounts&gt;&#xd;
+				&lt;Acc ID=&quot;2&quot; EarnValue=&quot;1.0000&quot;/&gt;&#xd;
+			&lt;/Accounts&gt;&#xd;
+		&lt;/LoyaltyInfo&gt;&#xd;
+	&lt;/Customer&gt;&#xd;
+	&lt;Documents MsgType=&quot;4&quot; LPEVer=&quot;5.0.0.0.1&quot; StoreID=&quot;1&quot; BusinessDate=&quot;${CurrDate}&quot; TillId=&quot;1&quot; TransactionNumber=&quot;${transID}&quot; ExternalReferenceId=&quot;${transID}&quot; StartDateTime=&quot;${CurrDate}T13:41:22.000&quot; EndDateTime=&quot;2056-12-12T13:41:23.000&quot; CashierId=&quot;1&quot; TicketTotal=&quot;100.00&quot;&gt;&#xd;
+		&lt;CustomerInfo&gt;&#xd;
+			&lt;ClubCard&gt;${LastCardID_1}&lt;/ClubCard&gt;&#xd;
+			&lt;HomeStore&gt;0&lt;/HomeStore&gt;&#xd;
+		&lt;/CustomerInfo&gt;&#xd;
+		&lt;Document&gt;&#xd;
+			&lt;Details&gt;&#xd;
+				&lt;Action&gt;0&lt;/Action&gt;&#xd;
+				&lt;Barcode&gt;${Barcode_1}&lt;/Barcode&gt;&#xd;
+				&lt;ID&gt;${DocumentId_1}&lt;/ID&gt;&#xd;
+				&lt;BarcodeProgrammingId&gt;${BarcodeId_1}&lt;/BarcodeProgrammingId&gt;&#xd;
+				&lt;IsUnique&gt;1&lt;/IsUnique&gt;&#xd;
+				&lt;TriggerPromotionId&gt;55&lt;/TriggerPromotionId&gt;&#xd;
+				&lt;Value&gt;1.00&lt;/Value&gt;&#xd;
+				&lt;Qty&gt;50&lt;/Qty&gt;&#xd;
+				&lt;TenderGroup&gt;1&lt;/TenderGroup&gt;&#xd;
+				&lt;Type&gt;3&lt;/Type&gt;&#xd;
+			&lt;/Details&gt;&#xd;
+			&lt;ValidationRules&gt;&#xd;
+				&lt;StartDate&gt;${CurrDate}&lt;/StartDate&gt;&#xd;
+				&lt;EndDate&gt;2056-12-12&lt;/EndDate&gt;&#xd;
+				&lt;RedemptionType&gt;1&lt;/RedemptionType&gt;&#xd;
+				&lt;RedemptionLocation&gt;2&lt;/RedemptionLocation&gt;&#xd;
+				&lt;RedemptionMode&gt;2&lt;/RedemptionMode&gt;&#xd;
+			&lt;/ValidationRules&gt;&#xd;
+		&lt;/Document&gt;&#xd;
+		&lt;Document&gt;&#xd;
+			&lt;Details&gt;&#xd;
+				&lt;Action&gt;0&lt;/Action&gt;&#xd;
+				&lt;Barcode&gt;${Barcode1_1}&lt;/Barcode&gt;&#xd;
+				&lt;ID&gt;${DocumentId1_1}&lt;/ID&gt;&#xd;
+				&lt;BarcodeProgrammingId&gt;${BarcodeId1_1}&lt;/BarcodeProgrammingId&gt;&#xd;
+				&lt;IsUnique&gt;1&lt;/IsUnique&gt;&#xd;
+				&lt;TriggerPromotionId&gt;55&lt;/TriggerPromotionId&gt;&#xd;
+				&lt;Value&gt;1.00&lt;/Value&gt;&#xd;
+				&lt;Qty&gt;40&lt;/Qty&gt;&#xd;
+				&lt;TenderGroup&gt;1&lt;/TenderGroup&gt;&#xd;
+				&lt;Type&gt;3&lt;/Type&gt;&#xd;
+			&lt;/Details&gt;&#xd;
+			&lt;ValidationRules&gt;&#xd;
+				&lt;StartDate&gt;${CurrDate}&lt;/StartDate&gt;&#xd;
+				&lt;EndDate&gt;2056-12-12&lt;/EndDate&gt;&#xd;
+				&lt;RedemptionType&gt;2&lt;/RedemptionType&gt;&#xd;
+				&lt;RedemptionLocation&gt;2&lt;/RedemptionLocation&gt;&#xd;
+				&lt;RedemptionMode&gt;2&lt;/RedemptionMode&gt;&#xd;
+			&lt;/ValidationRules&gt;&#xd;
+		&lt;/Document&gt;&#xd;
+	&lt;/Documents&gt;&#xd;
+	&lt;biztalk_1&gt;&#xd;
+		&lt;body&gt;&#xd;
+			&lt;ActiveStore_SalesTransaction_1.70&gt;&#xd;
+				&lt;StoreID&gt;1&lt;/StoreID&gt;&#xd;
+				&lt;BusinessDate&gt;${CurrDate}&lt;/BusinessDate&gt;&#xd;
+				&lt;ServerDate/&gt;&#xd;
+				&lt;TransactionNumber&gt;${transID}&lt;/TransactionNumber&gt;&#xd;
+				&lt;ExternalReferenceId&gt;${transID}&lt;/ExternalReferenceId&gt;&#xd;
+				&lt;TillID&gt;1&lt;/TillID&gt;&#xd;
+				&lt;StartDateTime&gt;${CurrDate}T13:41:22.000&lt;/StartDateTime&gt;&#xd;
+				&lt;EndDateTime&gt;2056-12-12T13:41:23.000&lt;/EndDateTime&gt;&#xd;
+				&lt;CashierID&gt;1&lt;/CashierID&gt;&#xd;
+				&lt;OfflineFlag&gt;0&lt;/OfflineFlag&gt;&#xd;
+				&lt;RetroactiveFlag&gt;0&lt;/RetroactiveFlag&gt;&#xd;
+				&lt;Total&gt;&#xd;
+					&lt;TotalAmount&gt;100.00&lt;/TotalAmount&gt;&#xd;
+				&lt;/Total&gt;&#xd;
+				&lt;TransactionDetail&gt;&#xd;
+					&lt;SequenceNumber&gt;1&lt;/SequenceNumber&gt;&#xd;
+					&lt;TransactionDetailGroup&gt;&#xd;
+						&lt;TransactionDetailLine&gt;&#xd;
+							&lt;TimingType&gt;3&lt;/TimingType&gt;&#xd;
+							&lt;DeferredID&gt;0&lt;/DeferredID&gt;&#xd;
+							&lt;Amount&gt;1.000000&lt;/Amount&gt;&#xd;
+							&lt;PromotionID&gt;55&lt;/PromotionID&gt;&#xd;
+							&lt;MarkdownItemID&gt;4560&lt;/MarkdownItemID&gt;&#xd;
+							&lt;MarkdownDepartmentID&gt;2&lt;/MarkdownDepartmentID&gt;&#xd;
+							&lt;AllocatedQty&gt;2&lt;/AllocatedQty&gt;&#xd;
+							&lt;TriggeredQty&gt;2&lt;/TriggeredQty&gt;&#xd;
+							&lt;RedeemedQty&gt;1&lt;/RedeemedQty&gt;&#xd;
+							&lt;RewardAmount&gt;100&lt;/RewardAmount&gt;&#xd;
+							&lt;TransactionDetailLineTax&gt;&#xd;
+								&lt;TaxId&gt;1&lt;/TaxId&gt;&#xd;
+								&lt;TaxAmount&gt;0&lt;/TaxAmount&gt;&#xd;
+								&lt;TaxableAmount&gt;0&lt;/TaxableAmount&gt;&#xd;
+								&lt;TaxPercent&gt;0&lt;/TaxPercent&gt;&#xd;
+							&lt;/TransactionDetailLineTax&gt;&#xd;
+						&lt;/TransactionDetailLine&gt;&#xd;
+					&lt;/TransactionDetailGroup&gt;&#xd;
+				&lt;/TransactionDetail&gt;&#xd;
+				&lt;PromotionSummary&gt;&#xd;
+					&lt;RedeemedPromotionId&gt;55&lt;/RedeemedPromotionId&gt;&#xd;
+					&lt;RedeemedQuantity&gt;1&lt;/RedeemedQuantity&gt;&#xd;
+					&lt;RedeemedTriggerCouponId&gt;0&lt;/RedeemedTriggerCouponId&gt;&#xd;
+					&lt;RedeemedTriggerCouponQty&gt;0&lt;/RedeemedTriggerCouponQty&gt;&#xd;
+					&lt;AdditionalAllocatedItems&gt;&#xd;
+						&lt;AdditionalAllocatedItem&gt;&#xd;
+							&lt;ItemID&gt;1&lt;/ItemID&gt;&#xd;
+							&lt;DepartmentID&gt;2&lt;/DepartmentID&gt;&#xd;
+							&lt;AllocatedQty&gt;2&lt;/AllocatedQty&gt;&#xd;
+							&lt;TriggeredQty&gt;2&lt;/TriggeredQty&gt;&#xd;
+						&lt;/AdditionalAllocatedItem&gt;&#xd;
+					&lt;/AdditionalAllocatedItems&gt;&#xd;
+					&lt;Vouchers&gt;&#xd;
+						&lt;Voucher&gt;&#xd;
+							&lt;ID&gt;6041770250015&lt;/ID&gt;&#xd;
+							&lt;Value&gt;0.00&lt;/Value&gt;&#xd;
+							&lt;Qty&gt;1&lt;/Qty&gt;&#xd;
+						&lt;/Voucher&gt;&#xd;
+					&lt;/Vouchers&gt;&#xd;
+				&lt;/PromotionSummary&gt;&#xd;
+				&lt;CustomerInfo Rejected=&quot;0&quot;&gt;&#xd;
+					&lt;ClubCard&gt;${LastCardID_1}&lt;/ClubCard&gt;&#xd;
+					&lt;ClubId&gt;0&lt;/ClubId&gt;&#xd;
+				&lt;/CustomerInfo&gt;&#xd;
+			&lt;/ActiveStore_SalesTransaction_1.70&gt;&#xd;
+		&lt;/body&gt;&#xd;
+	&lt;/biztalk_1&gt;&#xd;
+&lt;/Root&gt;]]&gt;&#xd;
+         &lt;/tem:messageData&gt;&#xd;
+      &lt;/tem:StoreData&gt;&#xd;
+   &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">RetalixCommGty_LMS_1/SOAP/StoreAndForwardMessageService.asmx</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="822800553">&lt;StoreDataResult&gt;true&lt;/StoreDataResult&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Verify msg3 success in CRM_POStran" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+
+select * from CRM_POSTran where matrixmemberid = @matrixmemberid and tranid =&apos;${transID}&apos;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">int sizex = vars.getObject(&quot;resultSet&quot;).size();
+
+if (sizex &gt;0)
+{
+    Failure = false;
+}
+
+else
+{
+    Failure = true;
+    FailureMessage = &quot;MSG3 upload failure. Size of result is: &quot; + sizex ;
+}
+</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- ValidateCentralizedDocument" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xd;
+&lt;soap:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;ValidateCentralizedDocument xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;in_DocumentsXML&gt;&lt;![CDATA[&lt;DeactivateCentralizedDocument Action=&quot;1&quot;&gt;&lt;Retailer Id=&quot;${RetailerID}&quot;&gt;&lt;Documents&gt;&lt;UniqueDocument Barcode=&quot;${Barcode1_1}&quot; /&gt;&lt;/Documents&gt;&lt;/Retailer&gt;&lt;/DeactivateCentralizedDocument&gt;]]&gt;&lt;/in_DocumentsXML&gt;&#xd;
+    &lt;/ValidateCentralizedDocument&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/LoyaltyDocuments/SaveLoyaltyDocument.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+              <stringProp name="1945149307">&lt;/out_DocumentsXML&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Error in response or no data in the response</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor- get xmldata" enabled="true">
+            <stringProp name="XPathExtractor.default"></stringProp>
+            <stringProp name="XPathExtractor.refname">XMLResponseData</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//out_DocumentsXML</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+          </XPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - User Maintenance" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-XML" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">text/xml</stringProp>
+            </elementProp>
+            <elementProp name="Authorization" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">LmsSession ${session}</stringProp>
+            </elementProp>
+            <elementProp name="DebugLevel" elementType="Header">
+              <stringProp name="Header.name">DebugLevel</stringProp>
+              <stringProp name="Header.value">Info</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- Manager Login" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;UserLogin xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;in_UserName&gt;${ManagerUserID}&lt;/in_UserName&gt;&#xd;
+      &lt;in_Password&gt;${ManagerPassword}&lt;/in_Password&gt;&#xd;
+    &lt;/UserLogin&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/Authorization/Login.asmx</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
+            <stringProp name="XPathExtractor.default">${session}</stringProp>
+            <stringProp name="XPathExtractor.refname">session</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//out_SessionKey</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">sKey</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- ChangeUserPasswordByManager" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:hql=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;hql:ChangeUserPasswordByManager&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:request&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;hql:UserName&gt;JmeterPWDChange&lt;/hql:UserName&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;hql:NewPassword&gt;${RandomPassword8chr}&lt;/hql:NewPassword&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;hql:NewPasswordConfirm&gt;${RandomPassword8chr}&lt;/hql:NewPasswordConfirm&gt;&#xd;
+         &lt;/hql:request&gt;&#xd;
+      &lt;/hql:ChangeUserPasswordByManager&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/UserServices/UserMaintenance.asmx?sk=${session}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request- Login with User with updated password" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&#xd;
+  &lt;soap:Body&gt;&#xd;
+    &lt;UserLogin xmlns=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+      &lt;in_UserName&gt;JmeterPWDChange&lt;/in_UserName&gt;&#xd;
+      &lt;in_Password&gt;${RandomPassword8chr}&lt;/in_Password&gt;&#xd;
+    &lt;/UserLogin&gt;&#xd;
+  &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">LoyaltyOnlineWS/Authorization/Login.asmx</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">login with the user for which password was changed</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="742802223">Status=&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
+            <stringProp name="XPathExtractor.default">${session}</stringProp>
+            <stringProp name="XPathExtractor.refname">session</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//out_SessionKey</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">sKey</stringProp>
+          </XPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

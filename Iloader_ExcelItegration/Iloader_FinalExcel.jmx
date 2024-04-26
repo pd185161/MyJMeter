@@ -1,0 +1,2328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="ILoader" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="SqlServer" elementType="Argument">
+              <stringProp name="Argument.name">SqlServer</stringProp>
+              <stringProp name="Argument.value">//SRRAADEVGUI</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="SQL_Username" elementType="Argument">
+              <stringProp name="Argument.name">SQL_Username</stringProp>
+              <stringProp name="Argument.value">sa</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="SQL_Password" elementType="Argument">
+              <stringProp name="Argument.name">SQL_Password</stringProp>
+              <stringProp name="Argument.value">Abcd1234@</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="databaseName" elementType="Argument">
+              <stringProp name="Argument.name">databaseName</stringProp>
+              <stringProp name="Argument.value">HOST_LMS_1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Destination_Path" elementType="Argument">
+              <stringProp name="Argument.name">Destination_Path</stringProp>
+              <stringProp name="Argument.value">\\\\SRRAADEVGUI\\C\\Work\\InputDownloadFiles</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Server" elementType="Argument">
+              <stringProp name="Argument.name">Server</stringProp>
+              <stringProp name="Argument.value">\\153.77.180.130</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Server_Username" elementType="Argument">
+              <stringProp name="Argument.name">Server_Username</stringProp>
+              <stringProp name="Argument.value">HQL\s_raa_appadmin</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Server_Password" elementType="Argument">
+              <stringProp name="Argument.name">Server_Password</stringProp>
+              <stringProp name="Argument.value">HAha123!</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Server_Exe_Loader" elementType="Argument">
+              <stringProp name="Argument.name">Server_Exe_Loader</stringProp>
+              <stringProp name="Argument.value">c:\Retalix\LMS\HQ Catalog.1\CatalogImport\HQ.Server.Exe.Loader.exe</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Item_Import" elementType="Argument">
+              <stringProp name="Argument.name">Item_Import</stringProp>
+              <stringProp name="Argument.value">False</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Store_import" elementType="Argument">
+              <stringProp name="Argument.name">Store_import</stringProp>
+              <stringProp name="Argument.value">True</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Tax_Import" elementType="Argument">
+              <stringProp name="Argument.name">Tax_Import</stringProp>
+              <stringProp name="Argument.value">False</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Supplier_import" elementType="Argument">
+              <stringProp name="Argument.name">Supplier_import</stringProp>
+              <stringProp name="Argument.value">False</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Hieratchies_Import" elementType="Argument">
+              <stringProp name="Argument.name">Hieratchies_Import</stringProp>
+              <stringProp name="Argument.value">False</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Excel_Filename" elementType="Argument">
+              <stringProp name="Argument.name">Excel_Filename</stringProp>
+              <stringProp name="Argument.value">Iloader.xlsx</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Sheet_Name" elementType="Argument">
+              <stringProp name="Argument.name">Sheet_Name</stringProp>
+              <stringProp name="Argument.value">Store</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Import Modules" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">ArrayList list  = new ArrayList();
+ArrayList ImportModule  = new ArrayList();
+ArrayList sheet  = new ArrayList();
+
+Stritems = vars.get(&quot;Item_Import&quot;);
+StrStore = vars.get(&quot;Store_import&quot;);
+StrTax = vars.get(&quot;Tax_Import&quot;);
+StrSupplier = vars.get(&quot;Supplier_import&quot;);
+StrHierachies = vars.get(&quot;Hieratchies_Import&quot;);
+
+if(StrStore.toUpperCase().equals(&quot;TRUE&quot;)){
+	list.add(&quot;TRUE&quot;);
+	ImportModule.add(&quot;Store&quot;);
+	//sheet.add(&quot;Store&quot;);
+}
+if(StrTax.toUpperCase().equals(&quot;TRUE&quot;)){
+	list.add(&quot;TRUE&quot;);
+	ImportModule.add(&quot;Tax&quot;);
+	//sheet.add(&quot;Tax&quot;);
+}
+if(Stritems.toUpperCase().equals(&quot;TRUE&quot;)){
+	list.add(&quot;TRUE&quot;);
+	ImportModule.add(&quot;Item&quot;);
+	//sheet.add(&quot;Item&quot;);
+}
+if(StrSupplier.toUpperCase().equals(&quot;TRUE&quot;)){
+	list.add(&quot;TRUE&quot;);
+	ImportModule.add(&quot;Supplier&quot;);
+	//sheet.add(&quot;Supplier&quot;);
+}
+if(StrHierachies.toUpperCase().equals(&quot;TRUE&quot;)){
+	list.add(&quot;TRUE&quot;);
+	ImportModule.add(&quot;Hierarchies&quot;);
+	//sheet.add(&quot;Hierarchies&quot;);
+}
+
+log.info(list.toString());
+log.info(ImportModule.toString());
+log.info((list.size()).toString());
+vars.put(&quot;loop&quot;,(list.size()).toString());
+vars.putObject(&quot;ImportModule&quot;,ImportModule);
+
+
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Bat File Creation" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import org.apache.jmeter.services.FileServer;
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+
+//get path of current jmeter&apos;s script
+String path = FileServer.getFileServer().getBaseDir();
+log.info(path);
+File file = new File(path + &quot;/&quot; +&quot;Iloader.bat&quot;);
+FileOutputStream fos = new FileOutputStream(file);
+DataOutputStream dos = new DataOutputStream(fos);
+dos.writeBytes(&quot;@echo off&quot;);
+dos.writeBytes(&quot;\n&quot;);
+dos.writeBytes(&quot;cd &quot; + path);
+dos.writeBytes(&quot;\n&quot;);
+String Psexec = &quot;PsExec.exe &quot; + vars.get(&quot;Server&quot;) + &quot; -u &quot; + vars.get(&quot;Server_Username&quot;) + &quot; -p &quot; + vars.get(&quot;Server_Password&quot;) + &quot; \&quot;&quot; + vars.get(&quot;Server_Exe_Loader&quot;) + &quot;\&quot;&quot;;
+dos.writeBytes(Psexec);
+dos.writeBytes(&quot;\n&quot;);
+fos.close();
+
+vars.put(&quot;path&quot;, path + &quot;/&quot; +&quot;Iloader.bat&quot; );
+
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Excelhandeling" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import org.apache.jmeter.services.FileServer;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import java.io.*;
+
+XSSFWorkbook book = &quot;&quot;;
+
+String path = FileServer.getFileServer().getBaseDir();
+String separator = File.separator;
+
+try {
+	
+	InputStream inputStream = new FileInputStream(new File(path + separator + &quot;${Excel_Filename}&quot;));
+	log.info(path + separator + &quot;${Excel_Filename}&quot;);
+	book = new XSSFWorkbook(inputStream);
+	inputStream.close();
+
+} catch (Exception e) {
+
+     log.info(&quot;!!!!!!!!&quot; + e.getMessage() + &quot;!!!!!!!!!!!!!!!&quot;);
+}
+
+if (!book.equals(&quot;&quot;)) {
+
+	vars.putObject(&quot;book&quot;, book);
+	log.info(&quot;Success&quot;);
+	
+} else {
+
+	SampleResult.setStopTestNow(true);	
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">${loop}</stringProp>
+        </LoopController>
+        <hashTree>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+            <stringProp name="CounterConfig.start">0</stringProp>
+            <stringProp name="CounterConfig.end"></stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">counter</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Switch variable" enabled="true">
+            <stringProp name="scriptLanguage">java</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">List List_value = vars.getObject(&quot;ImportModule&quot;);
+
+log.info((List_value.size()).toString());
+int k = Integer.parseInt(vars.get(&quot;loop&quot;)); 
+log.info(vars.get(&quot;counter&quot;).toString());
+int i = Integer.parseInt(vars.get(&quot;counter&quot;));
+String SWITCH_VALUE = (List_value.get(i)).trim();
+vars.put(&quot;SWITCH_VALUE&quot;,SWITCH_VALUE);
+log.info(SWITCH_VALUE);
+</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
+            <stringProp name="WhileController.condition">${__javaScript(&quot;${stopWhile}&quot; != &quot;OK&quot;)}</stringProp>
+          </WhileController>
+          <hashTree>
+            <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter_Excel" enabled="true">
+              <stringProp name="CounterConfig.start">1</stringProp>
+              <stringProp name="CounterConfig.end"></stringProp>
+              <stringProp name="CounterConfig.incr">1</stringProp>
+              <stringProp name="CounterConfig.name">Counter_Excel</stringProp>
+              <stringProp name="CounterConfig.format"></stringProp>
+              <boolProp name="CounterConfig.per_user">false</boolProp>
+            </CounterConfig>
+            <hashTree/>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="ReadingExcelFile" enabled="true">
+              <stringProp name="scriptLanguage">java</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import java.io.*;
+
+int i = Integer.parseInt(vars.get(&quot;Counter_Excel&quot;));
+
+log.info(i.toString());
+String Sheet_Name = vars.get(&quot;SWITCH_VALUE&quot;);
+XSSFRow row = vars.getObject(&quot;book&quot;).getSheet(Sheet_Name).getRow(i);
+vars.putObject(&quot;row&quot;, row);	
+
+	for (int j = 1; j &lt;= vars.getObject(&quot;book&quot;).getSheet(Sheet_Name).getRow(0).getLastCellNum(); j++) {
+		
+		if (row.getCell(j) == null) {
+			row.createCell(j).setCellValue(&quot;&quot;);
+		}
+	}	
+
+	String Flag = row.getCell(2).toString();
+	vars.put(&quot;Flag&quot;,Flag);
+	
+//	String Testcase_Name = row.getCell(1).toString();
+//	vars.put(&quot;Testcase_Name&quot;,Testcase_Name);
+//
+//	String itemCode = row.getCell(5).toString();
+//	vars.put(&quot;itemCode&quot;,itemCode);
+
+	//log.info(vars.getObject(&quot;book&quot;).getSheet(&quot;ULP&quot;).getLastRowNum());
+	
+//	if(Flag.equals(&quot;T&quot;))
+//	{
+//		log.info(vars.get(&quot;Testcase_Name&quot;));
+//		//${__V(FOUND,&quot;TRUE&quot;)}
+//		vars.put(&quot;SWITCH_VALUE&quot;,vars.get(&quot;Testcase_Name&quot;));
+//	}
+//	else
+//	{
+//		//${__V(FOUND,&quot;FALSE&quot;)}
+//	}
+	</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+              <stringProp name="IfController.condition">${__javaScript(&quot;${Flag}&quot; == &quot;T&quot;)}</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+              <boolProp name="IfController.useExpression">true</boolProp>
+            </IfController>
+            <hashTree>
+              <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Switch Controller XML Template" enabled="true">
+                <stringProp name="SwitchController.value">${SWITCH_VALUE}</stringProp>
+              </SwitchController>
+              <hashTree>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Store" enabled="true">
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="script">import java.io.StringReader;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import javax.xml.parsers.*;
+import javax.xml.xpath.*;
+import org.w3c.dom.*;
+import java.io.File;
+import java.nio.file.Files;
+import org.apache.commons.io.FileUtils;
+import java.util.List;
+import java.util.ArrayList;
+
+String XMLFile = vars.get(&quot;Store_XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;Store_XMLFileName&quot;);
+File file = new File(XMLFile); 
+public ModifyXMLFile(File InputFile,String TagName, String Attribute, String Value){
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	//API to obtain DOM Document instance
+	DocumentBuilder builder = null;
+	//Create DocumentBuilder with default configuration
+	builder = factory.newDocumentBuilder();
+	//Parse the content to Document object
+	Document doc = builder.parse(InputFile);
+	NodeList dependencyElements = doc.getElementsByTagName(TagName);
+	log.info((dependencyElements.getLength()).toString());
+
+	for(i=0;i&lt;dependencyElements.getLength();i++)
+	{
+		Node node = dependencyElements.item(i);
+		log.info(&quot;\nNode Name :&quot; + node.getNodeName());
+		if(node.getNodeType() == Node.ELEMENT_NODE)
+	{
+		 Element eElement = (Element) node;
+		 eElement.getAttributes().getNamedItem(Attribute).setTextContent(Value);
+		 String HeaderId = eElement.getAttributes().getNamedItem(Attribute).getNodeValue();
+		 log.info(HeaderId);
+		 TransformerFactory transformerFactory = TransformerFactory.newInstance();
+         	 Transformer transformer = transformerFactory.newTransformer();
+         	 DOMSource source = new DOMSource(doc);
+         	 StreamResult consoleResult = new StreamResult(InputFile);
+         	 transformer.transform(source, consoleResult);
+	}
+
+	}
+
+}
+
+log.info(vars.get(&quot;Store_CreationDate&quot;));
+log.info(vars.get(&quot;Store_Description&quot;));
+log.info(vars.get(&quot;Store_RetailerId&quot;));
+log.info(vars.get(&quot;Store_Action&quot;));
+log.info(vars.get(&quot;Store_StoreId&quot;));
+log.info(vars.get(&quot;Store_StoreName&quot;) + &quot;_&quot; + vars.get(&quot;Store_StoreId&quot;));
+log.info(vars.get(&quot;Store_DownloadIsActive&quot;));
+log.info(vars.get(&quot;Store_UploadIsActive&quot;));
+log.info(vars.get(&quot;Store_TaxZoneId&quot;));
+log.info(vars.get(&quot;Store_Active&quot;));
+log.info(vars.get(&quot;Store_PosType&quot;));
+log.info(vars.get(&quot;Store_OpenDate&quot;));
+log.info(vars.get(&quot;Store_DownloadReformatorTemplateId&quot;));
+//log.info(vars.get(&quot;Store_Working24Hours&quot;));
+//log.info(vars.get(&quot;Store_DownloadDistributionType&quot;));
+//log.info(vars.get(&quot;Store_StoreAttribute_Id&quot;));
+//log.info(vars.get(&quot;Store_StoreAttribute_Value&quot;));
+//log.info(vars.get(&quot;Store_ViewId&quot;));
+//log.info(vars.get(&quot;Store_CategoryId&quot;));
+//log.info(vars.get(&quot;Store_HierarchyLevel&quot;));
+
+
+ModifyXMLFile(file,&quot;Header&quot;,&quot;CreationDate&quot;,vars.get(&quot;Store_CreationDate&quot;));
+ModifyXMLFile(file,&quot;Package&quot;,&quot;Description&quot;,vars.get(&quot;Store_Description&quot;));
+ModifyXMLFile(file,&quot;Source&quot;,&quot;RetailerId&quot;,vars.get(&quot;Store_RetailerId&quot;));
+
+ModifyXMLFile(file,&quot;Store&quot;,&quot;Action&quot;,vars.get(&quot;Store_Action&quot;));
+ModifyXMLFile(file,&quot;Store&quot;,&quot;StoreId&quot;,vars.get(&quot;Store_StoreId&quot;));
+ModifyXMLFile(file,&quot;Store&quot;,&quot;StoreName&quot;,vars.get(&quot;Store_StoreName&quot;) + &quot;_&quot; + vars.get(&quot;Store_StoreId&quot;));
+ModifyXMLFile(file,&quot;Store&quot;,&quot;DownloadIsActive&quot;,vars.get(&quot;Store_DownloadIsActive&quot;));
+ModifyXMLFile(file,&quot;Store&quot;,&quot;UploadIsActive&quot;,vars.get(&quot;Store_UploadIsActive&quot;));
+ModifyXMLFile(file,&quot;Store&quot;,&quot;TaxZoneId&quot;,vars.get(&quot;Store_TaxZoneId&quot;));
+ModifyXMLFile(file,&quot;Store&quot;,&quot;Active&quot;,vars.get(&quot;Store_Active&quot;));
+ModifyXMLFile(file,&quot;Store&quot;,&quot;PosType&quot;,vars.get(&quot;Store_PosType&quot;));
+ModifyXMLFile(file,&quot;Store&quot;,&quot;DownloadReformatorTemplateId&quot;,vars.get(&quot;Store_DownloadReformatorTemplateId&quot;));
+//ModifyXMLFile(file,&quot;Store&quot;,&quot;OpenDate&quot;,vars.get(&quot;Store_OpenDate&quot;));
+//ModifyXMLFile(file,&quot;Store&quot;,&quot;Working24Hours&quot;,vars.get(&quot;Store_Working24Hours&quot;));
+////ModifyXMLFile(file,&quot;Store&quot;,&quot;DownloadDistributionType&quot;,vars.get(&quot;Store_DownloadDistributionType&quot;));
+//
+//ModifyXMLFile(file,&quot;StoreAttribute&quot;,&quot;Id&quot;,vars.get(&quot;Store_StoreAttribute_Id&quot;));
+//ModifyXMLFile(file,&quot;StoreAttribute&quot;,&quot;Value&quot;,vars.get(&quot;Store_StoreAttribute_Value&quot;));
+//
+//ModifyXMLFile(file,&quot;StoreHierarchyLink&quot;,&quot;ViewId&quot;,vars.get(&quot;Store_ViewId&quot;));
+//ModifyXMLFile(file,&quot;StoreHierarchyLink&quot;,&quot;CategoryId&quot;,vars.get(&quot;Store_CategoryId&quot;));
+//ModifyXMLFile(file,&quot;StoreHierarchyLink&quot;,&quot;HierarchyLevel&quot;,vars.get(&quot;Store_HierarchyLevel&quot;));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</stringProp>
+                  <stringProp name="scriptLanguage">java</stringProp>
+                </JSR223Sampler>
+                <hashTree>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="ReadingSorevaluesfromExcel" enabled="true">
+                    <stringProp name="scriptLanguage">java</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import java.io.*;
+import java.time.LocalDateTime; // Import the LocalDateTime class
+import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
+import java.text.SimpleDateFormat;  
+import java.util.Date;
+
+
+int i = Integer.parseInt(vars.get(&quot;Counter_Excel&quot;));
+String Sheet_Name = vars.get(&quot;SWITCH_VALUE&quot;);
+XSSFRow row = vars.getObject(&quot;book&quot;).getSheet(Sheet_Name).getRow(i);
+vars.putObject(&quot;row&quot;, row);	
+
+	for (int j = 1; j &lt;= vars.getObject(&quot;book&quot;).getSheet(Sheet_Name).getRow(0).getLastCellNum(); j++) {
+		if (row.getCell(j) == null) {
+			row.createCell(j).setCellValue(&quot;&quot;);
+		}
+	}	
+
+	DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&quot;);
+	//SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);	
+	
+	String Store_XMLFilepath = row.getCell(3).toString();
+	vars.put(&quot;Store_XMLFilepath&quot;,Store_XMLFilepath);
+	
+	String Store_XMLFileName = row.getCell(4).toString();
+	vars.put(&quot;Store_XMLFileName&quot;,Store_XMLFileName);
+    
+	String Store_CreationDate = row.getCell(5).toString();
+    	 SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd-MMM-yyyy&quot;,Locale.ENGLISH);
+    	 Date date = formatter.parse(Store_CreationDate);
+    	 SimpleDateFormat format1 = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).format(date);
+    	 vars.put(&quot;Store_CreationDate&quot;,format1.toString());
+
+	String Store_Description = row.getCell(6).toString();
+	vars.put(&quot;Store_Description&quot;,Store_Description);
+
+	String Store_RetailerId = row.getCell(7).toString();
+	vars.put(&quot;Store_RetailerId&quot;,Store_RetailerId.replace(&quot;.0&quot;, &quot;&quot;));
+
+	String Store_Action = row.getCell(8).toString();
+	vars.put(&quot;Store_Action&quot;,Store_Action);
+
+	String Store_StoreName = row.getCell(9).toString();
+	//String Store_StoreName = Store_StoreName +&quot;_&quot;+ vars.get(&quot;Store_StoreId&quot;);
+	vars.put(&quot;Store_StoreName&quot;,Store_StoreName);
+
+	String Store_DownloadIsActive = row.getCell(10).toString();
+	vars.put(&quot;Store_DownloadIsActive&quot;,Store_DownloadIsActive.replace(&quot;.0&quot;, &quot;&quot;));
+
+	String Store_UploadIsActive = row.getCell(11).toString();
+	vars.put(&quot;Store_UploadIsActive&quot;,Store_UploadIsActive.replace(&quot;.0&quot;, &quot;&quot;));
+
+	String Store_TaxZoneId = row.getCell(12).toString();
+	vars.put(&quot;Store_TaxZoneId&quot;,Store_TaxZoneId.replace(&quot;.0&quot;, &quot;&quot;));
+
+	String Store_Active = row.getCell(13).toString();
+	vars.put(&quot;Store_Active&quot;,Store_Active.replace(&quot;.0&quot;, &quot;&quot;));
+
+	String Store_PosType = row.getCell(14).toString();
+	vars.put(&quot;Store_PosType&quot;,Store_PosType.replace(&quot;.0&quot;, &quot;&quot;));
+
+	String Store_OpenDate = row.getCell(15).toString();
+	SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd-MMM-yyyy&quot;,Locale.ENGLISH);
+    	Date date1 = formatter.parse(Store_OpenDate);
+    	SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).format(date1);
+	vars.put(&quot;Store_OpenDate&quot;,format.toString());
+
+	String Store_DownloadReformatorTemplateId = row.getCell(16).toString();
+	vars.put(&quot;Store_DownloadReformatorTemplateId&quot;,Store_DownloadReformatorTemplateId.replace(&quot;.0&quot;, &quot;&quot;));
+	
+	//String Store_Working24Hours = row.getCell(16).toString();
+	//vars.put(&quot;Store_Working24Hours&quot;,Store_Working24Hours.replace(&quot;.0&quot;, &quot;&quot;));
+	
+//	String Store_DownloadDistributionType = row.getCell(17).toString();
+//	vars.put(&quot;Store_DownloadDistributionType&quot;,Store_DownloadDistributionType.replace(&quot;.0&quot;, &quot;&quot;));
+//	
+//	String Store_StoreAttribute_Id = row.getCell(18).toString();
+//	vars.put(&quot;Store_StoreAttribute_Id&quot;,Store_StoreAttribute_Id.replace(&quot;.0&quot;, &quot;&quot;));
+//
+//	String Store_StoreAttribute_Value = row.getCell(19).toString();
+//	vars.put(&quot;Store_StoreAttribute_Value&quot;,Store_StoreAttribute_Value.replace(&quot;.0&quot;, &quot;&quot;));
+//
+//	String Store_ViewId = row.getCell(20).toString();
+//	vars.put(&quot;Store_ViewId&quot;,Store_ViewId.replace(&quot;.0&quot;, &quot;&quot;));
+//
+//	String Store_CategoryId = row.getCell(21).toString();
+//	vars.put(&quot;Store_CategoryId&quot;,Store_CategoryId.replace(&quot;.0&quot;, &quot;&quot;));
+//
+//	String Store_HierarchyLevel = row.getCell(22).toString();
+//	vars.put(&quot;Store_HierarchyLevel&quot;,Store_HierarchyLevel.replace(&quot;.0&quot;, &quot;&quot;));
+	</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Store_Database" enabled="true">
+                    <stringProp name="scriptLanguage">java</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;Select top(1) cast(StoreId AS INT) As StoreId from StoreCode order by StoreId desc&quot;;
+
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(&quot;Connection established Successfully&quot;);
+		log.info(vars.get(&quot;Store_Action&quot;));
+		
+		switch(vars.get(&quot;Store_Action&quot;)){
+
+			case &quot;I&quot;:
+			
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			
+			while(resultSet.next())
+			{
+				int Store_StoreId = resultSet.getInt(&quot;StoreId&quot;);
+				Store_StoreId ++;
+				log.info(&quot;Store_StoreId &quot; + Store_StoreId.toString());
+	
+				Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				String QUERY1 = &quot;Select StoreId FROM StoreCode where StoreId = &quot;+Store_StoreId;
+				log.info(QUERY1);
+				ResultSet resultSet = stmt.executeQuery(QUERY1);
+				resultSet.last();
+				size_update = resultSet.getRow();
+				resultSet.beforeFirst();
+	
+				log.info(&quot;Size Update&quot; + size_update.toString());
+				
+				if(size_update == 0)
+				{
+					vars.put(&quot;Store_StoreId&quot;, Store_StoreId.toString() );
+					log.info(&quot;StoreId Update &quot; + Store_StoreId.toString());
+				}else {
+					log.error(&quot;Select Query for Itemid is not fetch top value&quot;);
+				}
+			}
+			break;
+	
+			case &quot;U&quot;:
+			
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			while(resultSet.next())
+			{
+				int Store_StoreId = resultSet.getInt(&quot;StoreId&quot;);
+				vars.put(&quot;Store_StoreId&quot;, Store_StoreId.toString());
+				log.info(&quot;Store_StoreId &quot; + Store_StoreId.toString());
+			}
+			break;
+			
+		}		
+		
+		conn.close();
+	}
+	
+	catch(Exception e){
+		log.info(e.toString());
+	}
+
+
+
+
+
+	</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                </hashTree>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Tax" enabled="true">
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="script">import java.io.StringReader;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import javax.xml.parsers.*;
+import javax.xml.xpath.*;
+import org.w3c.dom.*;
+import java.io.File;
+import java.nio.file.Files;
+import org.apache.commons.io.FileUtils;
+import java.util.List;
+import java.util.ArrayList;
+
+String XMLFile = vars.get(&quot;Tax_XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;Tax_XMLFileName&quot;);
+File file = new File(XMLFile); 
+public ModifyXMLFile(File InputFile,String TagName, String Attribute, String Value){
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	//API to obtain DOM Document instance
+	DocumentBuilder builder = null;
+	//Create DocumentBuilder with default configuration
+	builder = factory.newDocumentBuilder();
+	//Parse the content to Document object
+	Document doc = builder.parse(InputFile);
+	NodeList dependencyElements = doc.getElementsByTagName(TagName);
+	log.info((dependencyElements.getLength()).toString());
+
+	for(i=0;i&lt;dependencyElements.getLength();i++)
+	{
+		Node node = dependencyElements.item(i);
+		log.info(&quot;\nNode Name :&quot; + node.getNodeName());
+		if(node.getNodeType() == Node.ELEMENT_NODE)
+	{
+		 Element eElement = (Element) node;
+		 eElement.getAttributes().getNamedItem(Attribute).setTextContent(Value);
+		 String HeaderId = eElement.getAttributes().getNamedItem(Attribute).getNodeValue();
+		 log.info(HeaderId);
+		 TransformerFactory transformerFactory = TransformerFactory.newInstance();
+         	 Transformer transformer = transformerFactory.newTransformer();
+         	 DOMSource source = new DOMSource(doc);
+         	 StreamResult consoleResult = new StreamResult(InputFile);
+         	 transformer.transform(source, consoleResult);
+	}
+
+	}
+
+}
+
+ModifyXMLFile(file,&quot;Header&quot;,&quot;CreationDate&quot;,vars.get(&quot;Tax_CreationDate&quot;));
+ModifyXMLFile(file,&quot;Package&quot;,&quot;Description&quot;,vars.get(&quot;Tax_Description&quot;));
+ModifyXMLFile(file,&quot;Source&quot;,&quot;RetailerId&quot;,vars.get(&quot;Tax_RetailerId&quot;));
+
+ModifyXMLFile(file,&quot;TaxCode&quot;,&quot;TaxCodeId&quot;,vars.get(&quot;Tax_TaxCodeId&quot;));
+ModifyXMLFile(file,&quot;TaxCode&quot;,&quot;TaxName&quot;,vars.get(&quot;Tax_TaxName&quot;));
+ModifyXMLFile(file,&quot;TaxCode&quot;,&quot;Action&quot;,vars.get(&quot;Tax_Action&quot;));
+
+ModifyXMLFile(file,&quot;TaxParameter&quot;,&quot;TaxZoneId&quot;,vars.get(&quot;Tax_TaxZoneId&quot;));
+ModifyXMLFile(file,&quot;TaxParameter&quot;,&quot;TaxPercent&quot;,vars.get(&quot;Tax_TaxPercent&quot;));
+
+ModifyXMLFile(file,&quot;TaxBracket&quot;,&quot;BracketId&quot;,vars.get(&quot;Tax_BracketId&quot;));
+ModifyXMLFile(file,&quot;TaxBracket&quot;,&quot;BracketValue&quot;,vars.get(&quot;Tax_BracketValue&quot;));
+ModifyXMLFile(file,&quot;TaxBracket&quot;,&quot;BracketValue&quot;,vars.get(&quot;Tax_BracketValue&quot;));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</stringProp>
+                  <stringProp name="scriptLanguage">java</stringProp>
+                </JSR223Sampler>
+                <hashTree>
+                  <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="Tax_XMLFilepath" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_XMLFilepath</stringProp>
+                        <stringProp name="Argument.value">C:/Manoj/ManojJMeter/LMS/</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_XMLFileName" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_XMLFileName</stringProp>
+                        <stringProp name="Argument.value">Import-01-2021-08-05T144501-GT.xml</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_CreationDate" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_CreationDate</stringProp>
+                        <stringProp name="Argument.value">2021-12-22</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_Description" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_Description</stringProp>
+                        <stringProp name="Argument.value">Taxes</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_RetailerId" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_RetailerId</stringProp>
+                        <stringProp name="Argument.value">2</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_TaxName" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_TaxName</stringProp>
+                        <stringProp name="Argument.value">Bracket M</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_Action" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_Action</stringProp>
+                        <stringProp name="Argument.value">D</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_TaxZoneId" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_TaxZoneId</stringProp>
+                        <stringProp name="Argument.value">1</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_TaxPercent" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_TaxPercent</stringProp>
+                        <stringProp name="Argument.value">5.50</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_BracketId" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_BracketId</stringProp>
+                        <stringProp name="Argument.value">2</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Tax_BracketValue" elementType="Argument">
+                        <stringProp name="Argument.name">Tax_BracketValue</stringProp>
+                        <stringProp name="Argument.value">1</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </Arguments>
+                  <hashTree/>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Tax_Database" enabled="true">
+                    <stringProp name="scriptLanguage">java</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;select top(1) [TaxCodeId] from [ImportTaxCode_Log] order by [TaxCodeId] desc&quot;;
+String QUERY1 = &quot;select top(1) TaxCodeId  from Taxcode where UpdatedBy = 7 order by [TaxCodeId] desc&quot;;
+
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(vars.get(&quot;Tax_Action&quot;));
+		
+		switch(vars.get(&quot;Tax_Action&quot;)){
+
+			case &quot;I&quot;:
+			
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			log.info(&quot;Connection established Successfully&quot;);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			
+			while(resultSet.next())
+			{
+				int TaxCodeId = resultSet.getInt(&quot;TaxCodeId&quot;);
+				TaxCodeId ++;
+				log.info(&quot;TaxCodeId &quot; + TaxCodeId.toString());
+	
+				Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				String QUERY1 = &quot;Select TaxCodeId FROM ImportTaxCode_Log where TaxCodeId = &quot;+TaxCodeId;
+				ResultSet resultSet = stmt.executeQuery(QUERY1);
+				resultSet.last();
+				size_update = resultSet.getRow();
+				resultSet.beforeFirst();
+	
+				log.info(&quot;Size Update&quot; + size_update.toString());
+				
+				if(size_update == 0)
+				{
+					vars.put(&quot;Tax_TaxCodeId&quot;, TaxCodeId.toString() );
+					log.info(&quot;TaxCodeId Update &quot; + TaxCodeId.toString());
+				}else {
+					log.error(&quot;Select Query for Itemid is not fetch top value&quot;);
+				}
+			}
+			break;
+	
+			case &quot;U&quot;:
+			
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			log.info(&quot;Connection established Successfully&quot;);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			while(resultSet.next())
+			{
+				int TaxCodeId = resultSet.getInt(&quot;TaxCodeId&quot;);
+				vars.put(&quot;Tax_TaxCodeId&quot;, TaxCodeId.toString());
+				log.info(&quot;TaxCodeId &quot; + TaxCodeId.toString());
+			}
+			break;
+
+			case &quot;D&quot;:
+			
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			log.info(&quot;Connection established Successfully&quot;);
+			ResultSet resultSet = stmt.executeQuery(QUERY1);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			while(resultSet.next())
+			{
+				int TaxCodeId = resultSet.getInt(&quot;TaxCodeId&quot;);
+				vars.put(&quot;Tax_TaxCodeId&quot;, TaxCodeId.toString());
+				log.info(&quot;TaxCodeId &quot; + TaxCodeId.toString());
+			}
+			break;
+			
+		}		
+		
+		conn.close();
+	}
+	
+	catch(Exception e){
+		log.info(e.toString());
+	}
+
+</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                </hashTree>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Item" enabled="true">
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="script">import java.io.StringReader;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import javax.xml.parsers.*;
+import javax.xml.xpath.*;
+import org.w3c.dom.*;
+import java.io.File;
+import java.nio.file.Files;
+import org.apache.commons.io.FileUtils;
+import java.util.List;
+import java.util.ArrayList;
+
+String XMLFile = vars.get(&quot;XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;XMLFileName&quot;);
+File file = new File(XMLFile);
+public ModifyXMLFile(File InputFile,String TagName, String Attribute, String Value){
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	//API to obtain DOM Document instance
+	DocumentBuilder builder = null;
+	//Create DocumentBuilder with default configuration
+	builder = factory.newDocumentBuilder();
+	//Parse the content to Document object
+	Document doc = builder.parse(InputFile);
+	NodeList dependencyElements = doc.getElementsByTagName(TagName);
+	log.info((dependencyElements.getLength()).toString());
+
+	for(i=0;i&lt;dependencyElements.getLength();i++)
+	{
+		Node node = dependencyElements.item(i);
+		log.info(&quot;\nNode Name :&quot; + node.getNodeName());
+		if(node.getNodeType() == Node.ELEMENT_NODE)
+	{
+		 Element eElement = (Element) node;
+		 eElement.getAttributes().getNamedItem(Attribute).setTextContent(Value);
+		 String HeaderId = eElement.getAttributes().getNamedItem(Attribute).getNodeValue();
+		 log.info(HeaderId);
+		 TransformerFactory transformerFactory = TransformerFactory.newInstance();
+         	 Transformer transformer = transformerFactory.newTransformer();
+         	 DOMSource source = new DOMSource(doc);
+         	 StreamResult consoleResult = new StreamResult(InputFile);
+         	 transformer.transform(source, consoleResult);
+	}
+
+	}
+
+}
+
+log.info(vars.get(&quot;CreationDate&quot;));
+log.info(vars.get(&quot;Description&quot;));
+log.info(vars.get(&quot;RetailerId&quot;));
+log.info(vars.get(&quot;Action&quot;));
+log.info(vars.get(&quot;FullName&quot;));
+log.info(vars.get(&quot;Itemid&quot;));
+log.info(vars.get(&quot;SupplierId&quot;));
+log.info(vars.get(&quot;StoreId&quot;));
+log.info(vars.get(&quot;CategoryId&quot;));
+log.info(vars.get(&quot;HierarchyLevel&quot;));
+
+ModifyXMLFile(file,&quot;Header&quot;,&quot;CreationDate&quot;,vars.get(&quot;CreationDate&quot;));
+ModifyXMLFile(file,&quot;Package&quot;,&quot;Description&quot;,vars.get(&quot;Description&quot;));
+ModifyXMLFile(file,&quot;Source&quot;,&quot;RetailerId&quot;,vars.get(&quot;RetailerId&quot;));
+ModifyXMLFile(file,&quot;Item&quot;,&quot;Action&quot;,vars.get(&quot;Action&quot;));
+ModifyXMLFile(file,&quot;Item&quot;,&quot;FullName&quot;,vars.get(&quot;FullName&quot;));
+ModifyXMLFile(file,&quot;Item&quot;,&quot;MainId&quot;,vars.get(&quot;Itemid&quot;));
+ModifyXMLFile(file,&quot;Supplier&quot;,&quot;Id&quot;,vars.get(&quot;SupplierId&quot;));
+ModifyXMLFile(file,&quot;Supplier&quot;,&quot;StoreId&quot;,vars.get(&quot;StoreId&quot;));
+ModifyXMLFile(file,&quot;Supplier&quot;,&quot;Action&quot;,vars.get(&quot;Action&quot;));
+ModifyXMLFile(file,&quot;HierarchyLink&quot;,&quot;Action&quot;,vars.get(&quot;Action&quot;));
+ModifyXMLFile(file,&quot;HierarchyLink&quot;,&quot;CategoryId&quot;,vars.get(&quot;CategoryId&quot;));
+ModifyXMLFile(file,&quot;HierarchyLink&quot;,&quot;Level&quot;,vars.get(&quot;HierarchyLevel&quot;));
+ModifyXMLFile(file,&quot;HierarchyLink&quot;,&quot;StoreId&quot;,vars.get(&quot;StoreId&quot;));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</stringProp>
+                  <stringProp name="scriptLanguage">java</stringProp>
+                </JSR223Sampler>
+                <hashTree>
+                  <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="XMLFilepath" elementType="Argument">
+                        <stringProp name="Argument.name">XMLFilepath</stringProp>
+                        <stringProp name="Argument.value">C:/Manoj/ManojJMeter/LMS/</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="XMLFileName" elementType="Argument">
+                        <stringProp name="Argument.name">XMLFileName</stringProp>
+                        <stringProp name="Argument.value">Import-01-2021-12-21T144204-IT.xml</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="CreationDate" elementType="Argument">
+                        <stringProp name="Argument.name">CreationDate</stringProp>
+                        <stringProp name="Argument.value">2022-02-02</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Description" elementType="Argument">
+                        <stringProp name="Argument.name">Description</stringProp>
+                        <stringProp name="Argument.value">Taxes</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="RetailerId" elementType="Argument">
+                        <stringProp name="Argument.name">RetailerId</stringProp>
+                        <stringProp name="Argument.value">2</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Action" elementType="Argument">
+                        <stringProp name="Argument.name">Action</stringProp>
+                        <stringProp name="Argument.value">U</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="FullName" elementType="Argument">
+                        <stringProp name="Argument.name">FullName</stringProp>
+                        <stringProp name="Argument.value">New Item</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="SupplierId" elementType="Argument">
+                        <stringProp name="Argument.name">SupplierId</stringProp>
+                        <stringProp name="Argument.value">100</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="StoreId" elementType="Argument">
+                        <stringProp name="Argument.name">StoreId</stringProp>
+                        <stringProp name="Argument.value">0</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="CategoryId" elementType="Argument">
+                        <stringProp name="Argument.name">CategoryId</stringProp>
+                        <stringProp name="Argument.value">31</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="HierarchyLevel" elementType="Argument">
+                        <stringProp name="Argument.name">HierarchyLevel</stringProp>
+                        <stringProp name="Argument.value">2</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </Arguments>
+                  <hashTree/>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Item_Database" enabled="true">
+                    <stringProp name="scriptLanguage">java</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;Select Top(1) cast(itemid AS INT ) AS itemid FROM Itemcode order by itemid desc&quot;;
+
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(vars.get(&quot;Action&quot;));
+		
+		switch(vars.get(&quot;Action&quot;)){
+
+			case &quot;I&quot;:
+			
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			log.info(&quot;Connection established Successfully&quot;);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			
+			while(resultSet.next())
+			{
+				int Itemid = resultSet.getInt(&quot;itemId&quot;);
+				Itemid ++;
+				log.info(&quot;ItemId &quot; + Itemid.toString());
+	
+				Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				String QUERY1 = &quot;Select itemid FROM Itemcode where itemid = &quot;+Itemid;
+				ResultSet resultSet = stmt.executeQuery(QUERY1);
+				resultSet.last();
+				size_update = resultSet.getRow();
+				resultSet.beforeFirst();
+	
+				log.info(&quot;Size Update&quot; + size_update.toString());
+				
+				if(size_update == 0)
+				{
+					vars.put(&quot;Itemid&quot;, Itemid.toString() );
+					log.info(&quot;ItemId Update &quot; + Itemid.toString());
+				}else {
+					log.error(&quot;Select Query for Itemid is not fetch top value&quot;);
+				}
+			}
+			break;
+	
+			case &quot;U&quot;:
+			
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			log.info(&quot;Connection established Successfully&quot;);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			while(resultSet.next())
+			{
+				int Itemid = resultSet.getInt(&quot;itemId&quot;);
+				vars.put(&quot;Itemid&quot;, Itemid.toString());
+				log.info(&quot;ItemId &quot; + Itemid.toString());
+			}
+			break;
+			
+		}		
+		
+		conn.close();
+	}
+	
+	catch(Exception e){
+		log.info(e.toString());
+	}
+
+
+
+
+
+	</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                </hashTree>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Supplier" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.io.StringReader;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import javax.xml.parsers.*;
+import javax.xml.xpath.*;
+import org.w3c.dom.*;
+import java.io.File;
+import java.nio.file.Files;
+import org.apache.commons.io.FileUtils;
+import java.util.List;
+import java.util.ArrayList;
+
+String XMLFile = vars.get(&quot;Supplier_XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;Supplier_XMLFileName&quot;);
+File file = new File(XMLFile); 
+public ModifyXMLFile(File InputFile,String TagName, String Attribute, String Value){
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	//API to obtain DOM Document instance
+	DocumentBuilder builder = null;
+	//Create DocumentBuilder with default configuration
+	builder = factory.newDocumentBuilder();
+	//Parse the content to Document object
+	Document doc = builder.parse(InputFile);
+	NodeList dependencyElements = doc.getElementsByTagName(TagName);
+	log.info((dependencyElements.getLength()).toString());
+
+	for(i=0;i&lt;dependencyElements.getLength();i++)
+	{
+		Node node = dependencyElements.item(i);
+		log.info(&quot;\nNode Name :&quot; + node.getNodeName());
+		if(node.getNodeType() == Node.ELEMENT_NODE)
+	{
+		 Element eElement = (Element) node;
+		 eElement.getAttributes().getNamedItem(Attribute).setTextContent(Value);
+		 String HeaderId = eElement.getAttributes().getNamedItem(Attribute).getNodeValue();
+		 log.info(HeaderId);
+		 TransformerFactory transformerFactory = TransformerFactory.newInstance();
+         	 Transformer transformer = transformerFactory.newTransformer();
+         	 DOMSource source = new DOMSource(doc);
+         	 StreamResult consoleResult = new StreamResult(InputFile);
+         	 transformer.transform(source, consoleResult);
+	}
+
+	}
+
+}
+
+ModifyXMLFile(file,&quot;Header&quot;,&quot;CreationDate&quot;,vars.get(&quot;Supplier_CreationDate&quot;));
+ModifyXMLFile(file,&quot;Package&quot;,&quot;Description&quot;,vars.get(&quot;Supplier_Description&quot;));
+ModifyXMLFile(file,&quot;Source&quot;,&quot;RetailerId&quot;,vars.get(&quot;Supplier_RetailerId&quot;));
+
+ModifyXMLFile(file,&quot;GTSupplier&quot;,&quot;SupplierId&quot;,vars.get(&quot;Supplier_SupplierId&quot;));
+ModifyXMLFile(file,&quot;GTSupplier&quot;,&quot;Name&quot;,vars.get(&quot;Supplier_Name&quot;));
+ModifyXMLFile(file,&quot;GTSupplier&quot;,&quot;Action&quot;,vars.get(&quot;Supplier_Action&quot;));
+
+ModifyXMLFile(file,&quot;GTSupplierStore&quot;,&quot;StoreId&quot;,vars.get(&quot;Supplier_StoreId&quot;));
+ModifyXMLFile(file,&quot;GTSupplierStore&quot;,&quot;Action&quot;,vars.get(&quot;Supplier_Action&quot;));
+
+
+
+
+
+
+
+
+</stringProp>
+                </JSR223Sampler>
+                <hashTree>
+                  <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="Supplier_XMLFilepath" elementType="Argument">
+                        <stringProp name="Argument.name">Supplier_XMLFilepath</stringProp>
+                        <stringProp name="Argument.value">C:/Manoj/ManojJMeter/LMS/</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Supplier_XMLFileName" elementType="Argument">
+                        <stringProp name="Argument.name">Supplier_XMLFileName</stringProp>
+                        <stringProp name="Argument.value">Import-01-2011-08-10T121731-GT.xml.Suppliers_2.xml</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Supplier_CreationDate" elementType="Argument">
+                        <stringProp name="Argument.name">Supplier_CreationDate</stringProp>
+                        <stringProp name="Argument.value">2022-08-02</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Supplier_Description" elementType="Argument">
+                        <stringProp name="Argument.name">Supplier_Description</stringProp>
+                        <stringProp name="Argument.value">Suppliers</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Supplier_RetailerId" elementType="Argument">
+                        <stringProp name="Argument.name">Supplier_RetailerId</stringProp>
+                        <stringProp name="Argument.value">2</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Supplier_Name" elementType="Argument">
+                        <stringProp name="Argument.name">Supplier_Name</stringProp>
+                        <stringProp name="Argument.value">Import_Supplier</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Supplier_Action" elementType="Argument">
+                        <stringProp name="Argument.name">Supplier_Action</stringProp>
+                        <stringProp name="Argument.value">I</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Supplier_StoreId" elementType="Argument">
+                        <stringProp name="Argument.name">Supplier_StoreId</stringProp>
+                        <stringProp name="Argument.value">0</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </Arguments>
+                  <hashTree/>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Supplier_Database" enabled="true">
+                    <stringProp name="scriptLanguage">java</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;select top(1) cast(SupplierId AS INT) As SupplierId from SupplierCode order by SupplierId desc&quot;;
+
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(vars.get(&quot;Supplier_Action&quot;));
+		
+		switch(vars.get(&quot;Supplier_Action&quot;)){
+
+			case &quot;I&quot;:
+			
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			log.info(&quot;Connection established Successfully&quot;);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			
+			while(resultSet.next())
+			{
+				int Supplier_SupplierId = resultSet.getInt(&quot;SupplierId&quot;);
+				Supplier_SupplierId ++;
+				log.info(&quot;Supplier_SupplierId &quot; + Supplier_SupplierId.toString());
+	
+				Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				String QUERY1 = &quot;Select SupplierId FROM SupplierCode where SupplierId = &quot;+Supplier_SupplierId;
+				ResultSet resultSet = stmt.executeQuery(QUERY1);
+				resultSet.last();
+				size_update = resultSet.getRow();
+				resultSet.beforeFirst();
+	
+				log.info(&quot;Size Update&quot; + size_update.toString());
+				
+				if(size_update == 0)
+				{
+					vars.put(&quot;Supplier_SupplierId&quot;, Supplier_SupplierId.toString() );
+					log.info(&quot;Supplier_SupplierId Update &quot; + Supplier_SupplierId.toString());
+				}else {
+					log.error(&quot;Select Query for Itemid is not fetch top value&quot;);
+				}
+			}
+			break;
+	
+			case &quot;U&quot;:
+			
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			log.info(&quot;Connection established Successfully&quot;);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			while(resultSet.next())
+			{
+				int Supplier_SupplierId = resultSet.getInt(&quot;SupplierId&quot;);
+				vars.put(&quot;Supplier_SupplierId&quot;, Supplier_SupplierId.toString());
+				log.info(&quot;Supplier_SupplierId &quot; + Supplier_SupplierId.toString());
+			}
+			break;
+			
+		}		
+		
+		conn.close();
+	}
+	
+	catch(Exception e){
+		log.info(e.toString());
+	}
+
+</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                </hashTree>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Hierarchies" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.io.StringReader;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import javax.xml.parsers.*;
+import javax.xml.xpath.*;
+import org.w3c.dom.*;
+import java.io.File;
+import java.nio.file.Files;
+import org.apache.commons.io.FileUtils;
+import java.util.List;
+import java.util.ArrayList;
+
+String XMLFile = vars.get(&quot;Hierarchies_XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;Hierarchies_XMLFileName&quot;);
+File file = new File(XMLFile); 
+public ModifyXMLFile(File InputFile,String TagName, String Attribute, String Value){
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	//API to obtain DOM Document instance
+	DocumentBuilder builder = null;
+	//Create DocumentBuilder with default configuration
+	builder = factory.newDocumentBuilder();
+	//Parse the content to Document object
+	Document doc = builder.parse(InputFile);
+	NodeList dependencyElements = doc.getElementsByTagName(TagName);
+	log.info((dependencyElements.getLength()).toString());
+
+	for(i=0;i&lt;dependencyElements.getLength();i++)
+	{
+		Node node = dependencyElements.item(i);
+		log.info(&quot;\nNode Name :&quot; + node.getNodeName());
+		if(node.getNodeType() == Node.ELEMENT_NODE)
+	{
+		 Element eElement = (Element) node;
+		 eElement.getAttributes().getNamedItem(Attribute).setTextContent(Value);
+		 String HeaderId = eElement.getAttributes().getNamedItem(Attribute).getNodeValue();
+		 log.info(HeaderId);
+		 TransformerFactory transformerFactory = TransformerFactory.newInstance();
+         	 Transformer transformer = transformerFactory.newTransformer();
+         	 DOMSource source = new DOMSource(doc);
+         	 StreamResult consoleResult = new StreamResult(InputFile);
+         	 transformer.transform(source, consoleResult);
+	}
+
+	}
+
+}
+
+ModifyXMLFile(file,&quot;Header&quot;,&quot;CreationDate&quot;,vars.get(&quot;Hierarchies_CreationDate&quot;));
+ModifyXMLFile(file,&quot;Package&quot;,&quot;ExternalFileType&quot;,vars.get(&quot;Hierarchies_ExternalFileType&quot;));
+ModifyXMLFile(file,&quot;Source&quot;,&quot;RetailerId&quot;,vars.get(&quot;Hierarchies_RetailerId&quot;));
+
+ModifyXMLFile(file,&quot;ItemHierarchyView&quot;,&quot;ViewId&quot;,vars.get(&quot;Hierarchies_ViewId&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchyView&quot;,&quot;Name&quot;,vars.get(&quot;Hierarchies_Name&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchyView&quot;,&quot;Type&quot;,vars.get(&quot;Hierarchies_Type&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchyView&quot;,&quot;ImportMode&quot;,vars.get(&quot;Hierarchies_ImportMode&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchyView&quot;,&quot;MaxLevels&quot;,vars.get(&quot;Hierarchies_MaxLevels&quot;));
+
+ModifyXMLFile(file,&quot;ItemHierarchy&quot;,&quot;StoreId&quot;,vars.get(&quot;Hierarchies_StoreId&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchy&quot;,&quot;CategoryId&quot;,vars.get(&quot;Hierarchies_CategoryId&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchy&quot;,&quot;Action&quot;,vars.get(&quot;Hierarchies_Action&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchy&quot;,&quot;Level&quot;,vars.get(&quot;Hierarchies_Level&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchy&quot;,&quot;ParentCategoryId&quot;,vars.get(&quot;Hierarchies_ParentCategoryId&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchy&quot;,&quot;ParentLevel&quot;,vars.get(&quot;Hierarchies_ParentLevel&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchy&quot;,&quot;LevelName&quot;,vars.get(&quot;Hierarchies_LevelName&quot;));
+ModifyXMLFile(file,&quot;ItemHierarchy&quot;,&quot;CategoryDescription&quot;,vars.get(&quot;Hierarchies_CategoryDescription&quot;));
+
+ModifyXMLFile(file,&quot;GTIHVAttr&quot;,&quot;Id&quot;,vars.get(&quot;Hierarchies_GTIHVAttr_Id&quot;));
+ModifyXMLFile(file,&quot;GTIHVAttr&quot;,&quot;Value&quot;,vars.get(&quot;Hierarchies_GTIHVAttr_Value&quot;));
+
+
+
+
+
+
+
+</stringProp>
+                </JSR223Sampler>
+                <hashTree>
+                  <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="Hierarchies_XMLFilepath" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_XMLFilepath</stringProp>
+                        <stringProp name="Argument.value">C:/Manoj/ManojJMeter/LMS/</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_XMLFileName" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_XMLFileName</stringProp>
+                        <stringProp name="Argument.value">Import-01-2011-06-22T160947-GT.xml</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_CreationDate" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_CreationDate</stringProp>
+                        <stringProp name="Argument.value">2011-10-06</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_ExternalFileType" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_ExternalFileType</stringProp>
+                        <stringProp name="Argument.value">2</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_RetailerId" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_RetailerId</stringProp>
+                        <stringProp name="Argument.value">2</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_ViewId" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_ViewId</stringProp>
+                        <stringProp name="Argument.value">0</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_Name" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_Name</stringProp>
+                        <stringProp name="Argument.value">Printemps Main View</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_Type" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_Type</stringProp>
+                        <stringProp name="Argument.value">0</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_ImportMode" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_ImportMode</stringProp>
+                        <stringProp name="Argument.value">2</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_MaxLevels" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_MaxLevels</stringProp>
+                        <stringProp name="Argument.value">3</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_StoreId" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_StoreId</stringProp>
+                        <stringProp name="Argument.value">0</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_Action" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_Action</stringProp>
+                        <stringProp name="Argument.value">I</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_CategoryId" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_CategoryId</stringProp>
+                        <stringProp name="Argument.value">32069</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_Level" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_Level</stringProp>
+                        <stringProp name="Argument.value">1</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_ParentId" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_ParentId</stringProp>
+                        <stringProp name="Argument.value">1</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_ParentCategoryId" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_ParentCategoryId</stringProp>
+                        <stringProp name="Argument.value">32069</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_ParentLevel" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_ParentLevel</stringProp>
+                        <stringProp name="Argument.value">1</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_LevelName" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_LevelName</stringProp>
+                        <stringProp name="Argument.value">Article</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_CategoryDescription" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_CategoryDescription</stringProp>
+                        <stringProp name="Argument.value">ARTICLE (b) MARLIES DEKKERS</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_GTIHVAttr_Id" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_GTIHVAttr_Id</stringProp>
+                        <stringProp name="Argument.value">524</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                      <elementProp name="Hierarchies_GTIHVAttr_Value" elementType="Argument">
+                        <stringProp name="Argument.name">Hierarchies_GTIHVAttr_Value</stringProp>
+                        <stringProp name="Argument.value">3</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </Arguments>
+                  <hashTree/>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Hierarchies_Database" enabled="true">
+                    <stringProp name="scriptLanguage">java</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import org.junit.Assert; 
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;SELECT top(1)  * from  [HOST_LMS_MAIN].[dbo].[ImportHierarchyTreeItem_log] order by ExternalImportId desc&quot;;
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(&quot;Connection established Successfully&quot;);
+		log.info(vars.get(&quot;Hierarchies_Action&quot;));
+		log.info(QUERY);
+		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		ResultSet resultSet = stmt.executeQuery(QUERY);
+		resultSet.last();
+		size = resultSet.getRow();
+		resultSet.beforeFirst();
+
+		log.info(&quot;Size&quot; + size.toString());
+		Assert.assertTrue(&quot;Verification of Hierarchy in Database&quot;, size &gt; 0);
+		while(resultSet.next())
+			{
+				ExternalImportId = resultSet.getInt(&quot;ExternalImportId&quot;);
+				vars.put(&quot;ExternalImportId&quot;, ExternalImportId.toString() );
+				log.info(&quot;Verification of ExternalImportId in Database &quot; + ExternalImportId);
+			}
+		
+	}
+	catch(Exception e){
+		log.info(e.toString());
+	}
+</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                </hashTree>
+              </hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="File Transfer and Execute EXE file" enabled="true">
+                <stringProp name="scriptLanguage">java</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">import java.io.File;
+import java.nio.file.Files;
+import org.apache.commons.io.FileUtils;
+import java.util.concurrent.TimeUnit;
+import org.junit.Assert; 
+
+String Switch = vars.get(&quot;SWITCH_VALUE&quot;);
+
+if(Switch.equals(&quot;Item&quot;)){
+	String XMLFile = vars.get(&quot;XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;XMLFileName&quot;);
+	String Destination_Path = vars.get(&quot;Destination_Path&quot;) + &quot;/&quot; + vars.get(&quot;XMLFileName&quot;);
+	FileUtils.copyFile(new File(XMLFile),new File(Destination_Path));
+}
+	
+if(Switch.equals(&quot;Store&quot;)){
+	String XMLFile = vars.get(&quot;Store_XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;Store_XMLFileName&quot;);
+	String Destination_Path = vars.get(&quot;Destination_Path&quot;) + &quot;/&quot; + vars.get(&quot;Store_XMLFileName&quot;);
+	FileUtils.copyFile(new File(XMLFile),new File(Destination_Path));
+}
+
+if(Switch.equals(&quot;Tax&quot;)){
+	String XMLFile = vars.get(&quot;Tax_XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;Tax_XMLFileName&quot;);
+	String Destination_Path = vars.get(&quot;Destination_Path&quot;) + &quot;/&quot; + vars.get(&quot;Tax_XMLFileName&quot;);
+	FileUtils.copyFile(new File(XMLFile),new File(Destination_Path));
+}
+
+if(Switch.equals(&quot;Hierarchies&quot;)){
+	String XMLFile = vars.get(&quot;Hierarchies_XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;Hierarchies_XMLFileName&quot;);
+	String Destination_Path = vars.get(&quot;Destination_Path&quot;) + &quot;/&quot; + vars.get(&quot;Hierarchies_XMLFileName&quot;);
+	FileUtils.copyFile(new File(XMLFile),new File(Destination_Path));
+}
+
+if(Switch.equals(&quot;Supplier&quot;)){
+	String XMLFile = vars.get(&quot;Supplier_XMLFilepath&quot;) + &quot;/&quot; + vars.get(&quot;Supplier_XMLFileName&quot;);
+	String Destination_Path = vars.get(&quot;Destination_Path&quot;) + &quot;/&quot; + vars.get(&quot;Supplier_XMLFileName&quot;);
+	FileUtils.copyFile(new File(XMLFile),new File(Destination_Path));
+}
+
+
+
+String path =  vars.get(&quot;path&quot;);
+String[] array = { &quot;cmd&quot;, &quot;/C&quot;, &quot;start&quot;, path };
+Process child1 = Runtime.getRuntime().exec(array);
+
+log.info(&quot;Waiting for 1 min 20 Sec to execute Server_Exe_Loader.EXE file &quot;);
+Thread.sleep(200000);
+</stringProp>
+              </JSR223Sampler>
+              <hashTree/>
+              <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Switch Controller DB Validation" enabled="true">
+                <stringProp name="SwitchController.value">${SWITCH_VALUE}</stringProp>
+              </SwitchController>
+              <hashTree>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Item" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import org.junit.Assert; 
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;Select itemid FROM Itemcode where itemid = &quot;+vars.get(&quot;Itemid&quot;);
+String QUERY1 = &quot;Select * from ImportItemInfo_Log where mainItemid=&quot; + vars.get(&quot;Itemid&quot;) + &quot; and ActionType = &apos;U&apos;&quot;;
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(&quot;Connection established Successfully&quot;);
+		log.info(vars.get(&quot;Action&quot;));
+		
+
+		switch(vars.get(&quot;Action&quot;)){
+
+			case &quot;I&quot;:
+			log.info(QUERY);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			Assert.assertTrue(&quot;Verification of Item in Database&quot;, size &gt; 0);
+			
+			while(resultSet.next())
+			{
+				Itemid_DB = resultSet.getInt(&quot;itemId&quot;);
+				//String Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Verification of Item in Database &quot; + Itemid_DB);
+				Assert.assertTrue(&quot;Verification of Item in Database&quot;, Itemid_DB == Integer.parseInt(vars.get(&quot;Itemid&quot;)) );
+				//Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode.equals(&quot;NULL&quot;));	
+			}
+			
+			String QUERY_logtable = &quot;Select * from ImportItemInfo_Log where mainItemid=&quot; + vars.get(&quot;Itemid&quot;) + &quot; and ActionType = &apos;I&apos;&quot;;
+			log.info(QUERY_logtable);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY_logtable);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			while(resultSet.next())
+			{
+				Itemid_DB = resultSet.getInt(&quot;MainItemId&quot;);
+				Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Error Code&quot; + Errorcode.toString());
+				log.info(&quot;Verification of Item in Database &quot; + Itemid_DB);
+				Assert.assertTrue(&quot;Verification of Item in Database&quot;, Itemid_DB == Integer.parseInt(vars.get(&quot;Itemid&quot;)));
+				Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );	
+			}
+			Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+			break;
+			
+
+			case &quot;U&quot;:
+			log.info(QUERY1);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY1);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			while(resultSet.next())
+			{
+				Itemid_DB = resultSet.getInt(&quot;MainItemId&quot;);
+				Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Error Code&quot; + Errorcode.toString());
+				log.info(&quot;Verification of Item in Database &quot; + Itemid_DB);
+				Assert.assertTrue(&quot;Verification of Item in Database&quot;, Itemid_DB == Integer.parseInt(vars.get(&quot;Itemid&quot;)));
+				Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );
+				FullName = resultSet.getString(&quot;FullName&quot;);
+				log.info(&quot; Full Name given in XML import File &quot; + vars.get(&quot;FullName&quot;));
+				log.info(&quot; Full Name in Database &quot; + FullName);
+//				String Fullname_DB = vars.get(&quot;FullName&quot;).trim();
+				Assert.assertTrue(&quot;Verification of FullName in Database&quot;, FullName.equals(vars.get(&quot;FullName&quot;).trim()));	
+			}
+			Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+			break;
+			
+		}
+		
+		
+	}
+	catch(Exception e){
+		log.info(e.toString());
+	}
+</stringProp>
+                </JSR223Sampler>
+                <hashTree/>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Store" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import org.junit.Assert; 
+
+Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;Select * FROM ImportStore_Log where StoreId = &quot;+vars.get(&quot;Store_StoreId&quot;);
+String QUERY1 = &quot;Select * FROM StoreCode where StoreId = &quot;+vars.get(&quot;Store_StoreId&quot;);
+String QUERY2 = &quot;select * from Store where StoreInternalKey = (select StoreInternalKey from StoreCode where StoreId =&quot; +vars.get(&quot;Store_StoreId&quot;) +&quot;) and MatrixMemberId = (Select MatrixMemberId from RetailerCode where RetailerId = &quot;+vars.get(&quot;Store_RetailerId&quot;) +&quot;)&quot;;
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(&quot;Connection established Successfully&quot;);
+		log.info(vars.get(&quot;Store_Action&quot;));
+
+		log.info(QUERY);
+		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		ResultSet resultSet = stmt.executeQuery(QUERY);
+		resultSet.last();
+		size = resultSet.getRow();
+		resultSet.beforeFirst();
+
+		log.info(&quot;Size&quot; + size.toString());
+		Assert.assertTrue(&quot;Verification of Store in Database&quot;, size &gt; 0);
+		
+		while(resultSet.next())
+		{
+			Storeid_DB = resultSet.getInt(&quot;StoreId&quot;);
+			Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+			log.info(&quot;Error Code&quot; + Errorcode.toString());
+			log.info(&quot;Verification of Store in Database &quot; + Storeid_DB);
+			log.info(&quot;Verification of Store in Database &quot; + Storeid_DB);
+			Assert.assertTrue(&quot;Verification of Store in Database&quot;, Storeid_DB == Integer.parseInt(vars.get(&quot;Store_StoreId&quot;)) );
+			Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );
+			
+//			StoreName = resultSet.getString(&quot;StoreName&quot;);
+//			log.info(&quot; Store Name given in Database &quot; + StoreName);
+//			log.info(&quot; Store Name in XML import File &quot; + vars.get(&quot;Store_StoreName&quot;));
+			//Assert.assertTrue(&quot;Verification of StoreName in Database&quot;, StoreName.equals(vars.get(&quot;Store_StoreName&quot;).trim()));
+		}
+
+		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		ResultSet resultSet = stmt.executeQuery(QUERY1);
+		resultSet.last();
+		size = resultSet.getRow();
+		resultSet.beforeFirst();
+
+		log.info(&quot;Size&quot; + size.toString());
+		Assert.assertTrue(&quot;Verification of Store in Database&quot;, size &gt; 0);
+
+		while(resultSet.next())
+		{
+			Storeid_DB = resultSet.getInt(&quot;StoreId&quot;);
+			log.info(&quot;Verification of Store in Database &quot; + Storeid_DB);
+			Assert.assertTrue(&quot;Verification of Store in Database&quot;, Storeid_DB == Integer.parseInt(vars.get(&quot;Store_StoreId&quot;)) );
+		}
+
+		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		ResultSet resultSet = stmt.executeQuery(QUERY2);
+		resultSet.last();
+		size = resultSet.getRow();
+		resultSet.beforeFirst();
+
+		log.info(&quot;Size&quot; + size.toString());
+		Assert.assertTrue(&quot;Verification of Store in Database&quot;, size &gt; 0);
+
+		while(resultSet.next())
+		{
+			StoreName = resultSet.getString(&quot;StoreName&quot;);
+			log.info(&quot; Store Name given in Database &quot; + StoreName);
+			log.info(&quot; Store Name in XML import File &quot; + vars.get(&quot;Store_StoreName&quot;));
+			Assert.assertTrue(&quot;Verification of StoreName in Database&quot;, StoreName.equals(vars.get(&quot;Store_StoreName&quot;).trim()));
+			
+		}
+		
+	}
+	catch(Exception e){
+		log.info(e.toString());
+	}
+</stringProp>
+                </JSR223Sampler>
+                <hashTree/>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Tax" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import org.junit.Assert; 
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;select * from [ImportTaxCode_Log] where [TaxCodeId] = &quot;+vars.get(&quot;Tax_TaxCodeId&quot;);
+String QUERY1 = &quot;Select * from ImportTaxCode_Log where TaxCodeId=&quot; + vars.get(&quot;Tax_TaxCodeId&quot;) + &quot; and Action = &apos;U&apos;&quot;;
+String QUERY2 = &quot;Select * from ImportTaxCode_Log where TaxCodeId=&quot; + vars.get(&quot;Tax_TaxCodeId&quot;) + &quot; and Action = &apos;D&apos;&quot;;
+String QUERY3 = &quot;Select * from Taxcode where TaxCodeId=&quot; + vars.get(&quot;Tax_TaxCodeId&quot;) + &quot; and UpdatedBy = 7&quot;;
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(&quot;Connection established Successfully&quot;);
+		log.info(vars.get(&quot;Tax_Action&quot;));
+		
+
+		switch(vars.get(&quot;Tax_Action&quot;)){
+
+			case &quot;I&quot;:
+			log.info(QUERY);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			Assert.assertTrue(&quot;Verification of Tax code in Database&quot;, size &gt; 0);
+			
+			while(resultSet.next())
+			{
+				TaxCodeId_DB = resultSet.getInt(&quot;TaxCodeId&quot;);
+				log.info(&quot;Verification of Item in Database &quot; + TaxCodeId_DB);
+				Assert.assertTrue(&quot;Verification of Tax code in Database&quot;, TaxCodeId_DB == Integer.parseInt(vars.get(&quot;Tax_TaxCodeId&quot;)) );
+			}
+
+			log.info(QUERY3);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY3);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			Assert.assertTrue(&quot;Verification of Tax code in table &quot; + QUERY3, size &gt; 0);
+			
+			while(resultSet.next())
+			{
+				TaxCodeId_DB = resultSet.getInt(&quot;TaxCodeId&quot;);
+				log.info(&quot;Verification of Item in Database &quot; + TaxCodeId_DB);
+				Assert.assertTrue(&quot;Verification of Tax code in Database&quot;, TaxCodeId_DB == Integer.parseInt(vars.get(&quot;Tax_TaxCodeId&quot;)) );
+			}
+			
+			String QUERY_logtable = &quot;Select * from ImportTaxCode_Log where TaxCodeId=&quot; + vars.get(&quot;Tax_TaxCodeId&quot;) + &quot; and Action = &apos;I&apos;&quot;;
+			log.info(QUERY_logtable);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY_logtable);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			while(resultSet.next())
+			{
+				TaxCodeId_DB = resultSet.getInt(&quot;TaxCodeId&quot;);
+				Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Error Code&quot; + Errorcode.toString());
+				log.info(&quot;Verification of Taxcode in Database &quot; + TaxCodeId_DB);
+				Assert.assertTrue(&quot;Verification of Taxcode in Database&quot;, TaxCodeId_DB == Integer.parseInt(vars.get(&quot;Tax_TaxCodeId&quot;)));
+				Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );	
+			}
+			Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+			break;
+			
+			case &quot;U&quot;:
+			log.info(QUERY1);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY1);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			while(resultSet.next())
+			{
+				TaxCodeId_DB = resultSet.getInt(&quot;TaxCodeId&quot;);
+				Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Error Code&quot; + Errorcode.toString());
+				log.info(&quot;Verification of Item in Database &quot; + TaxCodeId_DB);
+				Assert.assertTrue(&quot;Verification of Tax code in Database&quot;, TaxCodeId_DB == Integer.parseInt(vars.get(&quot;Tax_TaxCodeId&quot;)));
+				Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );
+				TaxName = resultSet.getString(&quot;TaxName&quot;);
+				log.info(&quot; TaxName given in XML import File &quot; + vars.get(&quot;Tax_TaxName&quot;) );
+				log.info(&quot; TaxName in Database &quot; + TaxName);
+				Assert.assertTrue(&quot;Verification of FullName in Database&quot;, TaxName.equals(vars.get(&quot;Tax_TaxName&quot;).trim()));	
+			}
+			Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+			break;
+
+			case &quot;D&quot;:
+			log.info(QUERY2);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY2);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			while(resultSet.next())
+			{
+				TaxCodeId_DB = resultSet.getInt(&quot;TaxCodeId&quot;);
+				Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Error Code&quot; + Errorcode.toString());
+				log.info(&quot;Verification of Item in Database &quot; + TaxCodeId_DB);
+				Assert.assertTrue(&quot;Verification of Tax code in Database&quot;, TaxCodeId_DB == Integer.parseInt(vars.get(&quot;Tax_TaxCodeId&quot;)));
+				Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );
+				TaxName = resultSet.getString(&quot;TaxName&quot;);
+				log.info(&quot; TaxName given in XML import File &quot; + vars.get(&quot;Tax_TaxName&quot;) );
+				log.info(&quot; TaxName in Database &quot; + TaxName);
+				Assert.assertTrue(&quot;Verification of FullName in Database&quot;, TaxName.equals(vars.get(&quot;Tax_TaxName&quot;).trim()));	
+			}
+
+			log.info(QUERY3);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY3);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			log.info(&quot;Size&quot; + size.toString());
+			Assert.assertTrue(&quot;Verification of Tax Code in Database after Delete Import, Tax code should not available in Taxcode table&quot;, size == 0);
+			
+			Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+			break;
+			
+		}		
+	}
+	catch(Exception e){
+		log.info(e.toString());
+	}
+</stringProp>
+                </JSR223Sampler>
+                <hashTree/>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Hierarchies" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import org.junit.Assert; 
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;SELECT top(1)  * from  [HOST_LMS_MAIN].[dbo].[ImportHierarchyTreeItem_log] order by ExternalImportId desc&quot;;
+String QUERY1 = &quot;SELECT top(1)  * from  [HOST_LMS_MAIN].[dbo].[ImportHierarchyTreeItem_log] where ActionType = &apos;U&apos;order by ExternalImportId desc&quot;;
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(&quot;Connection established Successfully&quot;);
+		log.info(vars.get(&quot;Hierarchies_Action&quot;));
+		
+
+		switch(vars.get(&quot;Hierarchies_Action&quot;)){
+
+			case &quot;I&quot;:
+			log.info(QUERY);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			Assert.assertTrue(&quot;Verification of Hierarchy in Database&quot;, size &gt; 0);
+			
+			while(resultSet.next())
+			{
+				CategoryId_DB = resultSet.getInt(&quot;CategoryId&quot;);
+				//String Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Verification of CategoryId in Database &quot; + CategoryId_DB);
+				Assert.assertTrue(&quot;Verification of CategoryId in Database&quot;, CategoryId_DB == Integer.parseInt(vars.get(&quot;Hierarchies_CategoryId&quot;)) );
+				//Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode.equals(&quot;NULL&quot;));	
+			}
+			
+			String QUERY_logtable = &quot;SELECT top(1)  * from  [HOST_LMS_MAIN].[dbo].[ImportHierarchyTreeItem_log] where ActionType = &apos;I&apos;order by ExternalImportId desc&quot;;
+			log.info(QUERY_logtable);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY_logtable);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			while(resultSet.next())
+			{
+				ExternalImportId1 = resultSet.getInt(&quot;ExternalImportId&quot;);
+				CategoryId_DB = resultSet.getInt(&quot;CategoryId&quot;);
+				Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Error Code&quot; +Errorcode.toString());
+				log.info(&quot;Verification of CategoryId in Database &quot; + CategoryId_DB);
+				Assert.assertTrue(&quot;Verification of ExternalImportId in Database&quot;, ExternalImportId1 &gt; Integer.parseInt(vars.get(&quot;ExternalImportId&quot;)));
+				Assert.assertTrue(&quot;Verification of CategoryId in Database&quot;, CategoryId_DB == Integer.parseInt(vars.get(&quot;Hierarchies_CategoryId&quot;)));
+				Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );	
+			}
+			Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+			break;
+			
+
+			case &quot;U&quot;:
+			log.info(QUERY1);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY1);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			while(resultSet.next())
+			{
+				CategoryId_DB = resultSet.getInt(&quot;CategoryId&quot;);
+				Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Error Code&quot; +Errorcode.toString());
+				log.info(&quot;Verification of CategoryId in Database &quot; + CategoryId_DB);
+				Assert.assertTrue(&quot;Verification of CategoryId in Database&quot;, CategoryId_DB == Integer.parseInt(vars.get(&quot;Hierarchies_CategoryId&quot;)));
+				Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );
+				ViewName = resultSet.getString(&quot;ViewName&quot;);
+				log.info(&quot; ViewName given in XML import File &quot; + vars.get(&quot;Hierarchies_Name&quot;));
+				log.info(&quot; ViewName in Database &quot; + ViewName);
+//				String Fullname_DB = vars.get(&quot;FullName&quot;).trim();
+				Assert.assertTrue(&quot;Verification of ViewName in Database&quot;, FullName.equals(vars.get(&quot;Hierarchies_Name&quot;).trim()));	
+			}
+			Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+			break;
+			
+		}
+		
+		
+	}
+	catch(Exception e){
+		log.info(e.toString());
+	}
+</stringProp>
+                </JSR223Sampler>
+                <hashTree/>
+                <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Supplier" enabled="true">
+                  <stringProp name="scriptLanguage">java</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import org.junit.Assert; 
+
+String DB_URL = &quot;jdbc:sqlserver:&quot;+vars.get(&quot;SqlServer&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;databaseName&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;SQL_Username&quot;);
+String PASSWORD = vars.get(&quot;SQL_Password&quot;);
+String QUERY = &quot;Select SupplierId FROM SupplierCode where SupplierId = &quot;+vars.get(&quot;Supplier_SupplierId&quot;);
+String QUERY1 = &quot;select * from ImportSupplier_Log where SupplierId =&quot; + vars.get(&quot;Supplier_SupplierId&quot;) + &quot; and ActionType = &apos;U&apos;&quot;;
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		log.info(&quot;Connection established Successfully&quot;);
+		log.info(vars.get(&quot;Supplier_Action&quot;));
+		
+
+		switch(vars.get(&quot;Supplier_Action&quot;)){
+
+			case &quot;I&quot;:
+			log.info(QUERY);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+	
+			log.info(&quot;Size&quot; + size.toString());
+			Assert.assertTrue(&quot;Verification of Supplier in Database&quot;, size &gt; 0);
+			
+			while(resultSet.next())
+			{
+				SupplierId_DB = resultSet.getInt(&quot;SupplierId&quot;);
+				//String Errorcode = resultSet.getInt(&quot;ErrorCode&quot;);
+				log.info(&quot;Verification of SupplierId in Database &quot; + SupplierId_DB);
+				Assert.assertTrue(&quot;Verification of SupplierId in Database&quot;, SupplierId_DB == Integer.parseInt(vars.get(&quot;Supplier_SupplierId&quot;)) );
+				//Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode.equals(&quot;NULL&quot;));	
+			}
+			
+			String QUERY_logtable = &quot;select * from ImportSupplier_Log where SupplierId =&quot; + vars.get(&quot;Supplier_SupplierId&quot;) + &quot; and ActionType = &apos;I&apos;&quot;;
+			log.info(QUERY_logtable);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY_logtable);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			while(resultSet.next())
+			{
+				SupplierId_DB = resultSet.getInt(&quot;SupplierId&quot;);
+				Errorcode = resultSet.getInt(&quot;errorCode&quot;);
+				log.info(&quot;Error Code&quot; + Errorcode.toString());
+				log.info(&quot;Verification of SupplierId in Database &quot; + SupplierId_DB);
+				Assert.assertTrue(&quot;Verification of SupplierId in Database&quot;, SupplierId_DB == Integer.parseInt(vars.get(&quot;Supplier_SupplierId&quot;)));
+				Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );	
+			}
+			Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+			break;
+			
+
+			case &quot;U&quot;:
+			log.info(QUERY1);
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ResultSet resultSet = stmt.executeQuery(QUERY1);
+			resultSet.last();
+			size = resultSet.getRow();
+			resultSet.beforeFirst();
+
+			while(resultSet.next())
+			{
+				SupplierId_DB = resultSet.getInt(&quot;SupplierId&quot;);
+				Errorcode = resultSet.getInt(&quot;errorCode&quot;);
+				log.info(&quot;Error Code&quot; + Errorcode.toString());
+				log.info(&quot;Verification of SupplierId in Database &quot; + SupplierId_DB);
+				Assert.assertTrue(&quot;Verification of SupplierId in Database&quot;, SupplierId_DB == Integer.parseInt(vars.get(&quot;Supplier_SupplierId&quot;)));
+				Assert.assertTrue(&quot;Verification of Error Code in Database should be NULL&quot;, Errorcode == 0 );
+				SupplierName = resultSet.getString(&quot;SupplierName&quot;);
+				log.info(&quot; SupplierName given in XML import File &quot; + vars.get(&quot;Supplier_Name&quot;));
+				log.info(&quot; SupplierName in Database &quot; + SupplierName);
+//				String Fullname_DB = vars.get(&quot;FullName&quot;).trim();
+				Assert.assertTrue(&quot;Verification of SupplierName in Database&quot;, SupplierName.equals(vars.get(&quot;Supplier_Name&quot;).trim()));	
+			}
+			Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+			break;
+			
+		}
+		
+		
+	}
+	catch(Exception e){
+		log.info(e.toString());
+	}
+</stringProp>
+                </JSR223Sampler>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Excelloop" enabled="true">
+              <stringProp name="scriptLanguage">java</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.IOException;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+
+
+
+String stopWhile = null;
+int i = Integer.parseInt(vars.get(&quot;Counter_Excel&quot;));
+String Sheet_Name = vars.get(&quot;SWITCH_VALUE&quot;);
+if (i &gt;= vars.getObject(&quot;book&quot;).getSheet(Sheet_Name).getLastRowNum()) {
+	stopWhile = &quot;OK&quot;;
+	vars.put(&quot;stopWhile&quot;,stopWhile);
+}</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

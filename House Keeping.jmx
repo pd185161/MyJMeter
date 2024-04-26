@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="HouseKeeping" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-HouseKeeping" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables-Global" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="env" elementType="Argument">
+              <stringProp name="Argument.name">env</stringProp>
+              <stringProp name="Argument.value">153.77.180.130</stringProp>
+              <stringProp name="Argument.desc">Environment name to be used in the Endpoint URL</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="dataFolder" elementType="Argument">
+              <stringProp name="Argument.name">dataFolder</stringProp>
+              <stringProp name="Argument.value">C:\JmeterAutomation\Test Data\</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RetailerID" elementType="Argument">
+              <stringProp name="Argument.name">RetailerID</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RetailerUserID" elementType="Argument">
+              <stringProp name="Argument.name">RetailerUserID</stringProp>
+              <stringProp name="Argument.value">HQL</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RetailerPassword" elementType="Argument">
+              <stringProp name="Argument.name">RetailerPassword</stringProp>
+              <stringProp name="Argument.value">Abcd123</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="CurrDate1" elementType="Argument">
+              <stringProp name="Argument.name">CurrDate1</stringProp>
+              <stringProp name="Argument.value">${__groovy(new Date().format(&apos;yyyy-MM-dd&apos;),)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="CurrDate" elementType="Argument">
+              <stringProp name="Argument.name">CurrDate</stringProp>
+              <stringProp name="Argument.value">2020-01-01</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="transID" elementType="Argument">
+              <stringProp name="Argument.name">transID</stringProp>
+              <stringProp name="Argument.value">${__Random(5000000,6000000)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="transID1" elementType="Argument">
+              <stringProp name="Argument.name">transID1</stringProp>
+              <stringProp name="Argument.value">${__Random(5000000,6000000)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="transID2" elementType="Argument">
+              <stringProp name="Argument.name">transID2</stringProp>
+              <stringProp name="Argument.value">${__Random(5000000,6000000)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="transID3" elementType="Argument">
+              <stringProp name="Argument.name">transID3</stringProp>
+              <stringProp name="Argument.value">${__Random(5000000,6000000)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="transID4" elementType="Argument">
+              <stringProp name="Argument.name">transID4</stringProp>
+              <stringProp name="Argument.value">${__Random(5000000,6000000)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">text/xml</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">LmsSession ${session}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">DebugLevel</stringProp>
+              <stringProp name="Header.value">Info</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-LoyaltyDB" enabled="true">
+          <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="poolMax">10</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery">select 1</stringProp>
+          <stringProp name="dbUrl">jdbc:sqlserver://153.77.180.130;databaseName=Loyalty_LMS_1</stringProp>
+          <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+          <stringProp name="username">sa</stringProp>
+          <stringProp name="password">Abcd1234@</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration-Promotion DB" enabled="true">
+          <stringProp name="TestPlan.comments">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Promotion</stringProp>
+          <stringProp name="poolMax">10</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery">select 1</stringProp>
+          <stringProp name="dbUrl">jdbc:sqlserver://153.77.180.130;databaseName=Promotion_LMS_1</stringProp>
+          <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+          <stringProp name="username">sa</stringProp>
+          <stringProp name="password">Abcd1234@</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration - Host" enabled="true">
+          <stringProp name="TestPlan.comments">HOST_LMS_1</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="checkQuery">select 1</stringProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="connectionProperties"></stringProp>
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Host</stringProp>
+          <stringProp name="dbUrl">jdbc:sqlserver://153.77.180.130;databaseName=HOST_LMS_1</stringProp>
+          <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="password">Abcd1234@</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <boolProp name="preinit">false</boolProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <stringProp name="username">sa</stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Get Max ClubCardID" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+declare @BarcodeId int
+declare @Value nvarchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+select top 1 @Value = btl.Value, @BarcodeId = btl.BarcodeId 
+from CRM_ClubCard cc
+inner join [Promotion_LMS_1].dbo.BarcodeTemplateLine btl
+on cc.Matrixmemberid= btl.Matrixmemberid and btl.AttributeId=1 and cc.BarcodeId = btl.BarcodeId and cc.ClubCardId like &apos;&apos;+ (btl.[Value])+&apos;%&apos;
+where cc.matrixmemberid = @matrixmemberid 
+ORDER BY newid()
+
+select  (select  max(cast(ClubCardId as numeric)) from CRM_ClubCard where matrixmemberid = @matrixmemberid and BarcodeId=@BarcodeId and ClubCardId like &apos;&apos;+ (@Value)+&apos;%&apos;) as LastCardID, MatrixMemberid= @matrixmemberid</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">LastCardID, MatrixMemberid</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Any Customer --Get Barcode, DocumentId, Prefix " enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">--RedemptionSegmentation = &apos;1&apos; for samehousehold
+--RedemptionSegmentation = &apos;2&apos; for any customer
+
+Declare @matrixmemberid varchar(50)
+declare @BarcodeId int
+declare @DocumentId int
+declare @Value varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from [MP_LMS].[dbo].[RetailerCode] where RetailerID= &apos;${RetailerID}&apos;)
+
+select top 1 @Value = btl.Value, @BarcodeId = btl.BarcodeId, @DocumentId = ld.DocumentId from CRM_LoyaltyDocuments ld
+inner join [Promotion_LMS_1].dbo.BarcodeTemplateLine btl
+on ld.Matrixmemberid= btl.Matrixmemberid and btl.AttributeId=1 and ld.BarcodeId = btl.BarcodeId and ld.DocumentId is NOT NULL and ld.Barcode like &apos;&apos;+ (btl.[Value])+&apos;%&apos;
+where ld.matrixmemberid = @matrixmemberid and btl.BarCodeId in (select BarCodeId from [Promotion_LMS_1].dbo.BarcodeTemplateHeader where RedemptionSegmentation = &apos;2&apos; and matrixMemberId=@matrixmemberid)
+ORDER BY newid()
+select @matrixmemberid as matrixmemberid, @BarcodeId as BarcodeId, @DocumentId as DocumentId, @Value as Value, (select max(cast(Barcode as decimal(38,0))) from CRM_LoyaltyDocuments where matrixmemberid= @matrixmemberid and BarcodeId= @BarcodeId and DocumentId= @DocumentId
+and Barcode like (@Value)+&apos;%&apos;)+1 as Barcode</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">MatrixMemberid1,BarcodeId1,DocumentId1,Prefix1,Barcode1</stringProp>
+          <stringProp name="resultVariable">resultSet1</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request Login" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:hql=&quot;http://www.retalix.com/HQLWebServices&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;hql:UserLogin&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:in_UserName&gt;${RetailerUserID}&lt;/hql:in_UserName&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;hql:in_Password&gt;${RetailerPassword}&lt;/hql:in_Password&gt;&#xd;
+      &lt;/hql:UserLogin&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/LoyaltyOnlineWS/Authorization/Login.asmx</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
+            <stringProp name="XPathExtractor.default">${session}</stringProp>
+            <stringProp name="XPathExtractor.refname">session</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//out_SessionKey</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">false</boolProp>
+          </XPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC System Parameter CRM_AutoCreateMember" enabled="true">
+          <stringProp name="TestPlan.comments">CRM_AutoCreateMember=1</stringProp>
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Host</stringProp>
+          <stringProp name="queryType">Update Statement</stringProp>
+          <stringProp name="query">update SystemParameters
+set ParameterValue = 1
+where matrixmemberid=1 and ParameterKey=&apos;CRM_AutoCreateMember&apos;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable">result</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request-MSG345 " enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:tem=&quot;http://tempuri.org/&quot;&gt;&#xd;
+   &lt;soap:Header/&gt;&#xd;
+   &lt;soap:Body&gt;&#xd;
+      &lt;tem:StoreData&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;tem:messageHandlerApplication&gt;StoreInLoyalty&lt;/tem:messageHandlerApplication&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;tem:chain&gt;${RetailerID}&lt;/tem:chain&gt;                                                                                &#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;tem:branch&gt;1&lt;/tem:branch&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;tem:messageData&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot;?&gt;&#xd;
+&lt;Root&gt;&#xd;
+	&lt;Customer MsgType=&quot;3&quot; LPEVer=&quot;5.0.0.0.1&quot; StoreID=&quot;1&quot; PosID=&quot;1&quot; TransID=&quot;${transID}&quot; BusinessDate=&quot;${CurrDate}&quot; StartDateTime=&quot;${CurrDate}T13:41:22.000&quot; CashierID=&quot;1&quot; TicketTotal=&quot;100.00&quot; HomeStore=&quot;0&quot; FileSource=&quot;1&quot;&gt;&#xd;
+		&lt;LoyaltyInfo CardID=&quot;${LastCardID_1}&quot; ServerDate=&quot;${CurrDate}&quot; MemberEffectiveDate=&quot;${CurrDate}T10:37:00&quot;&gt;&#xd;
+			&lt;Accounts&gt;&#xd;
+				&lt;Acc ID=&quot;2&quot; EarnValue=&quot;1.0000&quot;/&gt;&#xd;
+			&lt;/Accounts&gt;&#xd;
+		&lt;/LoyaltyInfo&gt;&#xd;
+	&lt;/Customer&gt;&#xd;
+	&lt;Documents MsgType=&quot;4&quot; LPEVer=&quot;5.0.0.0.1&quot; StoreID=&quot;1&quot; BusinessDate=&quot;${CurrDate}&quot; TillId=&quot;1&quot; TransactionNumber=&quot;${transID}&quot; ExternalReferenceId=&quot;${transID}&quot; StartDateTime=&quot;${CurrDate}T13:41:22.000&quot; EndDateTime=&quot;2056-12-12T13:41:23.000&quot; CashierId=&quot;1&quot; TicketTotal=&quot;100.00&quot;&gt;&#xd;
+		&lt;CustomerInfo&gt;&#xd;
+			&lt;ClubCard&gt;${LastCardID_1}&lt;/ClubCard&gt;&#xd;
+			&lt;HomeStore&gt;0&lt;/HomeStore&gt;&#xd;
+		&lt;/CustomerInfo&gt;		&#xd;
+		&lt;Document&gt;&#xd;
+			&lt;Details&gt;&#xd;
+				&lt;Action&gt;0&lt;/Action&gt;&#xd;
+				&lt;Barcode&gt;${Barcode1_1}&lt;/Barcode&gt;&#xd;
+				&lt;ID&gt;${DocumentId1_1}&lt;/ID&gt;&#xd;
+				&lt;BarcodeProgrammingId&gt;${BarcodeId1_1}&lt;/BarcodeProgrammingId&gt;&#xd;
+				&lt;IsUnique&gt;1&lt;/IsUnique&gt;&#xd;
+				&lt;TriggerPromotionId&gt;55&lt;/TriggerPromotionId&gt;&#xd;
+				&lt;Value&gt;1.00&lt;/Value&gt;&#xd;
+				&lt;Qty&gt;1&lt;/Qty&gt;&#xd;
+				&lt;TenderGroup&gt;1&lt;/TenderGroup&gt;&#xd;
+				&lt;Type&gt;3&lt;/Type&gt;&#xd;
+			&lt;/Details&gt;&#xd;
+			&lt;ValidationRules&gt;&#xd;
+				&lt;StartDate&gt;${CurrDate}&lt;/StartDate&gt;&#xd;
+				&lt;EndDate&gt;2056-12-12&lt;/EndDate&gt;&#xd;
+				&lt;RedemptionType&gt;2&lt;/RedemptionType&gt;&#xd;
+				&lt;RedemptionLocation&gt;2&lt;/RedemptionLocation&gt;&#xd;
+				&lt;RedemptionMode&gt;2&lt;/RedemptionMode&gt;&#xd;
+			&lt;/ValidationRules&gt;&#xd;
+		&lt;/Document&gt;&#xd;
+	&lt;/Documents&gt;&#xd;
+	&lt;biztalk_1&gt;&#xd;
+		&lt;body&gt;&#xd;
+			&lt;ActiveStore_SalesTransaction_1.70&gt;&#xd;
+				&lt;StoreID&gt;1&lt;/StoreID&gt;&#xd;
+				&lt;BusinessDate&gt;${CurrDate}&lt;/BusinessDate&gt;&#xd;
+				&lt;ServerDate/&gt;&#xd;
+				&lt;TransactionNumber&gt;${transID}&lt;/TransactionNumber&gt;&#xd;
+				&lt;ExternalReferenceId&gt;${transID}&lt;/ExternalReferenceId&gt;&#xd;
+				&lt;TillID&gt;1&lt;/TillID&gt;&#xd;
+				&lt;StartDateTime&gt;${CurrDate}T13:41:22.000&lt;/StartDateTime&gt;&#xd;
+				&lt;EndDateTime&gt;2056-12-12T13:41:23.000&lt;/EndDateTime&gt;&#xd;
+				&lt;CashierID&gt;1&lt;/CashierID&gt;&#xd;
+				&lt;OfflineFlag&gt;0&lt;/OfflineFlag&gt;&#xd;
+				&lt;RetroactiveFlag&gt;0&lt;/RetroactiveFlag&gt;&#xd;
+				&lt;Total&gt;&#xd;
+					&lt;TotalAmount&gt;100.00&lt;/TotalAmount&gt;&#xd;
+				&lt;/Total&gt;&#xd;
+				&lt;TransactionDetail&gt;&#xd;
+					&lt;SequenceNumber&gt;1&lt;/SequenceNumber&gt;&#xd;
+					&lt;TransactionDetailGroup&gt;&#xd;
+						&lt;TransactionDetailLine&gt;&#xd;
+							&lt;TimingType&gt;3&lt;/TimingType&gt;&#xd;
+							&lt;DeferredID&gt;0&lt;/DeferredID&gt;&#xd;
+							&lt;Amount&gt;1.000000&lt;/Amount&gt;&#xd;
+							&lt;PromotionID&gt;55&lt;/PromotionID&gt;&#xd;
+							&lt;MarkdownItemID&gt;4560&lt;/MarkdownItemID&gt;&#xd;
+							&lt;MarkdownDepartmentID&gt;2&lt;/MarkdownDepartmentID&gt;&#xd;
+							&lt;AllocatedQty&gt;2&lt;/AllocatedQty&gt;&#xd;
+							&lt;TriggeredQty&gt;2&lt;/TriggeredQty&gt;&#xd;
+							&lt;RedeemedQty&gt;1&lt;/RedeemedQty&gt;&#xd;
+							&lt;RewardAmount&gt;100&lt;/RewardAmount&gt;&#xd;
+							&lt;TransactionDetailLineTax&gt;&#xd;
+								&lt;TaxId&gt;1&lt;/TaxId&gt;&#xd;
+								&lt;TaxAmount&gt;0&lt;/TaxAmount&gt;&#xd;
+								&lt;TaxableAmount&gt;0&lt;/TaxableAmount&gt;&#xd;
+								&lt;TaxPercent&gt;0&lt;/TaxPercent&gt;&#xd;
+							&lt;/TransactionDetailLineTax&gt;&#xd;
+						&lt;/TransactionDetailLine&gt;&#xd;
+					&lt;/TransactionDetailGroup&gt;&#xd;
+				&lt;/TransactionDetail&gt;&#xd;
+				&lt;PromotionSummary&gt;&#xd;
+					&lt;RedeemedPromotionId&gt;55&lt;/RedeemedPromotionId&gt;&#xd;
+					&lt;RedeemedQuantity&gt;1&lt;/RedeemedQuantity&gt;&#xd;
+					&lt;RedeemedTriggerCouponId&gt;0&lt;/RedeemedTriggerCouponId&gt;&#xd;
+					&lt;RedeemedTriggerCouponQty&gt;0&lt;/RedeemedTriggerCouponQty&gt;&#xd;
+					&lt;AdditionalAllocatedItems&gt;&#xd;
+						&lt;AdditionalAllocatedItem&gt;&#xd;
+							&lt;ItemID&gt;1&lt;/ItemID&gt;&#xd;
+							&lt;DepartmentID&gt;2&lt;/DepartmentID&gt;&#xd;
+							&lt;AllocatedQty&gt;2&lt;/AllocatedQty&gt;&#xd;
+							&lt;TriggeredQty&gt;2&lt;/TriggeredQty&gt;&#xd;
+						&lt;/AdditionalAllocatedItem&gt;&#xd;
+					&lt;/AdditionalAllocatedItems&gt;&#xd;
+					&lt;Vouchers&gt;&#xd;
+						&lt;Voucher&gt;&#xd;
+							&lt;ID&gt;6041770250015&lt;/ID&gt;&#xd;
+							&lt;Value&gt;0.00&lt;/Value&gt;&#xd;
+							&lt;Qty&gt;1&lt;/Qty&gt;&#xd;
+						&lt;/Voucher&gt;&#xd;
+					&lt;/Vouchers&gt;&#xd;
+				&lt;/PromotionSummary&gt;&#xd;
+				&lt;CustomerInfo Rejected=&quot;0&quot;&gt;&#xd;
+					&lt;ClubCard&gt;${LastCardID_1}&lt;/ClubCard&gt;&#xd;
+					&lt;ClubId&gt;0&lt;/ClubId&gt;&#xd;
+				&lt;/CustomerInfo&gt;&#xd;
+			&lt;/ActiveStore_SalesTransaction_1.70&gt;&#xd;
+		&lt;/body&gt;&#xd;
+	&lt;/biztalk_1&gt;&#xd;
+&lt;/Root&gt;]]&gt;&#xd;
+         &lt;/tem:messageData&gt;&#xd;
+      &lt;/tem:StoreData&gt;&#xd;
+   &lt;/soap:Body&gt;&#xd;
+&lt;/soap:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${env}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">RetalixCommGty_LMS_1/SOAP/StoreAndForwardMessageService.asmx</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="822800553">&lt;StoreDataResult&gt;true&lt;/StoreDataResult&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">2000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Data from CRM_POStran_msg3 success" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+select * from CRM_POSTran where matrixmemberid = @matrixmemberid and tranid =&apos;${transID}&apos;
+
+</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">transID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Count CRM_POStran" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+select COUNT (TranId) from CRM_POSTran where matrixmemberid = @matrixmemberid and tranid =&apos;${transID}&apos;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">transID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="TestPlan.comments"> msg3 success</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion Count" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Update  CRM_POStran" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Update Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+update CRM_POSTRAN set CreatedAt=&apos;${CurrDate}&apos; where matrixmemberid=@matrixmemberid and tranid=&apos;${transID}&apos;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">transID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="TestPlan.comments"> msg3 success</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion Count" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Verify msg4 displayed in DB" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+SELECT         CRM_LoyaltyDocuments.DocumentInternalKey                  
+FROM            CRM_Member INNER JOIN
+                         CRM_LoyaltyDocuments ON CRM_Member.BuyingUnitInternalKey = CRM_LoyaltyDocuments.IssuedBuyingUnitInternalKey INNER JOIN
+                         CRM_Clubcard ON CRM_Member.MemberInternalKey = CRM_Clubcard.MemberInternalKey
+WHERE        (CRM_Clubcard.MatrixMemberId = @matrixmemberid) AND (CRM_Clubcard.ClubCardId = &apos;${LastCardID_1}&apos;) AND (CRM_LoyaltyDocuments.Barcode = &apos;${Barcode1_1}&apos;)
+
+
+</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">DocIntKey</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <CompareAssertion guiclass="TestBeanGUI" testclass="CompareAssertion" testname="Compare Assertion" enabled="true">
+            <boolProp name="compareContent">true</boolProp>
+            <longProp name="compareTime">-1</longProp>
+            <collectionProp name="stringsToSkip">
+              <elementProp name="" elementType="SubstitutionElement">
+                <stringProp name="regex">Barcode</stringProp>
+                <stringProp name="substitute">&apos;${Barcode1_1}&apos;</stringProp>
+              </elementProp>
+            </collectionProp>
+          </CompareAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Count msg4 in DB" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+SELECT        COUNT (CRM_LoyaltyDocuments.Barcode)                     
+FROM            CRM_Member INNER JOIN
+                         CRM_LoyaltyDocuments ON CRM_Member.BuyingUnitInternalKey = CRM_LoyaltyDocuments.IssuedBuyingUnitInternalKey INNER JOIN
+                         CRM_Clubcard ON CRM_Member.MemberInternalKey = CRM_Clubcard.MemberInternalKey
+WHERE        (CRM_Clubcard.MatrixMemberId = @matrixmemberid) AND (CRM_Clubcard.ClubCardId = &apos;${LastCardID_1}&apos;) AND (CRM_LoyaltyDocuments.Barcode = &apos;${Barcode1_1}&apos;)
+</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Update LoyaltyDocument" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Update Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+
+update CRM_LoyaltyDocuments set Status=2 ,EndDate=&apos;2021-01-08 11:12:10.217&apos;,creationdatetime=&apos;2021-02-08 11:12:10.217&apos;where DocumentInternalKey=&apos;${DocIntKey_1}&apos;
+
+
+</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="serverIP" elementType="Argument">
+              <stringProp name="Argument.name">serverIP</stringProp>
+              <stringProp name="Argument.value">153.77.180.130</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="PSToolPath" elementType="Argument">
+              <stringProp name="Argument.name">PSToolPath</stringProp>
+              <stringProp name="Argument.value">C:\Jmeter\apache-jmeter-5.4.1\bin\PSTools\</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="batchManagerPath" elementType="Argument">
+              <stringProp name="Argument.name">batchManagerPath</stringProp>
+              <stringProp name="Argument.value">C:\Retalix\LMS\HQ Loyalty and Promotions.1\BatchManager</stringProp>
+              <stringProp name="Argument.desc">This is the server path where bath manager bat file is available</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="retailerID" elementType="Argument">
+              <stringProp name="Argument.name">retailerID</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunContinuityPromotionsHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunContinuityPromotionsHouseKeeping</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunDocumentsHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunDocumentsHouseKeeping</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunTransactionsHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunTransactionsHouseKeeping</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunMemberServiceAuditLogHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunMemberServiceAuditLogHouseKeeping</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunRegisteredPromotionsHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunRegisteredPromotionsHouseKeeping</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunImportNewCards_LOGHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunImportNewCards_LOGHouseKeeping</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunPendingLoyaltyInfoHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunPendingLoyaltyInfoHouseKeeping</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunImportCustomerLogForExportHK" elementType="Argument">
+              <stringProp name="Argument.name">RunImportCustomerLogForExportHK</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunNotesHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunNotesHouseKeeping</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunBulkAdjustHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunBulkAdjustHouseKeeping</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunLoyaltyDocumentsRepositoryHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunLoyaltyDocumentsRepositoryHouseKeeping</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunSegmentHistoryHouseKeeping" elementType="Argument">
+              <stringProp name="Argument.name">RunSegmentHistoryHouseKeeping</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunInactiveMembersHK" elementType="Argument">
+              <stringProp name="Argument.name">RunInactiveMembersHK</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunDeactivateMembersHK" elementType="Argument">
+              <stringProp name="Argument.name">RunDeactivateMembersHK</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="RunDate" elementType="Argument">
+              <stringProp name="Argument.name">RunDate</stringProp>
+              <stringProp name="Argument.value">2022-01-20</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="clubId" elementType="Argument">
+              <stringProp name="Argument.name">clubId</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="workFilePath" elementType="Argument">
+              <stringProp name="Argument.name">workFilePath</stringProp>
+              <stringProp name="Argument.value">C:\hql\exe\BatchManager\</stringProp>
+              <stringProp name="Argument.desc">Batch work file path</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="logFile" elementType="Argument">
+              <stringProp name="Argument.name">logFile</stringProp>
+              <stringProp name="Argument.value">C:\hql\exe\BatchManager\LoyaltyHousekeeping.log</stringProp>
+              <stringProp name="Argument.desc">Log File path</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="errorFile" elementType="Argument">
+              <stringProp name="Argument.name">errorFile</stringProp>
+              <stringProp name="Argument.value">C:\hql\exe\BatchManager\LoyaltyHousekeeping.err</stringProp>
+              <stringProp name="Argument.desc">Error File Path</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="serverUserName" elementType="Argument">
+              <stringProp name="Argument.name">serverUserName</stringProp>
+              <stringProp name="Argument.value">s_raa_appadmin</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Server login User Name</stringProp>
+            </elementProp>
+            <elementProp name="serverPassword" elementType="Argument">
+              <stringProp name="Argument.name">serverPassword</stringProp>
+              <stringProp name="Argument.value">HAha123!</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Server login Password</stringProp>
+            </elementProp>
+            <elementProp name="Username_DB" elementType="Argument">
+              <stringProp name="Argument.name">Username_DB</stringProp>
+              <stringProp name="Argument.value">sa</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Password_DB" elementType="Argument">
+              <stringProp name="Argument.name">Password_DB</stringProp>
+              <stringProp name="Argument.value">Abcd1234@</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="DB_Server" elementType="Argument">
+              <stringProp name="Argument.name">DB_Server</stringProp>
+              <stringProp name="Argument.value">SRRAADEVGUI</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Database_Name" elementType="Argument">
+              <stringProp name="Argument.name">Database_Name</stringProp>
+              <stringProp name="Argument.value">Loyalty_LMS_1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Housekeeping batchfile creation" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">	import java.io.BufferedReader;
+	import java.io.File;
+	import java.io.FileReader;
+	import java.io.IOException;
+	import java.io.File;
+	import java.util.ArrayList;
+	
+	SampleResult.setIgnore();
+	
+	//Create remote batch file
+	String batName = &quot;LOYALTYHOUSEKEEPING&quot;;
+	String inputFileformat = &quot;&quot;;
+	String outputFilePath =&quot;&quot;;
+	String workFilePath = vars.get(&quot;workFilePath&quot;);
+	String logFile = vars.get(&quot;logFile&quot;);
+	String errorFile = vars.get(&quot;errorFile&quot;);
+	//String retailerID = &quot;1&quot;;
+	String otherCriteria = &quot;/RunContinuityPromotionsHouseKeeping=&quot;+vars.get(&quot;RunContinuityPromotionsHouseKeeping&quot;)+&quot; /RunDocumentsHouseKeeping=&quot;+vars.get(&quot;RunDocumentsHouseKeeping&quot;)+&quot; /RunTransactionsHouseKeeping=&quot;+vars.get(&quot;RunTransactionsHouseKeeping&quot;)+&quot; /RunMemberServiceAuditLogHouseKeeping=&quot;+vars.get(&quot;RunMemberServiceAuditLogHouseKeeping&quot;)+&quot; /RunRegisteredPromotionsHouseKeeping=&quot;+vars.get(&quot;RunRegisteredPromotionsHouseKeeping&quot;)+&quot; /RunImportNewCards_LOGHouseKeeping=&quot;+vars.get(&quot;RunImportNewCards_LOGHouseKeeping&quot;)+&quot; /RunPendingLoyaltyInfoHouseKeeping=&quot;+vars.get(&quot;RunPendingLoyaltyInfoHouseKeeping&quot;)+&quot; /RunImportCustomerLogForExportHK=&quot;+vars.get(&quot;RunImportCustomerLogForExportHK&quot;)+&quot; /RunNotesHouseKeeping=&quot;+vars.get(&quot;RunNotesHouseKeeping&quot;)+&quot; /RunBulkAdjustHouseKeeping=&quot;+vars.get(&quot;RunBulkAdjustHouseKeeping&quot;)+&quot; /RunLoyaltyDocumentsRepositoryHouseKeeping=&quot;+vars.get(&quot;RunLoyaltyDocumentsRepositoryHouseKeeping&quot;)+&quot; /RunSegmentHistoryHouseKeeping=&quot;+vars.get(&quot;RunSegmentHistoryHouseKeeping&quot;)+&quot; /RunInactiveMembersHK=&quot;+vars.get(&quot;RunInactiveMembersHK&quot;)+&quot; /RunDeactivateMembersHK=&quot;+vars.get(&quot;RunDeactivateMembersHK&quot;);
+	log.info(otherCriteria);
+	String clubId = vars.get(&quot;clubId&quot;);
+	String RunDate= vars.get(&quot;RunDate&quot;);
+	
+	//UPload to variable
+	vars.put(&quot;LogFile&quot;,logFile);
+	vars.put(&quot;ErrorFile&quot;,errorFile);
+	
+	StringBuilder batFileText = new StringBuilder(&quot;ReMABatchManager.exe&quot;);
+	batFileText.append(&quot; -A&quot;+ batName);
+	batFileText.append(&quot; -W&quot;+ workFilePath);
+	batFileText.append(&quot; -L&quot;+ logFile);
+	batFileText.append(&quot; -E&quot;+ errorFile);
+	batFileText.append(&quot; -B&quot;+RunDate);
+	batFileText.append(&quot; /ClubId=&quot;+clubId);
+	batFileText.append(&quot; &quot;+ otherCriteria);
+	
+	//String batFileText = &quot;ReMABatchManager.exe&quot;+&quot; &quot;+ &quot;-A&quot; + batName.toUpperCase()+&quot; &quot;+&quot;-O&quot;+outputFilePath+&quot; &quot;+&quot;-W&quot;+workFilePath+&quot; &quot; + &quot;-L&quot; + logFile + &quot; &quot; + &quot;-E&quot;+errorFile+ &quot; &quot; +&quot;-R&quot;+retailerID+ &quot; &quot;+ otherCriteria;
+	
+	String serverIP = vars.get(&quot;serverIP&quot;);
+	String serverUserName = vars.get(&quot;serverUserName&quot;);
+	String serverPassword = vars.get(&quot;serverPassword&quot;);
+	String batchManagerPath = vars.get(&quot;batchManagerPath&quot;);
+	
+	String remoteBatchFilePath=&quot;\\\\&quot;+serverIP+&quot;\\&quot;+batchManagerPath.replace(&quot;:&quot;,&quot;&quot;);
+	String remoteBatchFile = remoteBatchFilePath+&quot;\\TestBatch_JmeterHKDoc.bat&quot;;
+	File file = new File(remoteBatchFile);
+	
+	FileWriter fw = new FileWriter(file.getAbsoluteFile(),false);
+	BufferedWriter bw = new BufferedWriter(fw);
+	bw.write(batFileText.toString());
+	bw.close();
+	
+	
+	//Create local batch file to run server batch file
+	StringBuilder localbatText = new StringBuilder(&quot;@ECHO OFF&quot;);
+	localbatText.append(&quot;\nPsExec.exe&quot;);
+	localbatText.append(&quot; \\\\&quot;+ serverIP );
+	localbatText.append(&quot; -u HQL\\&quot;+serverUserName);
+	localbatText.append(&quot; -p &quot;+serverPassword);
+	localbatText.append(&quot; cmd /c &quot;);
+	localbatText.append(&quot;\&quot;cd /d &quot; + batchManagerPath +&quot; &amp;&amp; &quot;);
+	localbatText.append(&quot;TestBatch_JmeterHKDoc.bat&quot;+&quot;\&quot;&quot;);
+	localbatText.append(&quot;\nPAUSE&quot;);
+	
+	String localbatFile= vars.get(&quot;PSToolPath&quot;) + &quot;\\LocalBatchFile.bat&quot;;
+	File localFile = new File(localbatFile);
+	
+	log.info(localbatFile);
+	
+	
+	FileWriter fwr = new FileWriter(localFile.getAbsoluteFile(),false);
+	BufferedWriter bwr = new BufferedWriter(fwr);
+	bwr.write(localbatText.toString());
+	bwr.close();
+	
+	//send batchfile path to variable 
+	//String batchPath = &quot;C:\\Users\\pd185161\\OneDrive - NCR Corporation\\Desktop\\LP\\apache-jmeter-5.4.1\\PSTools\\PSTools\\LMSBatchInitiator.bat&quot;;
+	vars.put(&quot;LocalBatchFile&quot;,localbatFile);</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delete LoyaltyHousekeeping_Log table" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import org.junit.Assert; 
+
+String DB_URL = &quot;jdbc:sqlserver://&quot;+vars.get(&quot;DB_Server&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;Database_Name&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;Username_DB&quot;);
+String PASSWORD = vars.get(&quot;Password_DB&quot;);
+String sql_1 = &quot;Delete FROM LoyaltyHousekeeping_Log&quot;;
+String sql_2 = &quot;update LoyaltyHousekeeping_ProcessConfiguration set IsActive=0&quot;;
+
+
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		//Class.forName(&quot;org.postgresql.Driver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		Statement stmt = conn.createStatement();
+		log.info(&quot;Connection established Successfully&quot;);
+		stmt.executeUpdate(sql_1);
+		stmt.executeUpdate(sql_2);
+
+		Thread.sleep(1000);
+
+		if(vars.get(&quot;RunContinuityPromotionsHouseKeeping&quot;).equals(&quot;1&quot;)){
+			String sql = &quot;update LoyaltyHousekeeping_ProcessConfiguration set IsActive=1 where processid=1&quot;;
+			stmt.executeUpdate(sql);
+		}
+		if(vars.get(&quot;RunDocumentsHouseKeeping&quot;).equals(&quot;1&quot;)){
+			String sql = &quot;update LoyaltyHousekeeping_ProcessConfiguration set IsActive=1 where processid=2&quot;;
+			stmt.executeUpdate(sql);
+		}
+		if(vars.get(&quot;RunTransactionsHouseKeeping&quot;).equals(&quot;1&quot;)){
+			String sql = &quot;update LoyaltyHousekeeping_ProcessConfiguration set IsActive=1 where processid=3&quot;;
+			stmt.executeUpdate(sql);
+		}
+		
+		conn.close();
+		SampleResult.setResponseMessage(&quot;PASSED&quot;);
+	}
+	catch(Exception e){
+		log.info(e.toString());
+		SampleResult.setResponseMessage(&quot;FAILED&quot;);
+		Assert.assertTrue(e, false);
+	}
+	
+	</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Execute and Validating LoyaltyHousekeeping_Log table" enabled="true">
+          <stringProp name="scriptLanguage">java</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+import org.junit.Assert; 
+
+//executing batch file
+
+String[] array = { &quot;cmd&quot;, &quot;/C&quot;, &quot;start&quot;, vars.get(&quot;LocalBatchFile&quot;) };
+Process proc = Runtime.getRuntime().exec(array);
+Thread.sleep(60000);
+
+// DB connection and Validation
+String DB_URL = &quot;jdbc:sqlserver://&quot;+vars.get(&quot;DB_Server&quot;)+&quot;;databaseName=&quot;+vars.get(&quot;Database_Name&quot;);
+log.info(DB_URL);
+String USER = vars.get(&quot;Username_DB&quot;);
+String PASSWORD = vars.get(&quot;Password_DB&quot;);
+String QUERY = &quot;select * from LoyaltyHousekeeping_Log&quot;;
+		
+	try{
+		Class.forName(&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;);
+		//Class.forName(&quot;org.postgresql.Driver&quot;);
+		Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		log.info(&quot;Connection established Successfully&quot;);
+
+		int size = 0;
+		ResultSet resultSet = stmt.executeQuery(QUERY);
+		resultSet.last();
+		size = resultSet.getRow();
+		resultSet.beforeFirst();
+
+		log.info(&quot;Size&quot; + size.toString());
+
+		if(size == 0){
+			Thread.sleep(30000);
+			if(size == 0){
+				Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+				Assert.assertTrue(&quot;LoyaltyHousekeeping_Log record count is Zero and process is not successful&quot;, size &gt; 0);
+			}
+		}
+		
+		
+		
+		while(resultSet.next())
+		{
+			int Status = resultSet.getInt(&quot;Status&quot;);
+			log.info(&quot;Status&quot; + Status.toString());
+			if(Status != &quot;99&quot;)
+			{
+				int Processid = resultSet.getInt(&quot;ProcessId&quot;);
+				log.info(&quot;Process id&quot; +Processid.toString());
+				//Assert.assertTrue(Processid + &quot; is failed&quot;, false);
+				Failure = true;
+				FailureMessage = Processid + &quot; is failed&quot;;
+			}
+		}
+		Runtime.getRuntime().exec(&quot;taskkill /F /IM cmd.exe&quot;);
+		conn.close();
+		SampleResult.setResponseMessage(&quot;PASSED&quot;);
+	}
+	catch(Exception e){
+		log.info(e.toString());
+		SampleResult.setResponseMessage(&quot;FAILED&quot;);
+		Assert.assertTrue(e, false);
+	}
+	
+	</stringProp>
+        </JSR223Sampler>
+        <hashTree>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="false">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Count CRM_POStran" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+select COUNT (TranId) from CRM_POSTran where matrixmemberid = @matrixmemberid and tranid =&apos;${transID}&apos;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">transID</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="TestPlan.comments"> msg3 success</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion Count" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="48">0</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Count documents in LoyaltyDocuments" enabled="true">
+          <stringProp name="dataSource">MS_Driver_Connection_Pool_Loyalty</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">Declare @matrixmemberid varchar(50)
+
+set @matrixmemberid = (select MatrixMemberId from RetailerCode_MP where RetailerID= ${RetailerID})
+
+SELECT        COUNT (CRM_LoyaltyDocuments.Barcode)                     
+FROM            CRM_Member INNER JOIN
+                         CRM_LoyaltyDocuments ON CRM_Member.BuyingUnitInternalKey = CRM_LoyaltyDocuments.IssuedBuyingUnitInternalKey INNER JOIN
+                         CRM_Clubcard ON CRM_Member.MemberInternalKey = CRM_Clubcard.MemberInternalKey
+WHERE        (CRM_Clubcard.MatrixMemberId = @matrixmemberid) AND (CRM_Clubcard.ClubCardId = &apos;${LastCardID_1}&apos;) AND (CRM_LoyaltyDocuments.Barcode = &apos;${Barcode1_1}&apos;)
+</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="48">0</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
